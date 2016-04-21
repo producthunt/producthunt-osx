@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "idiom" : "mac",
+      "filename" : "icon-twitter-hovered.pdf"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

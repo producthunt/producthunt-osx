@@ -1,0 +1,37 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - DateTools (1.7.0)
+  - ISO8601 (0.5.0)
+  - Kingfisher (2.2.2)
+  - Sparkle (1.14.0)
+  - SwiftyTimer (1.4.0)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.0)
+  - DateTools
+  - ISO8601 (~> 0.5)
+  - Kingfisher (~> 2.1)
+  - Sparkle (~> 1.10)
+  - SwiftyTimer
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  ISO8601: 25d7a973fa8daf31a50bbd0401d2e7b98e8a7df3
+  Kingfisher: 7e8de5b0cf7b5dc8ec559d193029a0859df93ef1
+  Sparkle: ccd95233b12a3e3d4eeb55ff01dd4c8bb8188b07
+  SwiftyTimer: db4458cfaf67fc71e16ad6e4637c60b86f76a649
+
+COCOAPODS: 0.39.0

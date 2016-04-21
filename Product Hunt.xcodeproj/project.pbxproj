@@ -1,0 +1,1257 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		370627019454F1B9078F9904 /* Pods_ProductHunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA09B18C78332E2F89BD2AB /* Pods_ProductHunt.framework */; };
+		6D3010CB2C2ED8A7EC5407E2 /* Pods_ProductHuntTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E34B14744B9FFB01A730F6BE /* Pods_ProductHuntTests.framework */; };
+		E706618D1CA2E70600BF8F36 /* PHPostsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E706618C1CA2E70600BF8F36 /* PHPostsDataSource.swift */; };
+		E708BED41CB6FBDA0068D97B /* ProductHuntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E708BED31CB6FBDA0068D97B /* ProductHuntTests.swift */; };
+		E72394DF1CA909F2000F4070 /* PHPostFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72394DE1CA909F2000F4070 /* PHPostFetcher.swift */; };
+		E723F2531CBBC6BA00E46A7D /* PHConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E723F2521CBBC6BA00E46A7D /* PHConfiguration.m */; };
+		E723F2541CBBC6BA00E46A7D /* PHConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E723F2521CBBC6BA00E46A7D /* PHConfiguration.m */; };
+		E72526C71C96C64700942F0E /* PHPostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72526C51C96C64700942F0E /* PHPostListViewController.swift */; };
+		E72526C81C96C64700942F0E /* PHPostListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72526C61C96C64700942F0E /* PHPostListViewController.xib */; };
+		E72526D11C96E54C00942F0E /* PHAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72526D01C96E54C00942F0E /* PHAPI.swift */; };
+		E72526D81C96EB9200942F0E /* PHAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72526D71C96EB9200942F0E /* PHAPIEndpoint.swift */; };
+		E72DBA641CA17EC20049F83A /* PHPreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DBA631CA17EC20049F83A /* PHPreferencesWindowController.swift */; };
+		E72DBA671CA17F1B0049F83A /* PHPreferencesWindowControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DBA661CA17F1B0049F83A /* PHPreferencesWindowControllerProtocol.swift */; };
+		E72DBA6A1CA180920049F83A /* PHGeneralSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DBA681CA180920049F83A /* PHGeneralSettingsViewController.swift */; };
+		E72DBA6B1CA180920049F83A /* PHGeneralSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72DBA691CA180920049F83A /* PHGeneralSettingsViewController.xib */; };
+		E7324EBC1C999BA40065525B /* PHSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EBB1C999BA40065525B /* PHSectionCell.swift */; };
+		E7324EBE1C99C8AD0065525B /* PHOpenURLAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EBD1C99C8AD0065525B /* PHOpenURLAction.swift */; };
+		E7324EC41C9AE3220065525B /* PHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EC31C9AE3220065525B /* PHLoadingView.swift */; };
+		E7324EC61C9AF2F50065525B /* PHScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EC51C9AF2F50065525B /* PHScrollView.swift */; };
+		E7324ECA1C9AF7250065525B /* PHOpenSettingsMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EC91C9AF7250065525B /* PHOpenSettingsMenuAction.swift */; };
+		E7324ECF1C9B481F0065525B /* PHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324ECE1C9B481F0065525B /* PHUserDefaults.swift */; };
+		E7324ED41C9B51180065525B /* PHSeenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324ED31C9B51180065525B /* PHSeenView.swift */; };
+		E75900BB1C9BF88D003C15B9 /* PHPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900BA1C9BF88D003C15B9 /* PHPostViewModel.swift */; };
+		E75900C81C9C06CE003C15B9 /* PHSeenPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900C71C9C06CE003C15B9 /* PHSeenPosts.swift */; };
+		E75900CE1C9C141E003C15B9 /* PHOpenPostAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900CD1C9C141E003C15B9 /* PHOpenPostAction.swift */; };
+		E75900ED1CA027D4003C15B9 /* PHGetTokenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900EC1CA027D4003C15B9 /* PHGetTokenAction.swift */; };
+		E75901051CA034AC003C15B9 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E75901041CA034AC003C15B9 /* ServiceManagement.framework */; };
+		E75F5EB41CA40521003B6D60 /* NSColor+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75F5EB31CA40521003B6D60 /* NSColor+ProductHunt.swift */; };
+		E75F5EB61CA4383F003B6D60 /* PHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75F5EB51CA4383F003B6D60 /* PHButton.swift */; };
+		E76ED6391C96BD0C005B3EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76ED6381C96BD0C005B3EC7 /* AppDelegate.swift */; };
+		E76ED63B1C96BD0C005B3EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E76ED63A1C96BD0C005B3EC7 /* Assets.xcassets */; };
+		E76ED63E1C96BD0C005B3EC7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76ED63C1C96BD0C005B3EC7 /* MainMenu.xib */; };
+		E781FB9C1CA198C000A7CFCE /* PHFirstLaunchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781FB9B1CA198C000A7CFCE /* PHFirstLaunchAction.swift */; };
+		E781FB9E1CA19BA800A7CFCE /* PHStartAtLoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781FB9D1CA19BA800A7CFCE /* PHStartAtLoginAction.swift */; };
+		E78A30E61CA2930200987B4F /* LLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A30E41CA2930200987B4F /* LLManager.m */; };
+		E78A30EC1CA2932200987B4F /* LaunchAtLoginHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = E78A30E91CA2930200987B4F /* LaunchAtLoginHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E791308C1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791308B1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift */; };
+		E79130921CB436E3009AAB9B /* PHShareAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79130911CB436E3009AAB9B /* PHShareAction.swift */; };
+		E79130941CB5072B009AAB9B /* PHShareMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79130931CB5072B009AAB9B /* PHShareMessage.swift */; };
+		E7A85BB21CA040BE00E48329 /* PHOpenSettingsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A85BB11CA040BE00E48329 /* PHOpenSettingsAction.swift */; };
+		E7A94CB51CC0D432008606AB /* KPCScaleToFillNSImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A94CB41CC0D432008606AB /* KPCScaleToFillNSImageView.m */; };
+		E7B017D81CABE66A0019E654 /* PHStatusBarUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B017D71CABE66A0019E654 /* PHStatusBarUpdater.swift */; };
+		E7B017E71CABF3AC0019E654 /* PHCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B017E61CABF3AC0019E654 /* PHCallbacks.swift */; };
+		E7BC08901C97246E00990066 /* PHKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC088F1C97246E00990066 /* PHKeychain.swift */; };
+		E7BC08921C973D2A00990066 /* PHToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC08911C973D2A00990066 /* PHToken.swift */; };
+		E7BC08941C973D3200990066 /* PHTokenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC08931C973D3200990066 /* PHTokenFactory.swift */; };
+		E7CD02791CA98F6900C9FA7B /* PHBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD02781CA98F6900C9FA7B /* PHBundle.swift */; };
+		E7CF19B71CA9764300535CC4 /* PHPopoverAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF19B61CA9764300535CC4 /* PHPopoverAction.swift */; };
+		E7E0C0FB1CC0C8BA002D0085 /* PHScheduleAsSeenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0C0FA1CC0C8BA002D0085 /* PHScheduleAsSeenAction.swift */; };
+		E7E423921C982B9600EF464D /* PHPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E423911C982B9600EF464D /* PHPostCell.swift */; };
+		E7E423961C98342100EF464D /* PHPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E423951C98342100EF464D /* PHPost.swift */; };
+		E7E423981C98371300EF464D /* PHDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E423971C98371300EF464D /* PHDateFormatter.swift */; };
+		E7E4239D1C98575D00EF464D /* PHPostFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E4239C1C98575D00EF464D /* PHPostFactory.swift */; };
+		E7EBBA6D1CAA5A8A00C09770 /* NSError+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EBBA6C1CAA5A8A00C09770 /* NSError+ProductHunt.swift */; };
+		E7EBBA6F1CAA710000C09770 /* PHSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EBBA6E1CAA710000C09770 /* PHSection.swift */; };
+		E7F3E9D31CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E9D11CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.swift */; };
+		E7F3E9D41CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7F3E9D21CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.xib */; };
+		E7F3E9D61CC5189700DA9A97 /* NSButton+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E9D51CC5189700DA9A97 /* NSButton+ProductHunt.swift */; };
+		E7F3E9DD1CC62B2700DA9A97 /* PHPostSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E9DC1CC62B2700DA9A97 /* PHPostSorter.swift */; };
+		E7F3E9DE1CC62B2700DA9A97 /* PHPostSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E9DC1CC62B2700DA9A97 /* PHPostSorter.swift */; };
+		E7F3E9E11CC62C9100DA9A97 /* PHUserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324ED11C9B4C760065525B /* PHUserDefaultsTests.swift */; };
+		E7F3E9E21CC62C9400DA9A97 /* PHTokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC08951C973EF400990066 /* PHTokenTests.swift */; };
+		E7F3E9E31CC62C9600DA9A97 /* PHSeenPostsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900CB1C9C0AC4003C15B9 /* PHSeenPostsTests.swift */; };
+		E7F3E9E41CC62C9800DA9A97 /* PHPostViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900BC1C9BF8D8003C15B9 /* PHPostViewModelTests.swift */; };
+		E7F3E9E51CC62C9A00DA9A97 /* PHPostFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B017EF1CAC14EA0019E654 /* PHPostFetcherTests.swift */; };
+		E7F3E9E61CC62C9C00DA9A97 /* PHPostDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705834F1CAD42F10046D2A9 /* PHPostDataSourceTests.swift */; };
+		E7F3E9E71CC62C9E00DA9A97 /* PHKeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC08991C974F1100990066 /* PHKeychainTests.swift */; };
+		E7F3E9E81CC62CA000DA9A97 /* PHDateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E423991C98375700EF464D /* PHDateFormatterTests.swift */; };
+		E7F3E9E91CC62CA300DA9A97 /* XCTestCase+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79659391C9708090010F358 /* XCTestCase+ProductHunt.swift */; };
+		E7F3E9EA1CC62CA500DA9A97 /* PHTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900D11C9C8699003C15B9 /* PHTestCase.swift */; };
+		E7F3E9EB1CC62CA700DA9A97 /* PHFakeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4BB151CAD0FD500E2458E /* PHFakeFactory.swift */; };
+		E7F3E9EC1CC62CA900DA9A97 /* PHFakeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B017EA1CAC08FE0019E654 /* PHFakeEndpoint.swift */; };
+		E7F3E9ED1CC62CC400DA9A97 /* PHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324ECE1C9B481F0065525B /* PHUserDefaults.swift */; };
+		E7F3E9EE1CC62CC600DA9A97 /* PHStatusBarUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B017D71CABE66A0019E654 /* PHStatusBarUpdater.swift */; };
+		E7F3E9EF1CC62CC900DA9A97 /* PHShareMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79130931CB5072B009AAB9B /* PHShareMessage.swift */; };
+		E7F3E9F01CC62CCB00DA9A97 /* PHSeenPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900C71C9C06CE003C15B9 /* PHSeenPosts.swift */; };
+		E7F3E9F11CC62CCD00DA9A97 /* PHPostsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E706618C1CA2E70600BF8F36 /* PHPostsDataSource.swift */; };
+		E7F3E9F41CC62CD400DA9A97 /* PHPostFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72394DE1CA909F2000F4070 /* PHPostFetcher.swift */; };
+		E7F3E9F61CC62CD800DA9A97 /* PHKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC088F1C97246E00990066 /* PHKeychain.swift */; };
+		E7F3E9F71CC62CDA00DA9A97 /* PHDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E423971C98371300EF464D /* PHDateFormatter.swift */; };
+		E7F3E9F81CC62CDD00DA9A97 /* PHCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B017E61CABF3AC0019E654 /* PHCallbacks.swift */; };
+		E7F3E9F91CC62CDF00DA9A97 /* PHBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD02781CA98F6900C9FA7B /* PHBundle.swift */; };
+		E7F3E9FA1CC62CE400DA9A97 /* PHPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900BA1C9BF88D003C15B9 /* PHPostViewModel.swift */; };
+		E7F3E9FB1CC62CE800DA9A97 /* PHPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E423951C98342100EF464D /* PHPost.swift */; };
+		E7F3E9FC1CC62CE800DA9A97 /* PHPostFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E4239C1C98575D00EF464D /* PHPostFactory.swift */; };
+		E7F3E9FD1CC62CE800DA9A97 /* PHSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EBBA6E1CAA710000C09770 /* PHSection.swift */; };
+		E7F3E9FE1CC62CE800DA9A97 /* PHToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC08911C973D2A00990066 /* PHToken.swift */; };
+		E7F3E9FF1CC62CE800DA9A97 /* PHTokenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC08931C973D3200990066 /* PHTokenFactory.swift */; };
+		E7F3EA001CC62CEF00DA9A97 /* PHAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72526D01C96E54C00942F0E /* PHAPI.swift */; };
+		E7F3EA011CC62CEF00DA9A97 /* PHAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72526D71C96EB9200942F0E /* PHAPIEndpoint.swift */; };
+		E7F3EA021CC62D0600DA9A97 /* PHPreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DBA631CA17EC20049F83A /* PHPreferencesWindowController.swift */; };
+		E7F3EA031CC62D0600DA9A97 /* PHPreferencesWindowControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DBA661CA17F1B0049F83A /* PHPreferencesWindowControllerProtocol.swift */; };
+		E7F3EA041CC62D0600DA9A97 /* PHAdvancedSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E9D11CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.swift */; };
+		E7F3EA051CC62D0600DA9A97 /* PHGeneralSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DBA681CA180920049F83A /* PHGeneralSettingsViewController.swift */; };
+		E7F3EA061CC62D0600DA9A97 /* PHPostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72526C51C96C64700942F0E /* PHPostListViewController.swift */; };
+		E7F3EA071CC62D0B00DA9A97 /* NSColor+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75F5EB31CA40521003B6D60 /* NSColor+ProductHunt.swift */; };
+		E7F3EA081CC62D0B00DA9A97 /* NSError+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EBBA6C1CAA5A8A00C09770 /* NSError+ProductHunt.swift */; };
+		E7F3EA091CC62D0B00DA9A97 /* NSImage+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791308B1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift */; };
+		E7F3EA0A1CC62D0B00DA9A97 /* NSButton+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E9D51CC5189700DA9A97 /* NSButton+ProductHunt.swift */; };
+		E7F3EA0C1CC62D1100DA9A97 /* PHFirstLaunchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781FB9B1CA198C000A7CFCE /* PHFirstLaunchAction.swift */; };
+		E7F3EA0D1CC62D1100DA9A97 /* PHGetTokenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900EC1CA027D4003C15B9 /* PHGetTokenAction.swift */; };
+		E7F3EA0E1CC62D1100DA9A97 /* PHOpenURLAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EBD1C99C8AD0065525B /* PHOpenURLAction.swift */; };
+		E7F3EA0F1CC62D1100DA9A97 /* PHPopoverAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF19B61CA9764300535CC4 /* PHPopoverAction.swift */; };
+		E7F3EA101CC62D1100DA9A97 /* PHShareAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79130911CB436E3009AAB9B /* PHShareAction.swift */; };
+		E7F3EA111CC62D1100DA9A97 /* PHOpenPostAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900CD1C9C141E003C15B9 /* PHOpenPostAction.swift */; };
+		E7F3EA121CC62D1100DA9A97 /* PHOpenSettingsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A85BB11CA040BE00E48329 /* PHOpenSettingsAction.swift */; };
+		E7F3EA131CC62D1100DA9A97 /* PHOpenSettingsMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EC91C9AF7250065525B /* PHOpenSettingsMenuAction.swift */; };
+		E7F3EA141CC62D1100DA9A97 /* PHStartAtLoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781FB9D1CA19BA800A7CFCE /* PHStartAtLoginAction.swift */; };
+		E7F3EA151CC62D1100DA9A97 /* PHOpenProductHuntAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC79841CC0BEA100FBEAC5 /* PHOpenProductHuntAction.swift */; };
+		E7F3EA161CC62D1100DA9A97 /* PHScheduleAsSeenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0C0FA1CC0C8BA002D0085 /* PHScheduleAsSeenAction.swift */; };
+		E7F3EA171CC62D1B00DA9A97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76ED6381C96BD0C005B3EC7 /* AppDelegate.swift */; };
+		E7F3EA181CC62D3C00DA9A97 /* LLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A30E41CA2930200987B4F /* LLManager.m */; };
+		E7F3EA1F1CC62D6A00DA9A97 /* PHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75F5EB51CA4383F003B6D60 /* PHButton.swift */; };
+		E7F3EA201CC62D6A00DA9A97 /* PHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EC31C9AE3220065525B /* PHLoadingView.swift */; };
+		E7F3EA211CC62D6A00DA9A97 /* PHPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E423911C982B9600EF464D /* PHPostCell.swift */; };
+		E7F3EA221CC62D6A00DA9A97 /* PHScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EC51C9AF2F50065525B /* PHScrollView.swift */; };
+		E7F3EA231CC62D6A00DA9A97 /* PHSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EBB1C999BA40065525B /* PHSectionCell.swift */; };
+		E7F3EA241CC62D6A00DA9A97 /* PHSeenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324ED31C9B51180065525B /* PHSeenView.swift */; };
+		E7F3EA2E1CC62E8300DA9A97 /* PHPostSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3EA2D1CC62E8300DA9A97 /* PHPostSorterTests.swift */; };
+		E7F3EA301CC6570700DA9A97 /* PHAppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3EA2F1CC6570700DA9A97 /* PHAppContext.swift */; };
+		E7F3EA311CC6570700DA9A97 /* PHAppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3EA2F1CC6570700DA9A97 /* PHAppContext.swift */; };
+		E7FC79851CC0BEA100FBEAC5 /* PHOpenProductHuntAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC79841CC0BEA100FBEAC5 /* PHOpenProductHuntAction.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E708BED61CB6FBDA0068D97B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E76ED62D1C96BD0C005B3EC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E76ED6341C96BD0C005B3EC7;
+			remoteInfo = ProductHunt;
+		};
+		E78A30E81CA2930200987B4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E78A30E01CA2930200987B4F /* LaunchAtLoginHelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 734C379415414CE200994189;
+			remoteInfo = LaunchAtLoginHelper;
+		};
+		E78A30EA1CA2931700987B4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E78A30E01CA2930200987B4F /* LaunchAtLoginHelper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 734C379315414CE200994189;
+			remoteInfo = LaunchAtLoginHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E75901021CA0344F003C15B9 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				E78A30EC1CA2932200987B4F /* LaunchAtLoginHelper.app in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2643FC333459FD12407313F4 /* Pods-ProductHunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHunt/Pods-ProductHunt.release.xcconfig"; sourceTree = "<group>"; };
+		885EE3882DE75A244EECE4AC /* Pods-ProductHuntTests.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHuntTests.testing.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHuntTests/Pods-ProductHuntTests.testing.xcconfig"; sourceTree = "<group>"; };
+		8EA09B18C78332E2F89BD2AB /* Pods_ProductHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9218BC9BA6A17E65B54D5A5E /* Pods-ProductHuntTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHuntTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHuntTests/Pods-ProductHuntTests.release.xcconfig"; sourceTree = "<group>"; };
+		C7B2BBAF867209B042096AB5 /* Pods-ProductHuntTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHuntTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHuntTests/Pods-ProductHuntTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF4434CD295A55B390BEBC9C /* Pods-ProductHunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHunt/Pods-ProductHunt.debug.xcconfig"; sourceTree = "<group>"; };
+		E34B14744B9FFB01A730F6BE /* Pods_ProductHuntTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductHuntTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E705834F1CAD42F10046D2A9 /* PHPostDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostDataSourceTests.swift; sourceTree = "<group>"; };
+		E706618C1CA2E70600BF8F36 /* PHPostsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostsDataSource.swift; sourceTree = "<group>"; };
+		E708BED11CB6FBDA0068D97B /* ProductHuntTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductHuntTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E708BED31CB6FBDA0068D97B /* ProductHuntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductHuntTests.swift; sourceTree = "<group>"; };
+		E708BED51CB6FBDA0068D97B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E72394DE1CA909F2000F4070 /* PHPostFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostFetcher.swift; sourceTree = "<group>"; };
+		E723F2501CBBC4E600E46A7D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		E723F2511CBBC6BA00E46A7D /* PHConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHConfiguration.h; sourceTree = "<group>"; };
+		E723F2521CBBC6BA00E46A7D /* PHConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHConfiguration.m; sourceTree = "<group>"; };
+		E723F2551CBBC82700E46A7D /* Keys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
+		E723F2571CBBC88D00E46A7D /* Keys-Example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Keys-Example.xcconfig"; sourceTree = "<group>"; };
+		E72526C51C96C64700942F0E /* PHPostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostListViewController.swift; sourceTree = "<group>"; };
+		E72526C61C96C64700942F0E /* PHPostListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHPostListViewController.xib; sourceTree = "<group>"; };
+		E72526D01C96E54C00942F0E /* PHAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAPI.swift; sourceTree = "<group>"; };
+		E72526D71C96EB9200942F0E /* PHAPIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAPIEndpoint.swift; sourceTree = "<group>"; };
+		E72DBA631CA17EC20049F83A /* PHPreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPreferencesWindowController.swift; sourceTree = "<group>"; };
+		E72DBA661CA17F1B0049F83A /* PHPreferencesWindowControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPreferencesWindowControllerProtocol.swift; sourceTree = "<group>"; };
+		E72DBA681CA180920049F83A /* PHGeneralSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHGeneralSettingsViewController.swift; sourceTree = "<group>"; };
+		E72DBA691CA180920049F83A /* PHGeneralSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHGeneralSettingsViewController.xib; sourceTree = "<group>"; };
+		E7324EBB1C999BA40065525B /* PHSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSectionCell.swift; sourceTree = "<group>"; };
+		E7324EBD1C99C8AD0065525B /* PHOpenURLAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHOpenURLAction.swift; sourceTree = "<group>"; };
+		E7324EC31C9AE3220065525B /* PHLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHLoadingView.swift; sourceTree = "<group>"; };
+		E7324EC51C9AF2F50065525B /* PHScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHScrollView.swift; sourceTree = "<group>"; };
+		E7324EC91C9AF7250065525B /* PHOpenSettingsMenuAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHOpenSettingsMenuAction.swift; sourceTree = "<group>"; };
+		E7324ECE1C9B481F0065525B /* PHUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHUserDefaults.swift; sourceTree = "<group>"; };
+		E7324ED11C9B4C760065525B /* PHUserDefaultsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHUserDefaultsTests.swift; sourceTree = "<group>"; };
+		E7324ED31C9B51180065525B /* PHSeenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSeenView.swift; sourceTree = "<group>"; };
+		E75900BA1C9BF88D003C15B9 /* PHPostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostViewModel.swift; sourceTree = "<group>"; };
+		E75900BC1C9BF8D8003C15B9 /* PHPostViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostViewModelTests.swift; sourceTree = "<group>"; };
+		E75900C71C9C06CE003C15B9 /* PHSeenPosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSeenPosts.swift; sourceTree = "<group>"; };
+		E75900CB1C9C0AC4003C15B9 /* PHSeenPostsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSeenPostsTests.swift; sourceTree = "<group>"; };
+		E75900CD1C9C141E003C15B9 /* PHOpenPostAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHOpenPostAction.swift; sourceTree = "<group>"; };
+		E75900D11C9C8699003C15B9 /* PHTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHTestCase.swift; sourceTree = "<group>"; };
+		E75900D51CA012FB003C15B9 /* ProductHunt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ProductHunt.entitlements; sourceTree = "<group>"; };
+		E75900EC1CA027D4003C15B9 /* PHGetTokenAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHGetTokenAction.swift; sourceTree = "<group>"; };
+		E75901041CA034AC003C15B9 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		E75F5EB31CA40521003B6D60 /* NSColor+ProductHunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+ProductHunt.swift"; sourceTree = "<group>"; };
+		E75F5EB51CA4383F003B6D60 /* PHButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHButton.swift; sourceTree = "<group>"; };
+		E76ED6351C96BD0C005B3EC7 /* Product Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Product Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E76ED6381C96BD0C005B3EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E76ED63A1C96BD0C005B3EC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E76ED63D1C96BD0C005B3EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E76ED63F1C96BD0C005B3EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E76ED64A1C96BD0C005B3EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E781FB9B1CA198C000A7CFCE /* PHFirstLaunchAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFirstLaunchAction.swift; sourceTree = "<group>"; };
+		E781FB9D1CA19BA800A7CFCE /* PHStartAtLoginAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHStartAtLoginAction.swift; sourceTree = "<group>"; };
+		E78A30D31CA2921300987B4F /* ProductHunt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProductHunt-Bridging-Header.h"; sourceTree = "<group>"; };
+		E78A30E01CA2930200987B4F /* LaunchAtLoginHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LaunchAtLoginHelper.xcodeproj; path = ../LaunchAtLoginHelper/LaunchAtLoginHelper.xcodeproj; sourceTree = "<group>"; };
+		E78A30E31CA2930200987B4F /* LLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLManager.h; sourceTree = "<group>"; };
+		E78A30E41CA2930200987B4F /* LLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLManager.m; sourceTree = "<group>"; };
+		E78A30E51CA2930200987B4F /* LLStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLStrings.h; sourceTree = "<group>"; };
+		E791308B1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+ProductHunt.swift"; sourceTree = "<group>"; };
+		E79130911CB436E3009AAB9B /* PHShareAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHShareAction.swift; sourceTree = "<group>"; };
+		E79130931CB5072B009AAB9B /* PHShareMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHShareMessage.swift; sourceTree = "<group>"; };
+		E79659391C9708090010F358 /* XCTestCase+ProductHunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+ProductHunt.swift"; sourceTree = "<group>"; };
+		E7A85BB11CA040BE00E48329 /* PHOpenSettingsAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHOpenSettingsAction.swift; sourceTree = "<group>"; };
+		E7A94CB31CC0D432008606AB /* KPCScaleToFillNSImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPCScaleToFillNSImageView.h; sourceTree = "<group>"; };
+		E7A94CB41CC0D432008606AB /* KPCScaleToFillNSImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPCScaleToFillNSImageView.m; sourceTree = "<group>"; };
+		E7B017D21CAA9C1F0019E654 /* UnitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnitTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		E7B017D71CABE66A0019E654 /* PHStatusBarUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHStatusBarUpdater.swift; sourceTree = "<group>"; };
+		E7B017E61CABF3AC0019E654 /* PHCallbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHCallbacks.swift; sourceTree = "<group>"; };
+		E7B017EA1CAC08FE0019E654 /* PHFakeEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFakeEndpoint.swift; sourceTree = "<group>"; };
+		E7B017EF1CAC14EA0019E654 /* PHPostFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostFetcherTests.swift; sourceTree = "<group>"; };
+		E7BC088F1C97246E00990066 /* PHKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHKeychain.swift; sourceTree = "<group>"; };
+		E7BC08911C973D2A00990066 /* PHToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHToken.swift; sourceTree = "<group>"; };
+		E7BC08931C973D3200990066 /* PHTokenFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHTokenFactory.swift; sourceTree = "<group>"; };
+		E7BC08951C973EF400990066 /* PHTokenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHTokenTests.swift; sourceTree = "<group>"; };
+		E7BC08991C974F1100990066 /* PHKeychainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHKeychainTests.swift; sourceTree = "<group>"; };
+		E7CD02781CA98F6900C9FA7B /* PHBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHBundle.swift; sourceTree = "<group>"; };
+		E7CF19B61CA9764300535CC4 /* PHPopoverAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPopoverAction.swift; sourceTree = "<group>"; };
+		E7E0C0FA1CC0C8BA002D0085 /* PHScheduleAsSeenAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHScheduleAsSeenAction.swift; sourceTree = "<group>"; };
+		E7E423911C982B9600EF464D /* PHPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostCell.swift; sourceTree = "<group>"; };
+		E7E423951C98342100EF464D /* PHPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPost.swift; sourceTree = "<group>"; };
+		E7E423971C98371300EF464D /* PHDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHDateFormatter.swift; sourceTree = "<group>"; };
+		E7E423991C98375700EF464D /* PHDateFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHDateFormatterTests.swift; sourceTree = "<group>"; };
+		E7E4239C1C98575D00EF464D /* PHPostFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostFactory.swift; sourceTree = "<group>"; };
+		E7EBBA6C1CAA5A8A00C09770 /* NSError+ProductHunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+ProductHunt.swift"; sourceTree = "<group>"; };
+		E7EBBA6E1CAA710000C09770 /* PHSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSection.swift; sourceTree = "<group>"; };
+		E7F3E9D11CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAdvancedSettingsViewController.swift; sourceTree = "<group>"; };
+		E7F3E9D21CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHAdvancedSettingsViewController.xib; sourceTree = "<group>"; };
+		E7F3E9D51CC5189700DA9A97 /* NSButton+ProductHunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSButton+ProductHunt.swift"; sourceTree = "<group>"; };
+		E7F3E9DC1CC62B2700DA9A97 /* PHPostSorter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostSorter.swift; sourceTree = "<group>"; };
+		E7F3EA2D1CC62E8300DA9A97 /* PHPostSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostSorterTests.swift; sourceTree = "<group>"; };
+		E7F3EA2F1CC6570700DA9A97 /* PHAppContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAppContext.swift; sourceTree = "<group>"; };
+		E7F4BB151CAD0FD500E2458E /* PHFakeFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFakeFactory.swift; sourceTree = "<group>"; };
+		E7FC79841CC0BEA100FBEAC5 /* PHOpenProductHuntAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHOpenProductHuntAction.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E708BECE1CB6FBDA0068D97B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3010CB2C2ED8A7EC5407E2 /* Pods_ProductHuntTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76ED6321C96BD0C005B3EC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E75901051CA034AC003C15B9 /* ServiceManagement.framework in Frameworks */,
+				370627019454F1B9078F9904 /* Pods_ProductHunt.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D696E3B7022D0774414E79D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E75901041CA034AC003C15B9 /* ServiceManagement.framework */,
+				8EA09B18C78332E2F89BD2AB /* Pods_ProductHunt.framework */,
+				E34B14744B9FFB01A730F6BE /* Pods_ProductHuntTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E708BED21CB6FBDA0068D97B /* ProductHuntTests */ = {
+			isa = PBXGroup;
+			children = (
+				E708BED51CB6FBDA0068D97B /* Info.plist */,
+				E708BED31CB6FBDA0068D97B /* ProductHuntTests.swift */,
+			);
+			path = ProductHuntTests;
+			sourceTree = "<group>";
+		};
+		E723F2561CBBC86700E46A7D /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E723F2501CBBC4E600E46A7D /* Config.xcconfig */,
+				E723F2571CBBC88D00E46A7D /* Keys-Example.xcconfig */,
+				E723F2551CBBC82700E46A7D /* Keys.xcconfig */,
+				E723F2511CBBC6BA00E46A7D /* PHConfiguration.h */,
+				E723F2521CBBC6BA00E46A7D /* PHConfiguration.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		E72526BC1C96C07100942F0E /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				E781FB9B1CA198C000A7CFCE /* PHFirstLaunchAction.swift */,
+				E75900EC1CA027D4003C15B9 /* PHGetTokenAction.swift */,
+				E7324EBD1C99C8AD0065525B /* PHOpenURLAction.swift */,
+				E7CF19B61CA9764300535CC4 /* PHPopoverAction.swift */,
+				E79130911CB436E3009AAB9B /* PHShareAction.swift */,
+				E75900CD1C9C141E003C15B9 /* PHOpenPostAction.swift */,
+				E7A85BB11CA040BE00E48329 /* PHOpenSettingsAction.swift */,
+				E7324EC91C9AF7250065525B /* PHOpenSettingsMenuAction.swift */,
+				E781FB9D1CA19BA800A7CFCE /* PHStartAtLoginAction.swift */,
+				E7FC79841CC0BEA100FBEAC5 /* PHOpenProductHuntAction.swift */,
+				E7E0C0FA1CC0C8BA002D0085 /* PHScheduleAsSeenAction.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		E72526BD1C96C20100942F0E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E75F5EB51CA4383F003B6D60 /* PHButton.swift */,
+				E7324EC31C9AE3220065525B /* PHLoadingView.swift */,
+				E7E423911C982B9600EF464D /* PHPostCell.swift */,
+				E7324EC51C9AF2F50065525B /* PHScrollView.swift */,
+				E7324EBB1C999BA40065525B /* PHSectionCell.swift */,
+				E7324ED31C9B51180065525B /* PHSeenView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E72526C41C96C61F00942F0E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E7F3E9D11CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.swift */,
+				E7F3E9D21CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.xib */,
+				E72DBA681CA180920049F83A /* PHGeneralSettingsViewController.swift */,
+				E72DBA691CA180920049F83A /* PHGeneralSettingsViewController.xib */,
+				E72526C51C96C64700942F0E /* PHPostListViewController.swift */,
+				E72526C61C96C64700942F0E /* PHPostListViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E72526C91C96DE8600942F0E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E72526D91C96EB9400942F0E /* API */,
+				E7E4239E1C985FD300EF464D /* Domain Objects */,
+				E75900B91C9BF87F003C15B9 /* ViewModels */,
+				E7CD02781CA98F6900C9FA7B /* PHBundle.swift */,
+				E7B017E61CABF3AC0019E654 /* PHCallbacks.swift */,
+				E7E423971C98371300EF464D /* PHDateFormatter.swift */,
+				E7BC088F1C97246E00990066 /* PHKeychain.swift */,
+				E72394DE1CA909F2000F4070 /* PHPostFetcher.swift */,
+				E706618C1CA2E70600BF8F36 /* PHPostsDataSource.swift */,
+				E75900C71C9C06CE003C15B9 /* PHSeenPosts.swift */,
+				E79130931CB5072B009AAB9B /* PHShareMessage.swift */,
+				E7B017D71CABE66A0019E654 /* PHStatusBarUpdater.swift */,
+				E7324ECE1C9B481F0065525B /* PHUserDefaults.swift */,
+				E7F3E9DC1CC62B2700DA9A97 /* PHPostSorter.swift */,
+				E7F3EA2F1CC6570700DA9A97 /* PHAppContext.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E72526CC1C96E2E700942F0E /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				E76ED63A1C96BD0C005B3EC7 /* Assets.xcassets */,
+				E76ED63F1C96BD0C005B3EC7 /* Info.plist */,
+				E76ED63C1C96BD0C005B3EC7 /* MainMenu.xib */,
+				E78A30D31CA2921300987B4F /* ProductHunt-Bridging-Header.h */,
+				E75900D51CA012FB003C15B9 /* ProductHunt.entitlements */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		E72526CD1C96E35A00942F0E /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E72526CE1C96E35F00942F0E /* UnitTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		E72526CE1C96E35F00942F0E /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				E75900D41C9C8725003C15B9 /* Support */,
+				E7E423991C98375700EF464D /* PHDateFormatterTests.swift */,
+				E7BC08991C974F1100990066 /* PHKeychainTests.swift */,
+				E705834F1CAD42F10046D2A9 /* PHPostDataSourceTests.swift */,
+				E7B017EF1CAC14EA0019E654 /* PHPostFetcherTests.swift */,
+				E75900BC1C9BF8D8003C15B9 /* PHPostViewModelTests.swift */,
+				E75900CB1C9C0AC4003C15B9 /* PHSeenPostsTests.swift */,
+				E7BC08951C973EF400990066 /* PHTokenTests.swift */,
+				E7324ED11C9B4C760065525B /* PHUserDefaultsTests.swift */,
+				E7F3EA2D1CC62E8300DA9A97 /* PHPostSorterTests.swift */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		E72526D91C96EB9400942F0E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E72526D01C96E54C00942F0E /* PHAPI.swift */,
+				E72526D71C96EB9200942F0E /* PHAPIEndpoint.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E72DBA651CA17EFB0049F83A /* PHSettings */ = {
+			isa = PBXGroup;
+			children = (
+				E72DBA631CA17EC20049F83A /* PHPreferencesWindowController.swift */,
+				E72DBA661CA17F1B0049F83A /* PHPreferencesWindowControllerProtocol.swift */,
+			);
+			path = PHSettings;
+			sourceTree = "<group>";
+		};
+		E75900B91C9BF87F003C15B9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E75900BA1C9BF88D003C15B9 /* PHPostViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E75900D41C9C8725003C15B9 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				E76ED64A1C96BD0C005B3EC7 /* Info.plist */,
+				E7B017EA1CAC08FE0019E654 /* PHFakeEndpoint.swift */,
+				E7F4BB151CAD0FD500E2458E /* PHFakeFactory.swift */,
+				E75900D11C9C8699003C15B9 /* PHTestCase.swift */,
+				E7B017D21CAA9C1F0019E654 /* UnitTests-Bridging-Header.h */,
+				E79659391C9708090010F358 /* XCTestCase+ProductHunt.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		E75F5EB21CA40511003B6D60 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E75F5EB31CA40521003B6D60 /* NSColor+ProductHunt.swift */,
+				E7EBBA6C1CAA5A8A00C09770 /* NSError+ProductHunt.swift */,
+				E791308B1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift */,
+				E7F3E9D51CC5189700DA9A97 /* NSButton+ProductHunt.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		E76ED62C1C96BD0C005B3EC7 = {
+			isa = PBXGroup;
+			children = (
+				D696E3B7022D0774414E79D8 /* Frameworks */,
+				E78A30DF1CA292F000987B4F /* LaunchAtLogin */,
+				EAC59181002FE86422EEF525 /* Pods */,
+				E708BED21CB6FBDA0068D97B /* ProductHuntTests */,
+				E76ED6361C96BD0C005B3EC7 /* Products */,
+				E76ED6371C96BD0C005B3EC7 /* Source */,
+				E72526CC1C96E2E700942F0E /* Support */,
+			);
+			sourceTree = "<group>";
+		};
+		E76ED6361C96BD0C005B3EC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E76ED6351C96BD0C005B3EC7 /* Product Hunt.app */,
+				E708BED11CB6FBDA0068D97B /* ProductHuntTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E76ED6371C96BD0C005B3EC7 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E72526BC1C96C07100942F0E /* Actions */,
+				E75F5EB21CA40511003B6D60 /* Categories */,
+				E781FB9A1CA18E0B00A7CFCE /* Components */,
+				E723F2561CBBC86700E46A7D /* Config */,
+				E72526C41C96C61F00942F0E /* Controllers */,
+				E72526C91C96DE8600942F0E /* Models */,
+				E72526CD1C96E35A00942F0E /* Tests */,
+				E72526BD1C96C20100942F0E /* Views */,
+				E76ED6381C96BD0C005B3EC7 /* AppDelegate.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		E781FB9A1CA18E0B00A7CFCE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E7A94CB21CC0D427008606AB /* KPCScaleToFillNSImageView */,
+				E72DBA651CA17EFB0049F83A /* PHSettings */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E78A30DF1CA292F000987B4F /* LaunchAtLogin */ = {
+			isa = PBXGroup;
+			children = (
+				E78A30E31CA2930200987B4F /* LLManager.h */,
+				E78A30E41CA2930200987B4F /* LLManager.m */,
+				E78A30E51CA2930200987B4F /* LLStrings.h */,
+				E78A30E01CA2930200987B4F /* LaunchAtLoginHelper.xcodeproj */,
+			);
+			path = LaunchAtLogin;
+			sourceTree = "<group>";
+		};
+		E78A30E11CA2930200987B4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E78A30E91CA2930200987B4F /* LaunchAtLoginHelper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7A94CB21CC0D427008606AB /* KPCScaleToFillNSImageView */ = {
+			isa = PBXGroup;
+			children = (
+				E7A94CB31CC0D432008606AB /* KPCScaleToFillNSImageView.h */,
+				E7A94CB41CC0D432008606AB /* KPCScaleToFillNSImageView.m */,
+			);
+			name = KPCScaleToFillNSImageView;
+			sourceTree = "<group>";
+		};
+		E7E4239E1C985FD300EF464D /* Domain Objects */ = {
+			isa = PBXGroup;
+			children = (
+				E7E423951C98342100EF464D /* PHPost.swift */,
+				E7E4239C1C98575D00EF464D /* PHPostFactory.swift */,
+				E7EBBA6E1CAA710000C09770 /* PHSection.swift */,
+				E7BC08911C973D2A00990066 /* PHToken.swift */,
+				E7BC08931C973D3200990066 /* PHTokenFactory.swift */,
+			);
+			path = "Domain Objects";
+			sourceTree = "<group>";
+		};
+		EAC59181002FE86422EEF525 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF4434CD295A55B390BEBC9C /* Pods-ProductHunt.debug.xcconfig */,
+				2643FC333459FD12407313F4 /* Pods-ProductHunt.release.xcconfig */,
+				C7B2BBAF867209B042096AB5 /* Pods-ProductHuntTests.debug.xcconfig */,
+				9218BC9BA6A17E65B54D5A5E /* Pods-ProductHuntTests.release.xcconfig */,
+				885EE3882DE75A244EECE4AC /* Pods-ProductHuntTests.testing.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E708BED01CB6FBDA0068D97B /* ProductHuntTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E708BED81CB6FBDA0068D97B /* Build configuration list for PBXNativeTarget "ProductHuntTests" */;
+			buildPhases = (
+				E54B00A12E18A165CC5FF0C0 /* Check Pods Manifest.lock */,
+				E708BECD1CB6FBDA0068D97B /* Sources */,
+				E708BECE1CB6FBDA0068D97B /* Frameworks */,
+				E708BECF1CB6FBDA0068D97B /* Resources */,
+				18C44F5E664C727D3257910D /* Embed Pods Frameworks */,
+				C3D9DC9D8F53CC0F7B0EB371 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E708BED71CB6FBDA0068D97B /* PBXTargetDependency */,
+			);
+			name = ProductHuntTests;
+			productName = ProductHuntTests;
+			productReference = E708BED11CB6FBDA0068D97B /* ProductHuntTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E76ED6341C96BD0C005B3EC7 /* ProductHunt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E76ED6581C96BD0C005B3EC7 /* Build configuration list for PBXNativeTarget "ProductHunt" */;
+			buildPhases = (
+				9877D65CD2D6F92FEA06C284 /* Check Pods Manifest.lock */,
+				E76ED6311C96BD0C005B3EC7 /* Sources */,
+				E76ED6321C96BD0C005B3EC7 /* Frameworks */,
+				E76ED6331C96BD0C005B3EC7 /* Resources */,
+				F3BE1E1634598C8378AFC5A4 /* Embed Pods Frameworks */,
+				8B05B063FC2D4678279AB65F /* Copy Pods Resources */,
+				E7F3E9CE1CC4BF3800DA9A97 /* Sparkle */,
+				E75901021CA0344F003C15B9 /* Copy Files */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E78A30EB1CA2931700987B4F /* PBXTargetDependency */,
+			);
+			name = ProductHunt;
+			productName = "Product Hunt";
+			productReference = E76ED6351C96BD0C005B3EC7 /* Product Hunt.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E76ED62D1C96BD0C005B3EC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = ProductHunt;
+				TargetAttributes = {
+					E708BED01CB6FBDA0068D97B = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = E76ED6341C96BD0C005B3EC7;
+					};
+					E76ED6341C96BD0C005B3EC7 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = MGTRPU24M6;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = E76ED6301C96BD0C005B3EC7 /* Build configuration list for PBXProject "Product Hunt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E76ED62C1C96BD0C005B3EC7;
+			productRefGroup = E76ED6361C96BD0C005B3EC7 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E78A30E11CA2930200987B4F /* Products */;
+					ProjectRef = E78A30E01CA2930200987B4F /* LaunchAtLoginHelper.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				E76ED6341C96BD0C005B3EC7 /* ProductHunt */,
+				E708BED01CB6FBDA0068D97B /* ProductHuntTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E78A30E91CA2930200987B4F /* LaunchAtLoginHelper.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = LaunchAtLoginHelper.app;
+			remoteRef = E78A30E81CA2930200987B4F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E708BECF1CB6FBDA0068D97B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76ED6331C96BD0C005B3EC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E72526C81C96C64700942F0E /* PHPostListViewController.xib in Resources */,
+				E76ED63B1C96BD0C005B3EC7 /* Assets.xcassets in Resources */,
+				E72DBA6B1CA180920049F83A /* PHGeneralSettingsViewController.xib in Resources */,
+				E76ED63E1C96BD0C005B3EC7 /* MainMenu.xib in Resources */,
+				E7F3E9D41CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18C44F5E664C727D3257910D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProductHuntTests/Pods-ProductHuntTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B05B063FC2D4678279AB65F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProductHunt/Pods-ProductHunt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9877D65CD2D6F92FEA06C284 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C3D9DC9D8F53CC0F7B0EB371 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProductHuntTests/Pods-ProductHuntTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E54B00A12E18A165CC5FF0C0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E7F3E9CE1CC4BF3800DA9A97 /* Sparkle */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Sparkle;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n\ncodesign --verbose --force --sign \"$CODE_SIGN_IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"";
+		};
+		F3BE1E1634598C8378AFC5A4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProductHunt/Pods-ProductHunt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E708BECD1CB6FBDA0068D97B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7F3EA021CC62D0600DA9A97 /* PHPreferencesWindowController.swift in Sources */,
+				E7F3EA181CC62D3C00DA9A97 /* LLManager.m in Sources */,
+				E7F3E9E21CC62C9400DA9A97 /* PHTokenTests.swift in Sources */,
+				E7F3EA061CC62D0600DA9A97 /* PHPostListViewController.swift in Sources */,
+				E7F3EA081CC62D0B00DA9A97 /* NSError+ProductHunt.swift in Sources */,
+				E7F3EA171CC62D1B00DA9A97 /* AppDelegate.swift in Sources */,
+				E7F3E9E91CC62CA300DA9A97 /* XCTestCase+ProductHunt.swift in Sources */,
+				E7F3EA001CC62CEF00DA9A97 /* PHAPI.swift in Sources */,
+				E7F3EA241CC62D6A00DA9A97 /* PHSeenView.swift in Sources */,
+				E7F3E9FE1CC62CE800DA9A97 /* PHToken.swift in Sources */,
+				E7F3EA121CC62D1100DA9A97 /* PHOpenSettingsAction.swift in Sources */,
+				E7F3EA091CC62D0B00DA9A97 /* NSImage+ProductHunt.swift in Sources */,
+				E7F3EA221CC62D6A00DA9A97 /* PHScrollView.swift in Sources */,
+				E7F3EA201CC62D6A00DA9A97 /* PHLoadingView.swift in Sources */,
+				E7F3EA101CC62D1100DA9A97 /* PHShareAction.swift in Sources */,
+				E7F3E9E71CC62C9E00DA9A97 /* PHKeychainTests.swift in Sources */,
+				E7F3EA011CC62CEF00DA9A97 /* PHAPIEndpoint.swift in Sources */,
+				E7F3E9F01CC62CCB00DA9A97 /* PHSeenPosts.swift in Sources */,
+				E7F3E9EF1CC62CC900DA9A97 /* PHShareMessage.swift in Sources */,
+				E7F3E9EA1CC62CA500DA9A97 /* PHTestCase.swift in Sources */,
+				E7F3EA0F1CC62D1100DA9A97 /* PHPopoverAction.swift in Sources */,
+				E723F2541CBBC6BA00E46A7D /* PHConfiguration.m in Sources */,
+				E7F3E9EE1CC62CC600DA9A97 /* PHStatusBarUpdater.swift in Sources */,
+				E7F3EA211CC62D6A00DA9A97 /* PHPostCell.swift in Sources */,
+				E7F3E9E31CC62C9600DA9A97 /* PHSeenPostsTests.swift in Sources */,
+				E7F3E9E61CC62C9C00DA9A97 /* PHPostDataSourceTests.swift in Sources */,
+				E7F3EA111CC62D1100DA9A97 /* PHOpenPostAction.swift in Sources */,
+				E7F3E9F11CC62CCD00DA9A97 /* PHPostsDataSource.swift in Sources */,
+				E7F3EA231CC62D6A00DA9A97 /* PHSectionCell.swift in Sources */,
+				E7F3EA0C1CC62D1100DA9A97 /* PHFirstLaunchAction.swift in Sources */,
+				E7F3E9FB1CC62CE800DA9A97 /* PHPost.swift in Sources */,
+				E7F3E9EB1CC62CA700DA9A97 /* PHFakeFactory.swift in Sources */,
+				E7F3EA0D1CC62D1100DA9A97 /* PHGetTokenAction.swift in Sources */,
+				E7F3EA041CC62D0600DA9A97 /* PHAdvancedSettingsViewController.swift in Sources */,
+				E7F3E9FF1CC62CE800DA9A97 /* PHTokenFactory.swift in Sources */,
+				E708BED41CB6FBDA0068D97B /* ProductHuntTests.swift in Sources */,
+				E7F3EA051CC62D0600DA9A97 /* PHGeneralSettingsViewController.swift in Sources */,
+				E7F3E9FC1CC62CE800DA9A97 /* PHPostFactory.swift in Sources */,
+				E7F3EA071CC62D0B00DA9A97 /* NSColor+ProductHunt.swift in Sources */,
+				E7F3E9FA1CC62CE400DA9A97 /* PHPostViewModel.swift in Sources */,
+				E7F3E9F91CC62CDF00DA9A97 /* PHBundle.swift in Sources */,
+				E7F3E9E81CC62CA000DA9A97 /* PHDateFormatterTests.swift in Sources */,
+				E7F3E9E11CC62C9100DA9A97 /* PHUserDefaultsTests.swift in Sources */,
+				E7F3EA031CC62D0600DA9A97 /* PHPreferencesWindowControllerProtocol.swift in Sources */,
+				E7F3EA311CC6570700DA9A97 /* PHAppContext.swift in Sources */,
+				E7F3EA151CC62D1100DA9A97 /* PHOpenProductHuntAction.swift in Sources */,
+				E7F3EA0E1CC62D1100DA9A97 /* PHOpenURLAction.swift in Sources */,
+				E7F3EA161CC62D1100DA9A97 /* PHScheduleAsSeenAction.swift in Sources */,
+				E7F3E9F61CC62CD800DA9A97 /* PHKeychain.swift in Sources */,
+				E7F3E9E51CC62C9A00DA9A97 /* PHPostFetcherTests.swift in Sources */,
+				E7F3E9FD1CC62CE800DA9A97 /* PHSection.swift in Sources */,
+				E7F3E9E41CC62C9800DA9A97 /* PHPostViewModelTests.swift in Sources */,
+				E7F3EA131CC62D1100DA9A97 /* PHOpenSettingsMenuAction.swift in Sources */,
+				E7F3E9F81CC62CDD00DA9A97 /* PHCallbacks.swift in Sources */,
+				E7F3E9DE1CC62B2700DA9A97 /* PHPostSorter.swift in Sources */,
+				E7F3EA141CC62D1100DA9A97 /* PHStartAtLoginAction.swift in Sources */,
+				E7F3E9ED1CC62CC400DA9A97 /* PHUserDefaults.swift in Sources */,
+				E7F3E9F41CC62CD400DA9A97 /* PHPostFetcher.swift in Sources */,
+				E7F3EA0A1CC62D0B00DA9A97 /* NSButton+ProductHunt.swift in Sources */,
+				E7F3EA1F1CC62D6A00DA9A97 /* PHButton.swift in Sources */,
+				E7F3E9F71CC62CDA00DA9A97 /* PHDateFormatter.swift in Sources */,
+				E7F3EA2E1CC62E8300DA9A97 /* PHPostSorterTests.swift in Sources */,
+				E7F3E9EC1CC62CA900DA9A97 /* PHFakeEndpoint.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76ED6311C96BD0C005B3EC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E75900CE1C9C141E003C15B9 /* PHOpenPostAction.swift in Sources */,
+				E7F3E9D61CC5189700DA9A97 /* NSButton+ProductHunt.swift in Sources */,
+				E7CD02791CA98F6900C9FA7B /* PHBundle.swift in Sources */,
+				E7F3EA301CC6570700DA9A97 /* PHAppContext.swift in Sources */,
+				E75900BB1C9BF88D003C15B9 /* PHPostViewModel.swift in Sources */,
+				E706618D1CA2E70600BF8F36 /* PHPostsDataSource.swift in Sources */,
+				E791308C1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift in Sources */,
+				E7E4239D1C98575D00EF464D /* PHPostFactory.swift in Sources */,
+				E7324EC41C9AE3220065525B /* PHLoadingView.swift in Sources */,
+				E7BC08941C973D3200990066 /* PHTokenFactory.swift in Sources */,
+				E7B017E71CABF3AC0019E654 /* PHCallbacks.swift in Sources */,
+				E7F3E9D31CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.swift in Sources */,
+				E7E423981C98371300EF464D /* PHDateFormatter.swift in Sources */,
+				E72DBA671CA17F1B0049F83A /* PHPreferencesWindowControllerProtocol.swift in Sources */,
+				E7EBBA6D1CAA5A8A00C09770 /* NSError+ProductHunt.swift in Sources */,
+				E75900ED1CA027D4003C15B9 /* PHGetTokenAction.swift in Sources */,
+				E75F5EB61CA4383F003B6D60 /* PHButton.swift in Sources */,
+				E7CF19B71CA9764300535CC4 /* PHPopoverAction.swift in Sources */,
+				E7324EC61C9AF2F50065525B /* PHScrollView.swift in Sources */,
+				E7A85BB21CA040BE00E48329 /* PHOpenSettingsAction.swift in Sources */,
+				E78A30E61CA2930200987B4F /* LLManager.m in Sources */,
+				E7324EBE1C99C8AD0065525B /* PHOpenURLAction.swift in Sources */,
+				E7B017D81CABE66A0019E654 /* PHStatusBarUpdater.swift in Sources */,
+				E79130921CB436E3009AAB9B /* PHShareAction.swift in Sources */,
+				E72526D11C96E54C00942F0E /* PHAPI.swift in Sources */,
+				E7E423961C98342100EF464D /* PHPost.swift in Sources */,
+				E7E0C0FB1CC0C8BA002D0085 /* PHScheduleAsSeenAction.swift in Sources */,
+				E72DBA641CA17EC20049F83A /* PHPreferencesWindowController.swift in Sources */,
+				E723F2531CBBC6BA00E46A7D /* PHConfiguration.m in Sources */,
+				E79130941CB5072B009AAB9B /* PHShareMessage.swift in Sources */,
+				E781FB9E1CA19BA800A7CFCE /* PHStartAtLoginAction.swift in Sources */,
+				E7F3E9DD1CC62B2700DA9A97 /* PHPostSorter.swift in Sources */,
+				E781FB9C1CA198C000A7CFCE /* PHFirstLaunchAction.swift in Sources */,
+				E75900C81C9C06CE003C15B9 /* PHSeenPosts.swift in Sources */,
+				E7FC79851CC0BEA100FBEAC5 /* PHOpenProductHuntAction.swift in Sources */,
+				E7BC08921C973D2A00990066 /* PHToken.swift in Sources */,
+				E7324ED41C9B51180065525B /* PHSeenView.swift in Sources */,
+				E7324ECF1C9B481F0065525B /* PHUserDefaults.swift in Sources */,
+				E7A94CB51CC0D432008606AB /* KPCScaleToFillNSImageView.m in Sources */,
+				E75F5EB41CA40521003B6D60 /* NSColor+ProductHunt.swift in Sources */,
+				E72DBA6A1CA180920049F83A /* PHGeneralSettingsViewController.swift in Sources */,
+				E7324EBC1C999BA40065525B /* PHSectionCell.swift in Sources */,
+				E72526D81C96EB9200942F0E /* PHAPIEndpoint.swift in Sources */,
+				E7BC08901C97246E00990066 /* PHKeychain.swift in Sources */,
+				E7E423921C982B9600EF464D /* PHPostCell.swift in Sources */,
+				E72526C71C96C64700942F0E /* PHPostListViewController.swift in Sources */,
+				E7EBBA6F1CAA710000C09770 /* PHSection.swift in Sources */,
+				E72394DF1CA909F2000F4070 /* PHPostFetcher.swift in Sources */,
+				E7324ECA1C9AF7250065525B /* PHOpenSettingsMenuAction.swift in Sources */,
+				E76ED6391C96BD0C005B3EC7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E708BED71CB6FBDA0068D97B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E76ED6341C96BD0C005B3EC7 /* ProductHunt */;
+			targetProxy = E708BED61CB6FBDA0068D97B /* PBXContainerItemProxy */;
+		};
+		E78A30EB1CA2931700987B4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LaunchAtLoginHelper;
+			targetProxy = E78A30EA1CA2931700987B4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E76ED63C1C96BD0C005B3EC7 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E76ED63D1C96BD0C005B3EC7 /* Base */,
+			);
+			name = MainMenu.xib;
+			path = .;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E708BED91CB6FBDA0068D97B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7B2BBAF867209B042096AB5 /* Pods-ProductHuntTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ProductHuntTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ProductHunt.OSX.ProductHuntTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Tests/UnitTests/Support/UnitTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Product Hunt.app/Contents/MacOS/Product Hunt";
+			};
+			name = Debug;
+		};
+		E708BEDA1CB6FBDA0068D97B /* Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 885EE3882DE75A244EECE4AC /* Pods-ProductHuntTests.testing.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ProductHuntTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ProductHunt.OSX.ProductHuntTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Tests/UnitTests/Support/UnitTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Product Hunt.app/Contents/MacOS/Product Hunt";
+			};
+			name = Testing;
+		};
+		E708BEDB1CB6FBDA0068D97B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9218BC9BA6A17E65B54D5A5E /* Pods-ProductHuntTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ProductHuntTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ProductHunt.OSX.ProductHuntTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Source/Tests/UnitTests/Support/UnitTests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Product Hunt.app/Contents/MacOS/Product Hunt";
+			};
+			name = Release;
+		};
+		E76ED6561C96BD0C005B3EC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E723F2501CBBC4E600E46A7D /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E76ED6571C96BD0C005B3EC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E723F2501CBBC4E600E46A7D /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E76ED6591C96BD0C005B3EC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF4434CD295A55B390BEBC9C /* Pods-ProductHunt.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
+				INFOPLIST_FILE = Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DTEST";
+				PRODUCT_BUNDLE_IDENTIFIER = com.producthunt.producthuntosx;
+				PRODUCT_NAME = "Product Hunt";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Support/ProductHunt-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E76ED65A1C96BD0C005B3EC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2643FC333459FD12407313F4 /* Pods-ProductHunt.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = NO;
+				INFOPLIST_FILE = Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DTEST";
+				PRODUCT_BUNDLE_IDENTIFIER = com.producthunt.producthuntosx;
+				PRODUCT_NAME = "Product Hunt";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Support/ProductHunt-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		E7AC4DFE1CA9435C0099AB0E /* Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E723F2501CBBC4E600E46A7D /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Testing;
+		};
+		E7AC4DFF1CA9435C0099AB0E /* Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF4434CD295A55B390BEBC9C /* Pods-ProductHunt.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"TEST=1",
+				);
+				INFOPLIST_FILE = Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DTEST";
+				PRODUCT_BUNDLE_IDENTIFIER = com.producthunt.producthuntosx;
+				PRODUCT_NAME = "Product Hunt";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Support/ProductHunt-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Testing;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E708BED81CB6FBDA0068D97B /* Build configuration list for PBXNativeTarget "ProductHuntTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E708BED91CB6FBDA0068D97B /* Debug */,
+				E708BEDA1CB6FBDA0068D97B /* Testing */,
+				E708BEDB1CB6FBDA0068D97B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E76ED6301C96BD0C005B3EC7 /* Build configuration list for PBXProject "Product Hunt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E76ED6561C96BD0C005B3EC7 /* Debug */,
+				E7AC4DFE1CA9435C0099AB0E /* Testing */,
+				E76ED6571C96BD0C005B3EC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E76ED6581C96BD0C005B3EC7 /* Build configuration list for PBXNativeTarget "ProductHunt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E76ED6591C96BD0C005B3EC7 /* Debug */,
+				E7AC4DFF1CA9435C0099AB0E /* Testing */,
+				E76ED65A1C96BD0C005B3EC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E76ED62D1C96BD0C005B3EC7 /* Project object */;
+}

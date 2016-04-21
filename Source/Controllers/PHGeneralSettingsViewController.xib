@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PHGeneralSettingsViewController" customModule="Product_Hunt" customModuleProvider="target">
+            <connections>
+                <outlet property="filterVotesLabel" destination="gal-sY-803" id="tkq-Ne-xYS"/>
+                <outlet property="filterVotesSlider" destination="AVU-la-yE7" id="nib-TF-ggl"/>
+                <outlet property="showsCountButton" destination="fIv-9N-ufx" id="3fS-yF-lcy"/>
+                <outlet property="startAtLoginButton" destination="Nzr-UJ-91w" id="VWT-DJ-WNN"/>
+                <outlet property="versionLabel" destination="AUT-jz-5CT" id="hfC-8u-MC4"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="181"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="Nzr-UJ-91w">
+                    <rect key="frame" x="18" y="145" width="444" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="yfx-eS-2P1"/>
+                    </constraints>
+                    <buttonCell key="cell" type="check" title="Start Product Hunt on system startup" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="bng-Fg-z6Q">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="startAtLoginAction:" target="-2" id="fJi-Tj-u4s"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="fIv-9N-ufx">
+                    <rect key="frame" x="18" y="119" width="444" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="Y7l-z8-rLV"/>
+                    </constraints>
+                    <buttonCell key="cell" type="check" title="Show unseen posts count in menu" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="425-CQ-nPC">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="showPostsCountAction:" target="-2" id="ScF-Za-qWa"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AUT-jz-5CT">
+                    <rect key="frame" x="18" y="10" width="444" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="4o5-S1-pWA"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Product Hunt v0.1" usesSingleLineMode="YES" id="7fo-Kl-CbF">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gal-sY-803">
+                    <rect key="frame" x="18" y="92" width="444" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="5Fa-bB-wYH"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Filter posts with more than XX votes" id="yOs-0j-bBc">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AVU-la-yE7">
+                    <rect key="frame" x="18" y="57" width="444" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="VOH-GW-HXh"/>
+                    </constraints>
+                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="10.526315789473685" tickMarkPosition="below" numberOfTickMarks="20" allowsTickMarkValuesOnly="YES" sliderType="linear" id="HNH-sh-K8y"/>
+                    <connections>
+                        <action selector="filterSliderValueChanged:" target="-2" id="02Z-4M-FPu"/>
+                    </connections>
+                </slider>
+            </subviews>
+            <constraints>
+                <constraint firstItem="fIv-9N-ufx" firstAttribute="top" secondItem="Nzr-UJ-91w" secondAttribute="bottom" constant="12" id="5nV-Xc-eLu"/>
+                <constraint firstAttribute="trailing" secondItem="Nzr-UJ-91w" secondAttribute="trailing" constant="20" id="7ZQ-hH-d6q"/>
+                <constraint firstAttribute="trailing" secondItem="gal-sY-803" secondAttribute="trailing" constant="20" id="Eg8-SN-xTM"/>
+                <constraint firstAttribute="bottom" secondItem="AUT-jz-5CT" secondAttribute="bottom" constant="10" id="J7o-lc-Kk5"/>
+                <constraint firstItem="AVU-la-yE7" firstAttribute="top" secondItem="gal-sY-803" secondAttribute="bottom" constant="12" id="Jbd-ha-bFB"/>
+                <constraint firstAttribute="trailing" secondItem="AUT-jz-5CT" secondAttribute="trailing" constant="20" id="OBz-99-LV9"/>
+                <constraint firstItem="gal-sY-803" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Urx-0f-1Pa"/>
+                <constraint firstItem="Nzr-UJ-91w" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="Ync-6T-YaK"/>
+                <constraint firstItem="AVU-la-yE7" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="bGL-oX-9jS"/>
+                <constraint firstItem="Nzr-UJ-91w" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="dlE-vw-QIE"/>
+                <constraint firstAttribute="trailing" secondItem="fIv-9N-ufx" secondAttribute="trailing" constant="20" id="hgE-N5-y7B"/>
+                <constraint firstAttribute="trailing" secondItem="AVU-la-yE7" secondAttribute="trailing" constant="20" id="jyS-6e-Bz6"/>
+                <constraint firstItem="AUT-jz-5CT" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="nzF-tD-fmS"/>
+                <constraint firstItem="fIv-9N-ufx" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="raj-Gc-8zu"/>
+                <constraint firstItem="gal-sY-803" firstAttribute="top" secondItem="fIv-9N-ufx" secondAttribute="bottom" constant="12" id="wMV-t0-lRg"/>
+            </constraints>
+            <point key="canvasLocation" x="552" y="374.5"/>
+        </customView>
+    </objects>
+</document>
