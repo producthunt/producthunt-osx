@@ -11,7 +11,6 @@
 		73C920E915414E7800C2A75A /* LLHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C920E615414E7800C2A75A /* LLHAppDelegate.m */; };
 		73C920EA15414E7800C2A75A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C920E715414E7800C2A75A /* main.m */; };
 		73C920EB15414E7800C2A75A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C920E815414E7800C2A75A /* MainMenu.xib */; };
-		E78281961CCFC0C700447D45 /* LaunchAtLoginHelper-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E78281951CCFC0C700447D45 /* LaunchAtLoginHelper-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +23,7 @@
 		73C920E715414E7800C2A75A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LaunchAtLoginHelper/main.m; sourceTree = "<group>"; };
 		73C920E815414E7800C2A75A /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = LaunchAtLoginHelper/MainMenu.xib; sourceTree = "<group>"; };
 		73C920FB15414FC900C2A75A /* LaunchAtLoginHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = LaunchAtLoginHelper.entitlements; path = LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements; sourceTree = "<group>"; };
-		E78281951CCFC0C700447D45 /* LaunchAtLoginHelper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LaunchAtLoginHelper-Info.plist"; sourceTree = "<group>"; };
+		E782819B1CCFC3FB00447D45 /* LaunchAtLoginHelper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "LaunchAtLoginHelper-Info.plist"; path = "LaunchAtLoginHelper/LaunchAtLoginHelper-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +41,7 @@
 		734C378915414CE200994189 = {
 			isa = PBXGroup;
 			children = (
-				E78281951CCFC0C700447D45 /* LaunchAtLoginHelper-Info.plist */,
+				E782819B1CCFC3FB00447D45 /* LaunchAtLoginHelper-Info.plist */,
 				73C920E715414E7800C2A75A /* main.m */,
 				73C920E515414E7800C2A75A /* LLHAppDelegate.h */,
 				73C920E615414E7800C2A75A /* LLHAppDelegate.m */,
@@ -134,7 +133,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E78281961CCFC0C700447D45 /* LaunchAtLoginHelper-Info.plist in Resources */,
 				73C920EB15414E7800C2A75A /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

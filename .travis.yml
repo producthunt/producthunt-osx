@@ -8,10 +8,9 @@ os: osx
 before_install:
 
 - export LANG=en_US.UTF-8
-- gem install xcpretty -N --no-ri --no-rdoc
 - gem install cocoapods --quiet
 - cp Source/Config/Keys-Example.xcconfig Source/Config/Keys.xcconfig
 
 script:
 
-- xctool -workspace Product\ Hunt.xcworkspace -scheme Debug -sdk macosx clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
+- xctool -workspace Product\ Hunt.xcworkspace -scheme Debug -sdk macosx clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO

@@ -20,20 +20,6 @@
                ReferencedContainer = "container:Product Hunt.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E76ED64E1C96BD0C005B3EC7"
-               BuildableName = "ProductHunt.xctest"
-               BlueprintName = "ProductHuntUITests"
-               ReferencedContainer = "container:Product Hunt.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
