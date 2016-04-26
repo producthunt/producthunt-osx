@@ -10,7 +10,6 @@
 		370627019454F1B9078F9904 /* Pods_ProductHunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA09B18C78332E2F89BD2AB /* Pods_ProductHunt.framework */; };
 		6D3010CB2C2ED8A7EC5407E2 /* Pods_ProductHuntTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E34B14744B9FFB01A730F6BE /* Pods_ProductHuntTests.framework */; };
 		E706618D1CA2E70600BF8F36 /* PHPostsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E706618C1CA2E70600BF8F36 /* PHPostsDataSource.swift */; };
-		E708BED41CB6FBDA0068D97B /* ProductHuntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E708BED31CB6FBDA0068D97B /* ProductHuntTests.swift */; };
 		E72394DF1CA909F2000F4070 /* PHPostFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72394DE1CA909F2000F4070 /* PHPostFetcher.swift */; };
 		E723F2531CBBC6BA00E46A7D /* PHConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E723F2521CBBC6BA00E46A7D /* PHConfiguration.m */; };
 		E723F2541CBBC6BA00E46A7D /* PHConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E723F2521CBBC6BA00E46A7D /* PHConfiguration.m */; };
@@ -180,8 +179,6 @@
 		E705834F1CAD42F10046D2A9 /* PHPostDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostDataSourceTests.swift; sourceTree = "<group>"; };
 		E706618C1CA2E70600BF8F36 /* PHPostsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostsDataSource.swift; sourceTree = "<group>"; };
 		E708BED11CB6FBDA0068D97B /* ProductHuntTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductHuntTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E708BED31CB6FBDA0068D97B /* ProductHuntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductHuntTests.swift; sourceTree = "<group>"; };
-		E708BED51CB6FBDA0068D97B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E72394DE1CA909F2000F4070 /* PHPostFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostFetcher.swift; sourceTree = "<group>"; };
 		E723F2501CBBC4E600E46A7D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		E723F2511CBBC6BA00E46A7D /* PHConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHConfiguration.h; sourceTree = "<group>"; };
@@ -293,15 +290,6 @@
 				E34B14744B9FFB01A730F6BE /* Pods_ProductHuntTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E708BED21CB6FBDA0068D97B /* ProductHuntTests */ = {
-			isa = PBXGroup;
-			children = (
-				E708BED51CB6FBDA0068D97B /* Info.plist */,
-				E708BED31CB6FBDA0068D97B /* ProductHuntTests.swift */,
-			);
-			path = ProductHuntTests;
 			sourceTree = "<group>";
 		};
 		E723F2561CBBC86700E46A7D /* Config */ = {
@@ -475,7 +463,6 @@
 				D696E3B7022D0774414E79D8 /* Frameworks */,
 				E78A30DF1CA292F000987B4F /* LaunchAtLogin */,
 				EAC59181002FE86422EEF525 /* Pods */,
-				E708BED21CB6FBDA0068D97B /* ProductHuntTests */,
 				E76ED6361C96BD0C005B3EC7 /* Products */,
 				E76ED6371C96BD0C005B3EC7 /* Source */,
 				E72526CC1C96E2E700942F0E /* Support */,
@@ -846,7 +833,6 @@
 				E7F3EA0D1CC62D1100DA9A97 /* PHGetTokenAction.swift in Sources */,
 				E7F3EA041CC62D0600DA9A97 /* PHAdvancedSettingsViewController.swift in Sources */,
 				E7F3E9FF1CC62CE800DA9A97 /* PHTokenFactory.swift in Sources */,
-				E708BED41CB6FBDA0068D97B /* ProductHuntTests.swift in Sources */,
 				E7F3EA051CC62D0600DA9A97 /* PHGeneralSettingsViewController.swift in Sources */,
 				E7F3E9FC1CC62CE800DA9A97 /* PHPostFactory.swift in Sources */,
 				E7F3EA071CC62D0B00DA9A97 /* NSColor+ProductHunt.swift in Sources */,
@@ -970,7 +956,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ProductHuntTests/Info.plist;
+				INFOPLIST_FILE = Source/Tests/UnitTests/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ProductHunt.OSX.ProductHuntTests;
@@ -989,7 +975,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ProductHuntTests/Info.plist;
+				INFOPLIST_FILE = Source/Tests/UnitTests/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ProductHunt.OSX.ProductHuntTests;
@@ -1008,7 +994,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ProductHuntTests/Info.plist;
+				INFOPLIST_FILE = Source/Tests/UnitTests/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ProductHunt.OSX.ProductHuntTests;
