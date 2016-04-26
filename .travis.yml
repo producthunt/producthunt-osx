@@ -14,4 +14,4 @@ before_install:
 
 script:
 
-- xcodebuild clean test -workspace Product\ Hunt.xcworkspace -scheme Debug -sdk macosx CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
+- xcodebuild clean test -workspace Product\ Hunt.xcworkspace -scheme Debug -configuration Debug -sdk macosx CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
