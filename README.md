@@ -24,8 +24,7 @@ $ cd producthunt-osx
 * Copy configuration templates:
 
 ```
-cd Source/Config
-cp Keys-Example.xcconfig Keys.xcconfig
+cp Source/Config/Keys-Example.xcconfig Source/Config/Keys.xcconfig
 ```
 
 API Keys generated from https://www.producthunt.com/v1/oauth/applications
