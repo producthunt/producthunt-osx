@@ -24,6 +24,7 @@ $ cd producthunt-osx
 * Copy configuration templates:
 
 ```
+cd Source/Config
 cp Keys-Example.xcconfig Keys.xcconfig
 ```
 
