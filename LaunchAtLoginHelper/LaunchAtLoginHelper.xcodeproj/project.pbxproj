@@ -22,8 +22,9 @@
 		73C920E615414E7800C2A75A /* LLHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLHAppDelegate.m; path = LaunchAtLoginHelper/LLHAppDelegate.m; sourceTree = "<group>"; };
 		73C920E715414E7800C2A75A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LaunchAtLoginHelper/main.m; sourceTree = "<group>"; };
 		73C920E815414E7800C2A75A /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = LaunchAtLoginHelper/MainMenu.xib; sourceTree = "<group>"; };
-		73C920FA15414F7000C2A75A /* LLStrings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLStrings.h; sourceTree = SOURCE_ROOT; };
 		73C920FB15414FC900C2A75A /* LaunchAtLoginHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = LaunchAtLoginHelper.entitlements; path = LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements; sourceTree = "<group>"; };
+		E782817F1CCFB35600447D45 /* LaunchAtLoginHelper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "LaunchAtLoginHelper-Info.plist"; path = "LaunchAtLoginHelper/LaunchAtLoginHelper-Info.plist"; sourceTree = "<group>"; };
+		E78281821CCFB38800447D45 /* LLStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLStrings.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,8 +42,9 @@
 		734C378915414CE200994189 = {
 			isa = PBXGroup;
 			children = (
+				E78281821CCFB38800447D45 /* LLStrings.h */,
+				E782817F1CCFB35600447D45 /* LaunchAtLoginHelper-Info.plist */,
 				73C920E715414E7800C2A75A /* main.m */,
-				73C920FA15414F7000C2A75A /* LLStrings.h */,
 				73C920E515414E7800C2A75A /* LLHAppDelegate.h */,
 				73C920E615414E7800C2A75A /* LLHAppDelegate.m */,
 				73C920E815414E7800C2A75A /* MainMenu.xib */,
@@ -103,6 +105,11 @@
 				TargetAttributes = {
 					734C379315414CE200994189 = {
 						DevelopmentTeam = MGTRPU24M6;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -220,7 +227,6 @@
 		734C37B315414CE200994189 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				INFOPLIST_FILE = "LaunchAtLoginHelper/LaunchAtLoginHelper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
@@ -234,7 +240,6 @@
 		734C37B415414CE200994189 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				INFOPLIST_FILE = "LaunchAtLoginHelper/LaunchAtLoginHelper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
@@ -287,7 +292,6 @@
 		E7AC4E031CA945340099AB0E /* Testing */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				INFOPLIST_FILE = "LaunchAtLoginHelper/LaunchAtLoginHelper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
