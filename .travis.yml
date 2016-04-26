@@ -7,10 +7,11 @@ os: osx
 
 before_install:
 
-    - export LANG=en_US.UTF-8
-    - gem install xcpretty -N --no-ri --no-rdoc
-    - gem install cocoapods --quiet
+- export LANG=en_US.UTF-8
+- gem install xcpretty -N --no-ri --no-rdoc
+- gem install cocoapods --quiet
+- cp Source/Config/Keys-Example.xcconfig Source/Config/Keys.xcconfig
 
 script:
 
-    - xcodebuild clean test -workspace Product\ Hunt.xcworkspace -scheme Debug -sdk macosx | xcpretty
+- xcodebuild clean test -workspace Product\ Hunt.xcworkspace -scheme Debug -sdk macosx | xcpretty

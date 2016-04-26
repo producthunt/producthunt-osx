@@ -223,11 +223,11 @@
 		E76ED64A1C96BD0C005B3EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E781FB9B1CA198C000A7CFCE /* PHFirstLaunchAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFirstLaunchAction.swift; sourceTree = "<group>"; };
 		E781FB9D1CA19BA800A7CFCE /* PHStartAtLoginAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHStartAtLoginAction.swift; sourceTree = "<group>"; };
+		E78281831CCFB3B300447D45 /* LLStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLStrings.h; sourceTree = "<group>"; };
 		E78A30D31CA2921300987B4F /* ProductHunt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProductHunt-Bridging-Header.h"; sourceTree = "<group>"; };
 		E78A30E01CA2930200987B4F /* LaunchAtLoginHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LaunchAtLoginHelper.xcodeproj; path = ../LaunchAtLoginHelper/LaunchAtLoginHelper.xcodeproj; sourceTree = "<group>"; };
 		E78A30E31CA2930200987B4F /* LLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLManager.h; sourceTree = "<group>"; };
 		E78A30E41CA2930200987B4F /* LLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLManager.m; sourceTree = "<group>"; };
-		E78A30E51CA2930200987B4F /* LLStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLStrings.h; sourceTree = "<group>"; };
 		E791308B1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+ProductHunt.swift"; sourceTree = "<group>"; };
 		E79130911CB436E3009AAB9B /* PHShareAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHShareAction.swift; sourceTree = "<group>"; };
 		E79130931CB5072B009AAB9B /* PHShareMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHShareMessage.swift; sourceTree = "<group>"; };
@@ -522,7 +522,7 @@
 			children = (
 				E78A30E31CA2930200987B4F /* LLManager.h */,
 				E78A30E41CA2930200987B4F /* LLManager.m */,
-				E78A30E51CA2930200987B4F /* LLStrings.h */,
+				E78281831CCFB3B300447D45 /* LLStrings.h */,
 				E78A30E01CA2930200987B4F /* LaunchAtLoginHelper.xcodeproj */,
 			);
 			path = LaunchAtLogin;

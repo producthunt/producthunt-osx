@@ -103,7 +103,7 @@ class PHUserDefaultsTests: PHTestCase {
         XCTAssertTrue(PHUserDefaults.getShowsCount())
 
         // Auto login enabled
-        XCTAssertFalse(PHUserDefaults.getAutoLogin())
+        XCTAssertTrue(PHUserDefaults.getAutoLogin())
 
         // Empty token data
         XCTAssertNotNil(PHUserDefaults.getTokenData())
