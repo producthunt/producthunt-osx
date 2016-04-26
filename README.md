@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/producthunt/producthunt-osx.svg?branch=master)](https://travis-ci.org/producthunt/producthunt-osx)
+
 # Product Hunt for Mac
 
 > This is the official [Product Hunt](http://www.producthunt.com) for Mac.
