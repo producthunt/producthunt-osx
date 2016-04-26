@@ -1,4 +1,4 @@
-language: swift
+language: objective-c
 
 xcode_project: Product\ Hunt.xcodeproj
 xcode_scheme: Debug
