@@ -36,7 +36,7 @@ API Keys generated from https://www.producthunt.com/v1/oauth/applications
 $ pod install
 ```
 
-* Open `ProductHunt.xcworkspace`
+* Open `Product\ Hunt.xcworkspace`
 
 ## Contributing
 
