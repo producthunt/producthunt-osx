@@ -9,10 +9,10 @@
 //
 
 #import "LLManager.h"
-#import "LLStrings.h"
 #import <ServiceManagement/ServiceManagement.h>
 
 NSString * const LLManagerSetLaunchAtLoginFailedNotification = @"LLManagerSetLaunchAtLoginFailedNotification";
+NSString * const LLHelperBundleIdentifier = @"com.producthunt.producthuntosx.LaunchAtLoginHelper";
 
 @implementation LLManager
 

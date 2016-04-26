@@ -24,7 +24,6 @@
 		73C920E815414E7800C2A75A /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = LaunchAtLoginHelper/MainMenu.xib; sourceTree = "<group>"; };
 		73C920FB15414FC900C2A75A /* LaunchAtLoginHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = LaunchAtLoginHelper.entitlements; path = LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements; sourceTree = "<group>"; };
 		E782817F1CCFB35600447D45 /* LaunchAtLoginHelper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "LaunchAtLoginHelper-Info.plist"; path = "LaunchAtLoginHelper/LaunchAtLoginHelper-Info.plist"; sourceTree = "<group>"; };
-		E78281821CCFB38800447D45 /* LLStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLStrings.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +41,6 @@
 		734C378915414CE200994189 = {
 			isa = PBXGroup;
 			children = (
-				E78281821CCFB38800447D45 /* LLStrings.h */,
 				E782817F1CCFB35600447D45 /* LaunchAtLoginHelper-Info.plist */,
 				73C920E715414E7800C2A75A /* main.m */,
 				73C920E515414E7800C2A75A /* LLHAppDelegate.h */,

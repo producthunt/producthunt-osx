@@ -8,7 +8,8 @@
 //
 
 #import "LLHAppDelegate.h"
-#import "LLStrings.h"
+
+NSString * const LLURLScheme = @"producthunt";
 
 @implementation LLHAppDelegate
 
