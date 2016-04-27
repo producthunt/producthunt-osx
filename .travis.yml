@@ -8,9 +8,6 @@ os: osx
 before_install:
 
 - export LANG=en_US.UTF-8
-- brew unlink xctool
-- brew update
-- brew install xctool
 - gem install cocoapods --quiet
 - cp Source/Config/Keys-Example.xcconfig Source/Config/Keys.xcconfig
 
