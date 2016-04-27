@@ -1,4 +1,4 @@
-language: objective-c
+language: Swift
 
 xcode_project: Product\ Hunt.xcodeproj
 xcode_scheme: Debug
@@ -8,10 +8,12 @@ os: osx
 before_install:
 
 - export LANG=en_US.UTF-8
-- gem install xcpretty -N --no-ri --no-rdoc
+- brew unlink xctool
+- brew update
+- brew install xctool
 - gem install cocoapods --quiet
 - cp Source/Config/Keys-Example.xcconfig Source/Config/Keys.xcconfig
 
 script:
 
-- xcodebuild clean test -workspace Product\ Hunt.xcworkspace -scheme Debug -configuration Debug -sdk macosx CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
+- xctool -workspace Product\ Hunt.xcworkspace -scheme Debug -sdk macosx clean test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
