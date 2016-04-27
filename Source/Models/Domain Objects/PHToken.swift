@@ -13,8 +13,11 @@ struct PHToken {
     var accessToken: String
     var expirationDate: NSDate
 
+    var isValid: Bool {
+        return expirationDate.isLaterThan(NSDate())
+    }
+
     func description() -> [String: AnyObject] {
         return ["access_token" : accessToken, "expires_in" : expirationDate.timeIntervalSinceNow]
     }
-
 }

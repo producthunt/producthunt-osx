@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ReSwift
 
 enum PHPostFilter {
     case Seen(Bool), Votes(Int), SortByVotes, None
@@ -14,25 +15,27 @@ enum PHPostFilter {
 
 class PHPostSorter {
 
-    class func filter(posts:[PHPost], by:[PHPostFilter]) -> [PHPost] {
+    class func filter(store: Store<PHAppState>, posts:[PHPost], by:[PHPostFilter]) -> [PHPost] {
         return by.reduce(posts, combine: { (posts, filter) -> [PHPost] in
             switch(filter) {
-            case .Seen(let seen):
-                return posts.filter { (seen ? PHSeenPosts.isSeen($0) : !PHSeenPosts.isSeen($0)) }
 
-            case .Votes(let votesCount):
-                return posts.filter { $0.votesCount >= votesCount }
+                case .Seen(let seen):
+                    let seenIds = store.state.seenPosts.postIds
+                    return posts.filter { (seen ? seenIds.contains($0.id) : !seenIds.contains($0.id) ) }
 
-            case .SortByVotes:
-                return posts.sort({ $0.votesCount > $1.votesCount })
+                case .Votes(let votesCount):
+                    return posts.filter { $0.votesCount >= votesCount }
 
-            case .None:
-                return posts
+                case .SortByVotes:
+                    return posts.sort({ $0.votesCount > $1.votesCount })
+
+                case .None:
+                    return posts
             }
         })
     }
 
-    class func sort(posts: [PHPost], votes: Int) -> [PHPost] {
-        return filter(posts, by: [.Seen(false), .Votes(votes), .SortByVotes]) + filter(posts, by: [.Seen(true), .SortByVotes])
+    class func sort(store: Store<PHAppState> ,posts: [PHPost], votes: Int) -> [PHPost] {
+        return filter(store, posts: posts, by: [.Seen(false), .Votes(votes), .SortByVotes]) + filter(store, posts: posts, by: [.Seen(true), .SortByVotes])
     }
 }

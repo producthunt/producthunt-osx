@@ -7,21 +7,32 @@
 //
 
 import Foundation
+import ReSwift
 
 protocol PHDataSourceDelegate {
-    func contentChanged(updateType: UpdateType)
+    func contentChanged()
 }
 
-class PHPostsDataSource: PHAppContextObserver {
+class PHPostsDataSource: StoreSubscriber {
 
     var delegate: PHDataSourceDelegate?
 
+    private var store: Store<PHAppState>
     private var content = [AnyObject]()
-    private var context: PHAppContext
 
-    init(context: PHAppContext) {
-        self.context = context
-        context.addObserver(self)
+    init(store: Store<PHAppState>) {
+        self.store = store
+
+        store.subscribe(self)
+    }
+
+    deinit {
+        store.unsubscribe(self)
+    }
+
+    func newState(state: PHAppState) {
+        content = flatContent(state.posts.sections)
+        delegate?.contentChanged()
     }
 
     func numberOfRows() -> Int {
@@ -37,16 +48,11 @@ class PHPostsDataSource: PHAppContextObserver {
     }
 
     func loadNewer() {
-        context.fetcher.loadNewer()
+        PHLoadPostOperation.performNewer(store)
     }
 
     func loadOlder() {
-        context.fetcher.loadOlder()
-    }
-
-    func contentChanged(updateType: UpdateType, context: PHAppContext) {
-        content = flatContent(context.fetcher.content)
-        delegate?.contentChanged(updateType)
+        PHLoadPostOperation.performOlder(store)
     }
 
     private func flatContent(content: [PHSection]) -> [AnyObject] {
@@ -56,7 +62,7 @@ class PHPostsDataSource: PHAppContextObserver {
         content.forEach { (section) in
             output.append(formatter.format(withDateString: section.day) ?? "")
 
-            PHPostSorter.sort(section.posts, votes: PHUserDefaults.getFilterCount()).forEach({ (post) in
+            PHPostSorter.sort(store, posts: section.posts, votes: store.state.settings.filterCount).forEach({ (post) in
                 output.append(post)
             })
         }

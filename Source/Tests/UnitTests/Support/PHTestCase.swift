@@ -19,11 +19,9 @@ class PHTestCase: XCTestCase {
         super.setUp()
 
         PHAPI.sharedInstance.endpoint = endpoint
-        PHKeychain.setToken(PHToken(accessToken: "testToken", expirationDate: NSDate(timeIntervalSinceNow: 1000)))
     }
 
     override func tearDown() {
-        PHKeychain.resetToken()
         super.tearDown()
     }
 

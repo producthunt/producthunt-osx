@@ -8,17 +8,11 @@
 
 import Cocoa
 
-protocol PHLoadingViewDelegate {
-    func reload()
-}
-
 enum LoadingState {
     case Loading, Error, Empty, Idle
 }
 
 class PHLoadingView: NSView {
-
-    var delegate: PHLoadingViewDelegate?
 
     @IBOutlet weak var loadingIndicator: NSProgressIndicator!
     @IBOutlet weak var loadingLabel: NSTextField!
@@ -62,6 +56,6 @@ class PHLoadingView: NSView {
 
     @IBAction func toggleReloadButton(sender: NSView) {
         showState(.Loading)
-        delegate?.reload()
+        PHLoadPostOperation.performNewer()
     }
 }

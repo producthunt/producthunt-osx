@@ -7,27 +7,40 @@
 //
 
 import Cocoa
+import ReSwift
 
-class PHStatusBarUpdater: PHAppContextObserver {
+class PHStatusBarUpdater: StoreSubscriber {
 
     private var button: NSStatusBarButton?
+    private var store: Store<PHAppState>
 
-    init(button: NSStatusBarButton?) {
+    init(button: NSStatusBarButton?, store: Store<PHAppState>) {
         self.button = button
+        self.store = store
+
+        store.subscribe(self)
     }
 
-    func contentChanged(updateType: UpdateType, context: PHAppContext) {
-        guard let button = button, let posts = context.fetcher.todayPosts()  else {
+    deinit {
+        store.unsubscribe(self)
+    }
+
+    func newState(state: PHAppState) {
+        updateTitle()
+    }
+
+    private func updateTitle() {
+        guard let button = button, let posts = store.state.posts.todayPosts  else {
             return
         }
 
-        let sortedPosts = PHPostSorter.filter(posts, by: [.Seen(false), .Votes(PHUserDefaults.getFilterCount())])
+        let sortedPosts = PHPostSorter.filter(store, posts: posts, by: [.Seen(false), .Votes(store.state.settings.filterCount)])
 
         button.title = title(fromCount: sortedPosts.count)
     }
 
     private func title(fromCount count: Int) -> String {
-        if !PHUserDefaults.getShowsCount() {
+        if !store.state.settings.showsCount {
             return ""
         }
 

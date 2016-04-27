@@ -1,65 +1,22 @@
 //
 //  PHSeenPosts.swift
-//  ProductHunt
+//  Product Hunt
 //
-//  Created by Vlado on 3/18/16.
+//  Created by Vlado on 5/3/16.
 //  Copyright © 2016 ProductHunt. All rights reserved.
 //
 
 import Foundation
-import DateTools
-import ISO8601
 
-class PHSeenPosts {
+struct PHSeenPosts {
+    var date: NSDate
+    var postIds: Set<Int>
 
-    class func markAllAsSeen(posts: [PHPost]?) {
-        guard let posts = posts else {
-            return
-        }
-
-        let votesTreshold = PHUserDefaults.getFilterCount()
-        
-        let filters: [PHPostFilter] = [.Seen(false), .Votes(votesTreshold)]
-
-        PHPostSorter.filter(posts, by: filters).forEach({ markAsSeen($0) })
-
-        PHAppContext.sharedInstance.notify(.Newer)
-    }
-
-    class func markAsSeen(post: PHPost) {
-        if !isFromToday(post) {
-            return
-        }
-
-        let seenPosts = PHUserDefaults.getSeenPosts()
-
-        var seenIDs = [post.id]
-
-        if let key = seenPosts.keys.first, let date = NSDate(ISO8601String: key), var ids = seenPosts[key] as? [Int] where date.isSameDay(NSDate(ISO8601String: post.day)) {
-            ids.append(post.id)
-            seenIDs = ids
-        }
-
-        PHUserDefaults.setSeenPosts(["\(post.day)" : seenIDs])
-
-        PHAppContext.sharedInstance.notify(.Newer)
-    }
-
-    class func isSeen(post: PHPost) -> Bool {
-        if !isFromToday(post) {
+    func isSeen(post: PHPost) -> Bool {
+        if PHDateFormatter.daysAgo(post.day) > 0 {
             return true
         }
 
-        let seenPosts = PHUserDefaults.getSeenPosts()
-
-        guard let key = seenPosts.keys.first, let ids = seenPosts[key] as? [Int] else {
-            return true
-        }
-
-        return ids.contains(post.id)
-    }
-
-    private class func isFromToday(post: PHPost) -> Bool {
-        return PHDateFormatter().daysAgo(fromDateAsString: post.day) == 0
+        return postIds.contains(post.id)
     }
 }

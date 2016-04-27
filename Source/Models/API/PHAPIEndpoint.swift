@@ -27,7 +27,7 @@ class PHAPIEndpoint {
         updateAuthorizationToken()
     }
 
-    func updateAuthorizationToken(token: PHToken? = PHKeychain.getToken()) {
+    func updateAuthorizationToken(token: PHToken? = store.state.token) {
         if let token = token {
             manager.requestSerializer.setValue("Bearer \(token.accessToken)", forHTTPHeaderField: "Authorization")
         }

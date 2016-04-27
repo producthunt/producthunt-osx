@@ -1,14 +1,14 @@
 //
-//  PHShowPostAction.swift
-//  ProductHunt
+//  PHOpenPostOperation.swift
+//  Product Hunt
 //
-//  Created by Vlado on 3/18/16.
+//  Created by Vlado on 5/4/16.
 //  Copyright © 2016 ProductHunt. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
-class PHOpenPostAction {
+class PHOpenPostOperation {
 
     private class var openExternalLink: Bool {
         var openExternalLink = false
@@ -25,6 +25,7 @@ class PHOpenPostAction {
 
         PHOpenURLAction.perform(withUrl:  url, closeAfterLaunch: true)
 
-        PHSeenPosts.markAsSeen(post)
+        PHMarkAsSeenOperation.perform(post)
     }
+
 }

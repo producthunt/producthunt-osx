@@ -85,7 +85,7 @@ class PHPostCell: NSTableCellView {
             return
         }
 
-        model = PHPostViewModel(withPost: post)
+        model = PHPostViewModel(withPost: post, store: store)
         updateUI()
     }
 

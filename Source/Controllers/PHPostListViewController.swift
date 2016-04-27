@@ -10,7 +10,7 @@ import Cocoa
 import DateTools
 import SwiftyTimer
 
-class PHPostListViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, PHDataSourceDelegate, PHLoadingViewDelegate {
+class PHPostListViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, PHDataSourceDelegate {
 
     @IBOutlet weak var productTableView: NSTableView!
     @IBOutlet weak var loadingView: PHLoadingView!
@@ -18,47 +18,47 @@ class PHPostListViewController: NSViewController, NSTableViewDataSource, NSTable
     @IBOutlet weak var homeButton: PHButton!
     @IBOutlet weak var settingsButton: PHButton!
 
+    private var source = PHPostsDataSource(store: store)
     private var updateUITimer: NSTimer?
-    private var source = PHPostsDataSource(context: PHAppContext.sharedInstance)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.wantsLayer = true
+
         view.layer?.backgroundColor = NSColor.ph_whiteColor().CGColor
 
         productTableView.intercellSpacing = NSSize.zero
 
         source.delegate = self
 
-        loadingView.delegate = self
         loadingView.showState(.Loading)
 
         homeButton.setImages("Icon-product-hunt", highlitedImage: "icon-kitty")
-
-        updateUI()
     }
 
     override func viewWillAppear() {
         super.viewWillAppear()
 
-        updateUITimer = NSTimer.every(15.seconds) { [weak self] in self?.updateUI() }
-
         self.source.loadNewer()
 
         PHScheduleAsSeenAction.performCancel()
+
+        updateUITimer = NSTimer.every(15.seconds) { [weak self] in self?.updateUI() }
+
+        updateUI()
     }
 
     override func viewWillDisappear() {
         super.viewWillDisappear()
+
+        PHScheduleAsSeenAction.performSchedule()
 
         if let timer = updateUITimer {
             timer.invalidate()
         }
 
         updateUITimer = nil
-
-        PHScheduleAsSeenAction.performSchedule()
     }
 
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -80,8 +80,7 @@ class PHPostListViewController: NSViewController, NSTableViewDataSource, NSTable
 
     func tableView(tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
         if let post = source.data(atIndex: row) as? PHPost {
-            PHOpenPostAction.perform(withPost: post)
-            updateUI()
+            PHOpenPostOperation.perform(withPost: post)
         }
 
         return true
@@ -95,22 +94,12 @@ class PHPostListViewController: NSViewController, NSTableViewDataSource, NSTable
 
     // MARK: PHDataSourceDelegate
 
-    func contentChanged(updateType: UpdateType)  {
-        if updateType == .Newer {
-            PHUserDefaults.setLastUpdated()
-        }
+    func contentChanged()  {
+        loadingView.showState( source.numberOfRows() > 0 ? LoadingState.Idle : LoadingState.Empty )
 
-        let state = source.numberOfRows() > 0 ? LoadingState.Idle : LoadingState.Empty
-        loadingView.showState(state)
+        productTableView.reloadData()
 
         updateUI()
-        productTableView.reloadData()
-    }
-
-    // MARK: PHLoadingViewDelegate
-
-    func reload() {
-        source.loadNewer()
     }
 
     // MARK: Actions
@@ -124,6 +113,6 @@ class PHPostListViewController: NSViewController, NSTableViewDataSource, NSTable
     }
 
     func updateUI() {
-        lastUpdatedLabel.stringValue = "Last Updated: \(PHUserDefaults.getLastUpdated().timeAgoSinceNow())"
+        lastUpdatedLabel.stringValue = "Last Updated: \(store.state.posts.lastUpdated.timeAgoSinceNow())"
     }
 }

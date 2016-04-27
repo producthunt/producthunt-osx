@@ -17,8 +17,12 @@ class PHScheduleAsSeenAction {
     class func performSchedule() {
         performCancel()
 
-        delegate.countdownToMarkAsSeen = NSTimer.after(30.seconds, { 
-            PHSeenPosts.markAllAsSeen(PHAppContext.sharedInstance.fetcher.todayPosts())
+        delegate.countdownToMarkAsSeen = NSTimer.after(30.seconds, {
+            guard let posts = store.state.posts.todayPosts else {
+                return
+            }
+
+            PHMarkAsSeenOperation.perform( posts )
         })
     }
 

@@ -12,6 +12,10 @@ import ISO8601
 
 class PHDateFormatter {
 
+    class func daysAgo(dateString: String) -> Int {
+        return PHDateFormatter().daysAgo(fromDateAsString: dateString)
+    }
+
     private let formatter = NSDateFormatter()
     private var units: [Int : String] {
         return [0: "th", 1: "st", 21: "st", 31: "st", 2: "nd", 22: "nd", 3: "rd", 23: "rd"]

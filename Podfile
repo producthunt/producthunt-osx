@@ -7,6 +7,7 @@ pod 'ISO8601', '~> 0.5'
 pod 'DateTools'
 pod 'SwiftyTimer'
 pod 'Sparkle', '~> 1.10'
+pod 'ReSwift'
 end
 
 target 'ProductHunt' do

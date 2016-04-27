@@ -10,7 +10,6 @@
 		370627019454F1B9078F9904 /* Pods_ProductHunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA09B18C78332E2F89BD2AB /* Pods_ProductHunt.framework */; };
 		6D3010CB2C2ED8A7EC5407E2 /* Pods_ProductHuntTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E34B14744B9FFB01A730F6BE /* Pods_ProductHuntTests.framework */; };
 		E706618D1CA2E70600BF8F36 /* PHPostsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E706618C1CA2E70600BF8F36 /* PHPostsDataSource.swift */; };
-		E72394DF1CA909F2000F4070 /* PHPostFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72394DE1CA909F2000F4070 /* PHPostFetcher.swift */; };
 		E723F2531CBBC6BA00E46A7D /* PHConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E723F2521CBBC6BA00E46A7D /* PHConfiguration.m */; };
 		E723F2541CBBC6BA00E46A7D /* PHConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E723F2521CBBC6BA00E46A7D /* PHConfiguration.m */; };
 		E72526C71C96C64700942F0E /* PHPostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72526C51C96C64700942F0E /* PHPostListViewController.swift */; };
@@ -26,22 +25,56 @@
 		E7324EC41C9AE3220065525B /* PHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EC31C9AE3220065525B /* PHLoadingView.swift */; };
 		E7324EC61C9AF2F50065525B /* PHScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EC51C9AF2F50065525B /* PHScrollView.swift */; };
 		E7324ECA1C9AF7250065525B /* PHOpenSettingsMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EC91C9AF7250065525B /* PHOpenSettingsMenuAction.swift */; };
-		E7324ECF1C9B481F0065525B /* PHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324ECE1C9B481F0065525B /* PHUserDefaults.swift */; };
 		E7324ED41C9B51180065525B /* PHSeenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324ED31C9B51180065525B /* PHSeenView.swift */; };
+		E732F46A1CD0F4B200F57DEA /* PHAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F4691CD0F4B200F57DEA /* PHAppState.swift */; };
+		E732F46C1CD0FDE400F57DEA /* PHSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F46B1CD0FDE400F57DEA /* PHSettings.swift */; };
+		E732F46E1CD1009400F57DEA /* PHAppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F46D1CD1009400F57DEA /* PHAppReducer.swift */; };
+		E732F4721CD1016A00F57DEA /* PHSettingsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F4711CD1016A00F57DEA /* PHSettingsModule.swift */; };
+		E736DBAB1CD9256D00C83AA1 /* PHTokenModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBAA1CD9256D00C83AA1 /* PHTokenModule.swift */; };
+		E736DBAD1CD9257D00C83AA1 /* PHTokenOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBAC1CD9257D00C83AA1 /* PHTokenOperation.swift */; };
+		E736DBAE1CD9279300C83AA1 /* PHTokenModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBAA1CD9256D00C83AA1 /* PHTokenModule.swift */; };
+		E736DBBA1CD9E44E00C83AA1 /* PHMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBB91CD9E44E00C83AA1 /* PHMiddleware.swift */; };
+		E736DBBB1CD9E44E00C83AA1 /* PHMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBB91CD9E44E00C83AA1 /* PHMiddleware.swift */; };
+		E736DBBD1CD9FA8900C83AA1 /* PHAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBBC1CD9FA8900C83AA1 /* PHAPIOperation.swift */; };
+		E736DBBE1CD9FA8900C83AA1 /* PHAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBBC1CD9FA8900C83AA1 /* PHAPIOperation.swift */; };
+		E736DBC41CDA195F00C83AA1 /* PHOpenPostOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBC31CDA195F00C83AA1 /* PHOpenPostOperation.swift */; };
+		E736DBC51CDA195F00C83AA1 /* PHOpenPostOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBC31CDA195F00C83AA1 /* PHOpenPostOperation.swift */; };
+		E736DBC91CDA1C3300C83AA1 /* PHPostsModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBC81CDA1C3300C83AA1 /* PHPostsModuleTests.swift */; };
+		E736DBCB1CDA263C00C83AA1 /* PHSeenPostsModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBCA1CDA263C00C83AA1 /* PHSeenPostsModuleTests.swift */; };
+		E736DBCD1CDA304D00C83AA1 /* PHSettingsModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBCC1CDA304D00C83AA1 /* PHSettingsModuleTests.swift */; };
+		E736DBD11CDA548C00C83AA1 /* PHDateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBD01CDA548C00C83AA1 /* PHDateFormatterTests.swift */; };
+		E736DBD41CDA71D300C83AA1 /* PHPostViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBD31CDA71D300C83AA1 /* PHPostViewModelTests.swift */; };
+		E736DBD61CDA733900C83AA1 /* PHPostSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBD51CDA733900C83AA1 /* PHPostSorterTests.swift */; };
+		E736DBD81CDA736B00C83AA1 /* PHPostDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBD71CDA736B00C83AA1 /* PHPostDataSourceTests.swift */; };
 		E75900BB1C9BF88D003C15B9 /* PHPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900BA1C9BF88D003C15B9 /* PHPostViewModel.swift */; };
-		E75900C81C9C06CE003C15B9 /* PHSeenPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900C71C9C06CE003C15B9 /* PHSeenPosts.swift */; };
-		E75900CE1C9C141E003C15B9 /* PHOpenPostAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900CD1C9C141E003C15B9 /* PHOpenPostAction.swift */; };
-		E75900ED1CA027D4003C15B9 /* PHGetTokenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900EC1CA027D4003C15B9 /* PHGetTokenAction.swift */; };
 		E75901051CA034AC003C15B9 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E75901041CA034AC003C15B9 /* ServiceManagement.framework */; };
 		E75F5EB41CA40521003B6D60 /* NSColor+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75F5EB31CA40521003B6D60 /* NSColor+ProductHunt.swift */; };
 		E75F5EB61CA4383F003B6D60 /* PHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75F5EB51CA4383F003B6D60 /* PHButton.swift */; };
+		E765F7841CD8D1580044CE41 /* PHLoadPostOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F7821CD8CF990044CE41 /* PHLoadPostOperation.swift */; };
+		E765F7851CD8D1580044CE41 /* PHLoadPostOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F7821CD8CF990044CE41 /* PHLoadPostOperation.swift */; };
+		E765F7871CD8D4BA0044CE41 /* PHAppStatePosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F7861CD8D4BA0044CE41 /* PHAppStatePosts.swift */; };
+		E765F7881CD8D4BA0044CE41 /* PHAppStatePosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F7861CD8D4BA0044CE41 /* PHAppStatePosts.swift */; };
+		E765F78A1CD8D5430044CE41 /* PHSeenPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F7891CD8D5430044CE41 /* PHSeenPosts.swift */; };
+		E765F78B1CD8D5430044CE41 /* PHSeenPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F7891CD8D5430044CE41 /* PHSeenPosts.swift */; };
+		E765F78D1CD8D5970044CE41 /* PHSeenPostsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F78C1CD8D5970044CE41 /* PHSeenPostsModule.swift */; };
+		E765F78E1CD8D5970044CE41 /* PHSeenPostsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F78C1CD8D5970044CE41 /* PHSeenPostsModule.swift */; };
+		E765F7901CD8D8690044CE41 /* PHMarkAsSeenOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F78F1CD8D8690044CE41 /* PHMarkAsSeenOperation.swift */; };
+		E765F7911CD8D8690044CE41 /* PHMarkAsSeenOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F78F1CD8D8690044CE41 /* PHMarkAsSeenOperation.swift */; };
 		E76ED6391C96BD0C005B3EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76ED6381C96BD0C005B3EC7 /* AppDelegate.swift */; };
 		E76ED63B1C96BD0C005B3EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E76ED63A1C96BD0C005B3EC7 /* Assets.xcassets */; };
 		E76ED63E1C96BD0C005B3EC7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76ED63C1C96BD0C005B3EC7 /* MainMenu.xib */; };
+		E779A12B1CD2339C002C69D9 /* PHAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F4691CD0F4B200F57DEA /* PHAppState.swift */; };
+		E779A12C1CD2339E002C69D9 /* PHAppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F46D1CD1009400F57DEA /* PHAppReducer.swift */; };
+		E779A12D1CD233A1002C69D9 /* PHSettingsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F4711CD1016A00F57DEA /* PHSettingsModule.swift */; };
+		E779A12E1CD233AE002C69D9 /* PHSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F46B1CD0FDE400F57DEA /* PHSettings.swift */; };
+		E779A1301CD23749002C69D9 /* PHDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E779A12F1CD23749002C69D9 /* PHDefaults.swift */; };
+		E779A1311CD23749002C69D9 /* PHDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E779A12F1CD23749002C69D9 /* PHDefaults.swift */; };
 		E781FB9C1CA198C000A7CFCE /* PHFirstLaunchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781FB9B1CA198C000A7CFCE /* PHFirstLaunchAction.swift */; };
 		E781FB9E1CA19BA800A7CFCE /* PHStartAtLoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781FB9D1CA19BA800A7CFCE /* PHStartAtLoginAction.swift */; };
 		E78A30E61CA2930200987B4F /* LLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E78A30E41CA2930200987B4F /* LLManager.m */; };
 		E78A30EC1CA2932200987B4F /* LaunchAtLoginHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = E78A30E91CA2930200987B4F /* LaunchAtLoginHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E78D36CE1CD27410001BF122 /* PHPostsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78D36CD1CD27410001BF122 /* PHPostsModule.swift */; };
+		E78D36CF1CD27410001BF122 /* PHPostsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78D36CD1CD27410001BF122 /* PHPostsModule.swift */; };
 		E791308C1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791308B1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift */; };
 		E79130921CB436E3009AAB9B /* PHShareAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79130911CB436E3009AAB9B /* PHShareAction.swift */; };
 		E79130941CB5072B009AAB9B /* PHShareMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79130931CB5072B009AAB9B /* PHShareMessage.swift */; };
@@ -49,7 +82,6 @@
 		E7A94CB51CC0D432008606AB /* KPCScaleToFillNSImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A94CB41CC0D432008606AB /* KPCScaleToFillNSImageView.m */; };
 		E7B017D81CABE66A0019E654 /* PHStatusBarUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B017D71CABE66A0019E654 /* PHStatusBarUpdater.swift */; };
 		E7B017E71CABF3AC0019E654 /* PHCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B017E61CABF3AC0019E654 /* PHCallbacks.swift */; };
-		E7BC08901C97246E00990066 /* PHKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC088F1C97246E00990066 /* PHKeychain.swift */; };
 		E7BC08921C973D2A00990066 /* PHToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC08911C973D2A00990066 /* PHToken.swift */; };
 		E7BC08941C973D3200990066 /* PHTokenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC08931C973D3200990066 /* PHTokenFactory.swift */; };
 		E7CD02791CA98F6900C9FA7B /* PHBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD02781CA98F6900C9FA7B /* PHBundle.swift */; };
@@ -66,25 +98,14 @@
 		E7F3E9D61CC5189700DA9A97 /* NSButton+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E9D51CC5189700DA9A97 /* NSButton+ProductHunt.swift */; };
 		E7F3E9DD1CC62B2700DA9A97 /* PHPostSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E9DC1CC62B2700DA9A97 /* PHPostSorter.swift */; };
 		E7F3E9DE1CC62B2700DA9A97 /* PHPostSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E9DC1CC62B2700DA9A97 /* PHPostSorter.swift */; };
-		E7F3E9E11CC62C9100DA9A97 /* PHUserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324ED11C9B4C760065525B /* PHUserDefaultsTests.swift */; };
 		E7F3E9E21CC62C9400DA9A97 /* PHTokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC08951C973EF400990066 /* PHTokenTests.swift */; };
-		E7F3E9E31CC62C9600DA9A97 /* PHSeenPostsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900CB1C9C0AC4003C15B9 /* PHSeenPostsTests.swift */; };
-		E7F3E9E41CC62C9800DA9A97 /* PHPostViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900BC1C9BF8D8003C15B9 /* PHPostViewModelTests.swift */; };
-		E7F3E9E51CC62C9A00DA9A97 /* PHPostFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B017EF1CAC14EA0019E654 /* PHPostFetcherTests.swift */; };
-		E7F3E9E61CC62C9C00DA9A97 /* PHPostDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705834F1CAD42F10046D2A9 /* PHPostDataSourceTests.swift */; };
-		E7F3E9E71CC62C9E00DA9A97 /* PHKeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC08991C974F1100990066 /* PHKeychainTests.swift */; };
-		E7F3E9E81CC62CA000DA9A97 /* PHDateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E423991C98375700EF464D /* PHDateFormatterTests.swift */; };
 		E7F3E9E91CC62CA300DA9A97 /* XCTestCase+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79659391C9708090010F358 /* XCTestCase+ProductHunt.swift */; };
 		E7F3E9EA1CC62CA500DA9A97 /* PHTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900D11C9C8699003C15B9 /* PHTestCase.swift */; };
 		E7F3E9EB1CC62CA700DA9A97 /* PHFakeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4BB151CAD0FD500E2458E /* PHFakeFactory.swift */; };
 		E7F3E9EC1CC62CA900DA9A97 /* PHFakeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B017EA1CAC08FE0019E654 /* PHFakeEndpoint.swift */; };
-		E7F3E9ED1CC62CC400DA9A97 /* PHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324ECE1C9B481F0065525B /* PHUserDefaults.swift */; };
 		E7F3E9EE1CC62CC600DA9A97 /* PHStatusBarUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B017D71CABE66A0019E654 /* PHStatusBarUpdater.swift */; };
 		E7F3E9EF1CC62CC900DA9A97 /* PHShareMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79130931CB5072B009AAB9B /* PHShareMessage.swift */; };
-		E7F3E9F01CC62CCB00DA9A97 /* PHSeenPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900C71C9C06CE003C15B9 /* PHSeenPosts.swift */; };
 		E7F3E9F11CC62CCD00DA9A97 /* PHPostsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E706618C1CA2E70600BF8F36 /* PHPostsDataSource.swift */; };
-		E7F3E9F41CC62CD400DA9A97 /* PHPostFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72394DE1CA909F2000F4070 /* PHPostFetcher.swift */; };
-		E7F3E9F61CC62CD800DA9A97 /* PHKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC088F1C97246E00990066 /* PHKeychain.swift */; };
 		E7F3E9F71CC62CDA00DA9A97 /* PHDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E423971C98371300EF464D /* PHDateFormatter.swift */; };
 		E7F3E9F81CC62CDD00DA9A97 /* PHCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B017E61CABF3AC0019E654 /* PHCallbacks.swift */; };
 		E7F3E9F91CC62CDF00DA9A97 /* PHBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD02781CA98F6900C9FA7B /* PHBundle.swift */; };
@@ -106,11 +127,9 @@
 		E7F3EA091CC62D0B00DA9A97 /* NSImage+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791308B1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift */; };
 		E7F3EA0A1CC62D0B00DA9A97 /* NSButton+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E9D51CC5189700DA9A97 /* NSButton+ProductHunt.swift */; };
 		E7F3EA0C1CC62D1100DA9A97 /* PHFirstLaunchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781FB9B1CA198C000A7CFCE /* PHFirstLaunchAction.swift */; };
-		E7F3EA0D1CC62D1100DA9A97 /* PHGetTokenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900EC1CA027D4003C15B9 /* PHGetTokenAction.swift */; };
 		E7F3EA0E1CC62D1100DA9A97 /* PHOpenURLAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EBD1C99C8AD0065525B /* PHOpenURLAction.swift */; };
 		E7F3EA0F1CC62D1100DA9A97 /* PHPopoverAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF19B61CA9764300535CC4 /* PHPopoverAction.swift */; };
 		E7F3EA101CC62D1100DA9A97 /* PHShareAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79130911CB436E3009AAB9B /* PHShareAction.swift */; };
-		E7F3EA111CC62D1100DA9A97 /* PHOpenPostAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75900CD1C9C141E003C15B9 /* PHOpenPostAction.swift */; };
 		E7F3EA121CC62D1100DA9A97 /* PHOpenSettingsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A85BB11CA040BE00E48329 /* PHOpenSettingsAction.swift */; };
 		E7F3EA131CC62D1100DA9A97 /* PHOpenSettingsMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EC91C9AF7250065525B /* PHOpenSettingsMenuAction.swift */; };
 		E7F3EA141CC62D1100DA9A97 /* PHStartAtLoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781FB9D1CA19BA800A7CFCE /* PHStartAtLoginAction.swift */; };
@@ -124,9 +143,6 @@
 		E7F3EA221CC62D6A00DA9A97 /* PHScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EC51C9AF2F50065525B /* PHScrollView.swift */; };
 		E7F3EA231CC62D6A00DA9A97 /* PHSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EBB1C999BA40065525B /* PHSectionCell.swift */; };
 		E7F3EA241CC62D6A00DA9A97 /* PHSeenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324ED31C9B51180065525B /* PHSeenView.swift */; };
-		E7F3EA2E1CC62E8300DA9A97 /* PHPostSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3EA2D1CC62E8300DA9A97 /* PHPostSorterTests.swift */; };
-		E7F3EA301CC6570700DA9A97 /* PHAppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3EA2F1CC6570700DA9A97 /* PHAppContext.swift */; };
-		E7F3EA311CC6570700DA9A97 /* PHAppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3EA2F1CC6570700DA9A97 /* PHAppContext.swift */; };
 		E7FC79851CC0BEA100FBEAC5 /* PHOpenProductHuntAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC79841CC0BEA100FBEAC5 /* PHOpenProductHuntAction.swift */; };
 /* End PBXBuildFile section */
 
@@ -176,10 +192,8 @@
 		C7B2BBAF867209B042096AB5 /* Pods-ProductHuntTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHuntTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHuntTests/Pods-ProductHuntTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF4434CD295A55B390BEBC9C /* Pods-ProductHunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHunt/Pods-ProductHunt.debug.xcconfig"; sourceTree = "<group>"; };
 		E34B14744B9FFB01A730F6BE /* Pods_ProductHuntTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductHuntTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E705834F1CAD42F10046D2A9 /* PHPostDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostDataSourceTests.swift; sourceTree = "<group>"; };
 		E706618C1CA2E70600BF8F36 /* PHPostsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostsDataSource.swift; sourceTree = "<group>"; };
 		E708BED11CB6FBDA0068D97B /* ProductHuntTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductHuntTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E72394DE1CA909F2000F4070 /* PHPostFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostFetcher.swift; sourceTree = "<group>"; };
 		E723F2501CBBC4E600E46A7D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		E723F2511CBBC6BA00E46A7D /* PHConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHConfiguration.h; sourceTree = "<group>"; };
 		E723F2521CBBC6BA00E46A7D /* PHConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHConfiguration.m; sourceTree = "<group>"; };
@@ -198,32 +212,48 @@
 		E7324EC31C9AE3220065525B /* PHLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHLoadingView.swift; sourceTree = "<group>"; };
 		E7324EC51C9AF2F50065525B /* PHScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHScrollView.swift; sourceTree = "<group>"; };
 		E7324EC91C9AF7250065525B /* PHOpenSettingsMenuAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHOpenSettingsMenuAction.swift; sourceTree = "<group>"; };
-		E7324ECE1C9B481F0065525B /* PHUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHUserDefaults.swift; sourceTree = "<group>"; };
-		E7324ED11C9B4C760065525B /* PHUserDefaultsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHUserDefaultsTests.swift; sourceTree = "<group>"; };
 		E7324ED31C9B51180065525B /* PHSeenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSeenView.swift; sourceTree = "<group>"; };
+		E732F4691CD0F4B200F57DEA /* PHAppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAppState.swift; sourceTree = "<group>"; };
+		E732F46B1CD0FDE400F57DEA /* PHSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSettings.swift; sourceTree = "<group>"; };
+		E732F46D1CD1009400F57DEA /* PHAppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAppReducer.swift; sourceTree = "<group>"; };
+		E732F4711CD1016A00F57DEA /* PHSettingsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSettingsModule.swift; sourceTree = "<group>"; };
+		E736DBAA1CD9256D00C83AA1 /* PHTokenModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHTokenModule.swift; sourceTree = "<group>"; };
+		E736DBAC1CD9257D00C83AA1 /* PHTokenOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHTokenOperation.swift; sourceTree = "<group>"; };
+		E736DBB91CD9E44E00C83AA1 /* PHMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHMiddleware.swift; sourceTree = "<group>"; };
+		E736DBBC1CD9FA8900C83AA1 /* PHAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAPIOperation.swift; sourceTree = "<group>"; };
+		E736DBC31CDA195F00C83AA1 /* PHOpenPostOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHOpenPostOperation.swift; sourceTree = "<group>"; };
+		E736DBC81CDA1C3300C83AA1 /* PHPostsModuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostsModuleTests.swift; sourceTree = "<group>"; };
+		E736DBCA1CDA263C00C83AA1 /* PHSeenPostsModuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSeenPostsModuleTests.swift; sourceTree = "<group>"; };
+		E736DBCC1CDA304D00C83AA1 /* PHSettingsModuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSettingsModuleTests.swift; sourceTree = "<group>"; };
+		E736DBD01CDA548C00C83AA1 /* PHDateFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHDateFormatterTests.swift; sourceTree = "<group>"; };
+		E736DBD31CDA71D300C83AA1 /* PHPostViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostViewModelTests.swift; sourceTree = "<group>"; };
+		E736DBD51CDA733900C83AA1 /* PHPostSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostSorterTests.swift; sourceTree = "<group>"; };
+		E736DBD71CDA736B00C83AA1 /* PHPostDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostDataSourceTests.swift; sourceTree = "<group>"; };
 		E75900BA1C9BF88D003C15B9 /* PHPostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostViewModel.swift; sourceTree = "<group>"; };
-		E75900BC1C9BF8D8003C15B9 /* PHPostViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostViewModelTests.swift; sourceTree = "<group>"; };
-		E75900C71C9C06CE003C15B9 /* PHSeenPosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSeenPosts.swift; sourceTree = "<group>"; };
-		E75900CB1C9C0AC4003C15B9 /* PHSeenPostsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSeenPostsTests.swift; sourceTree = "<group>"; };
-		E75900CD1C9C141E003C15B9 /* PHOpenPostAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHOpenPostAction.swift; sourceTree = "<group>"; };
 		E75900D11C9C8699003C15B9 /* PHTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHTestCase.swift; sourceTree = "<group>"; };
 		E75900D51CA012FB003C15B9 /* ProductHunt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ProductHunt.entitlements; sourceTree = "<group>"; };
-		E75900EC1CA027D4003C15B9 /* PHGetTokenAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHGetTokenAction.swift; sourceTree = "<group>"; };
 		E75901041CA034AC003C15B9 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		E75F5EB31CA40521003B6D60 /* NSColor+ProductHunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+ProductHunt.swift"; sourceTree = "<group>"; };
 		E75F5EB51CA4383F003B6D60 /* PHButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHButton.swift; sourceTree = "<group>"; };
+		E765F7821CD8CF990044CE41 /* PHLoadPostOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHLoadPostOperation.swift; sourceTree = "<group>"; };
+		E765F7861CD8D4BA0044CE41 /* PHAppStatePosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAppStatePosts.swift; sourceTree = "<group>"; };
+		E765F7891CD8D5430044CE41 /* PHSeenPosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSeenPosts.swift; sourceTree = "<group>"; };
+		E765F78C1CD8D5970044CE41 /* PHSeenPostsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSeenPostsModule.swift; sourceTree = "<group>"; };
+		E765F78F1CD8D8690044CE41 /* PHMarkAsSeenOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHMarkAsSeenOperation.swift; sourceTree = "<group>"; };
 		E76ED6351C96BD0C005B3EC7 /* Product Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Product Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76ED6381C96BD0C005B3EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E76ED63A1C96BD0C005B3EC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E76ED63D1C96BD0C005B3EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E76ED63F1C96BD0C005B3EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E76ED64A1C96BD0C005B3EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E779A12F1CD23749002C69D9 /* PHDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHDefaults.swift; sourceTree = "<group>"; };
 		E781FB9B1CA198C000A7CFCE /* PHFirstLaunchAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFirstLaunchAction.swift; sourceTree = "<group>"; };
 		E781FB9D1CA19BA800A7CFCE /* PHStartAtLoginAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHStartAtLoginAction.swift; sourceTree = "<group>"; };
 		E78A30D31CA2921300987B4F /* ProductHunt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProductHunt-Bridging-Header.h"; sourceTree = "<group>"; };
 		E78A30E01CA2930200987B4F /* LaunchAtLoginHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LaunchAtLoginHelper.xcodeproj; path = ../LaunchAtLoginHelper/LaunchAtLoginHelper.xcodeproj; sourceTree = "<group>"; };
 		E78A30E31CA2930200987B4F /* LLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLManager.h; sourceTree = "<group>"; };
 		E78A30E41CA2930200987B4F /* LLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLManager.m; sourceTree = "<group>"; };
+		E78D36CD1CD27410001BF122 /* PHPostsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostsModule.swift; sourceTree = "<group>"; };
 		E791308B1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+ProductHunt.swift"; sourceTree = "<group>"; };
 		E79130911CB436E3009AAB9B /* PHShareAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHShareAction.swift; sourceTree = "<group>"; };
 		E79130931CB5072B009AAB9B /* PHShareMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHShareMessage.swift; sourceTree = "<group>"; };
@@ -235,19 +265,15 @@
 		E7B017D71CABE66A0019E654 /* PHStatusBarUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHStatusBarUpdater.swift; sourceTree = "<group>"; };
 		E7B017E61CABF3AC0019E654 /* PHCallbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHCallbacks.swift; sourceTree = "<group>"; };
 		E7B017EA1CAC08FE0019E654 /* PHFakeEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFakeEndpoint.swift; sourceTree = "<group>"; };
-		E7B017EF1CAC14EA0019E654 /* PHPostFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostFetcherTests.swift; sourceTree = "<group>"; };
-		E7BC088F1C97246E00990066 /* PHKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHKeychain.swift; sourceTree = "<group>"; };
 		E7BC08911C973D2A00990066 /* PHToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHToken.swift; sourceTree = "<group>"; };
 		E7BC08931C973D3200990066 /* PHTokenFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHTokenFactory.swift; sourceTree = "<group>"; };
 		E7BC08951C973EF400990066 /* PHTokenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHTokenTests.swift; sourceTree = "<group>"; };
-		E7BC08991C974F1100990066 /* PHKeychainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHKeychainTests.swift; sourceTree = "<group>"; };
 		E7CD02781CA98F6900C9FA7B /* PHBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHBundle.swift; sourceTree = "<group>"; };
 		E7CF19B61CA9764300535CC4 /* PHPopoverAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPopoverAction.swift; sourceTree = "<group>"; };
 		E7E0C0FA1CC0C8BA002D0085 /* PHScheduleAsSeenAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHScheduleAsSeenAction.swift; sourceTree = "<group>"; };
 		E7E423911C982B9600EF464D /* PHPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostCell.swift; sourceTree = "<group>"; };
 		E7E423951C98342100EF464D /* PHPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPost.swift; sourceTree = "<group>"; };
 		E7E423971C98371300EF464D /* PHDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHDateFormatter.swift; sourceTree = "<group>"; };
-		E7E423991C98375700EF464D /* PHDateFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHDateFormatterTests.swift; sourceTree = "<group>"; };
 		E7E4239C1C98575D00EF464D /* PHPostFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostFactory.swift; sourceTree = "<group>"; };
 		E7EBBA6C1CAA5A8A00C09770 /* NSError+ProductHunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+ProductHunt.swift"; sourceTree = "<group>"; };
 		E7EBBA6E1CAA710000C09770 /* PHSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSection.swift; sourceTree = "<group>"; };
@@ -255,8 +281,6 @@
 		E7F3E9D21CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHAdvancedSettingsViewController.xib; sourceTree = "<group>"; };
 		E7F3E9D51CC5189700DA9A97 /* NSButton+ProductHunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSButton+ProductHunt.swift"; sourceTree = "<group>"; };
 		E7F3E9DC1CC62B2700DA9A97 /* PHPostSorter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostSorter.swift; sourceTree = "<group>"; };
-		E7F3EA2D1CC62E8300DA9A97 /* PHPostSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostSorterTests.swift; sourceTree = "<group>"; };
-		E7F3EA2F1CC6570700DA9A97 /* PHAppContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAppContext.swift; sourceTree = "<group>"; };
 		E7F4BB151CAD0FD500E2458E /* PHFakeFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFakeFactory.swift; sourceTree = "<group>"; };
 		E7FC79841CC0BEA100FBEAC5 /* PHOpenProductHuntAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHOpenProductHuntAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -308,11 +332,9 @@
 			isa = PBXGroup;
 			children = (
 				E781FB9B1CA198C000A7CFCE /* PHFirstLaunchAction.swift */,
-				E75900EC1CA027D4003C15B9 /* PHGetTokenAction.swift */,
 				E7324EBD1C99C8AD0065525B /* PHOpenURLAction.swift */,
 				E7CF19B61CA9764300535CC4 /* PHPopoverAction.swift */,
 				E79130911CB436E3009AAB9B /* PHShareAction.swift */,
-				E75900CD1C9C141E003C15B9 /* PHOpenPostAction.swift */,
 				E7A85BB11CA040BE00E48329 /* PHOpenSettingsAction.swift */,
 				E7324EC91C9AF7250065525B /* PHOpenSettingsMenuAction.swift */,
 				E781FB9D1CA19BA800A7CFCE /* PHStartAtLoginAction.swift */,
@@ -357,15 +379,13 @@
 				E7CD02781CA98F6900C9FA7B /* PHBundle.swift */,
 				E7B017E61CABF3AC0019E654 /* PHCallbacks.swift */,
 				E7E423971C98371300EF464D /* PHDateFormatter.swift */,
-				E7BC088F1C97246E00990066 /* PHKeychain.swift */,
-				E72394DE1CA909F2000F4070 /* PHPostFetcher.swift */,
 				E706618C1CA2E70600BF8F36 /* PHPostsDataSource.swift */,
-				E75900C71C9C06CE003C15B9 /* PHSeenPosts.swift */,
 				E79130931CB5072B009AAB9B /* PHShareMessage.swift */,
 				E7B017D71CABE66A0019E654 /* PHStatusBarUpdater.swift */,
-				E7324ECE1C9B481F0065525B /* PHUserDefaults.swift */,
 				E7F3E9DC1CC62B2700DA9A97 /* PHPostSorter.swift */,
-				E7F3EA2F1CC6570700DA9A97 /* PHAppContext.swift */,
+				E732F46B1CD0FDE400F57DEA /* PHSettings.swift */,
+				E779A12F1CD23749002C69D9 /* PHDefaults.swift */,
+				E765F7891CD8D5430044CE41 /* PHSeenPosts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -394,15 +414,14 @@
 			isa = PBXGroup;
 			children = (
 				E75900D41C9C8725003C15B9 /* Support */,
-				E7E423991C98375700EF464D /* PHDateFormatterTests.swift */,
-				E7BC08991C974F1100990066 /* PHKeychainTests.swift */,
-				E705834F1CAD42F10046D2A9 /* PHPostDataSourceTests.swift */,
-				E7B017EF1CAC14EA0019E654 /* PHPostFetcherTests.swift */,
-				E75900BC1C9BF8D8003C15B9 /* PHPostViewModelTests.swift */,
-				E75900CB1C9C0AC4003C15B9 /* PHSeenPostsTests.swift */,
 				E7BC08951C973EF400990066 /* PHTokenTests.swift */,
-				E7324ED11C9B4C760065525B /* PHUserDefaultsTests.swift */,
-				E7F3EA2D1CC62E8300DA9A97 /* PHPostSorterTests.swift */,
+				E736DBC81CDA1C3300C83AA1 /* PHPostsModuleTests.swift */,
+				E736DBD31CDA71D300C83AA1 /* PHPostViewModelTests.swift */,
+				E736DBCA1CDA263C00C83AA1 /* PHSeenPostsModuleTests.swift */,
+				E736DBCC1CDA304D00C83AA1 /* PHSettingsModuleTests.swift */,
+				E736DBD01CDA548C00C83AA1 /* PHDateFormatterTests.swift */,
+				E736DBD71CDA736B00C83AA1 /* PHPostDataSourceTests.swift */,
+				E736DBD51CDA733900C83AA1 /* PHPostSorterTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -423,6 +442,47 @@
 				E72DBA661CA17F1B0049F83A /* PHPreferencesWindowControllerProtocol.swift */,
 			);
 			path = PHSettings;
+			sourceTree = "<group>";
+		};
+		E736DBBF1CDA186800C83AA1 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				E732F4691CD0F4B200F57DEA /* PHAppState.swift */,
+				E765F7861CD8D4BA0044CE41 /* PHAppStatePosts.swift */,
+				E732F46D1CD1009400F57DEA /* PHAppReducer.swift */,
+			);
+			name = States;
+			sourceTree = "<group>";
+		};
+		E736DBC01CDA187300C83AA1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E732F4711CD1016A00F57DEA /* PHSettingsModule.swift */,
+				E78D36CD1CD27410001BF122 /* PHPostsModule.swift */,
+				E765F78C1CD8D5970044CE41 /* PHSeenPostsModule.swift */,
+				E736DBAA1CD9256D00C83AA1 /* PHTokenModule.swift */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		E736DBC11CDA188E00C83AA1 /* Opearations */ = {
+			isa = PBXGroup;
+			children = (
+				E765F7821CD8CF990044CE41 /* PHLoadPostOperation.swift */,
+				E765F78F1CD8D8690044CE41 /* PHMarkAsSeenOperation.swift */,
+				E736DBAC1CD9257D00C83AA1 /* PHTokenOperation.swift */,
+				E736DBBC1CD9FA8900C83AA1 /* PHAPIOperation.swift */,
+				E736DBC31CDA195F00C83AA1 /* PHOpenPostOperation.swift */,
+			);
+			name = Opearations;
+			sourceTree = "<group>";
+		};
+		E736DBC21CDA18A000C83AA1 /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				E736DBB91CD9E44E00C83AA1 /* PHMiddleware.swift */,
+			);
+			name = Middleware;
 			sourceTree = "<group>";
 		};
 		E75900B91C9BF87F003C15B9 /* ViewModels */ = {
@@ -481,6 +541,10 @@
 		E76ED6371C96BD0C005B3EC7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				E736DBBF1CDA186800C83AA1 /* States */,
+				E736DBC01CDA187300C83AA1 /* Modules */,
+				E736DBC11CDA188E00C83AA1 /* Opearations */,
+				E736DBC21CDA18A000C83AA1 /* Middleware */,
 				E72526BC1C96C07100942F0E /* Actions */,
 				E75F5EB21CA40511003B6D60 /* Categories */,
 				E781FB9A1CA18E0B00A7CFCE /* Components */,
@@ -774,7 +838,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\n\nLOCATION=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n\ncodesign --verbose --force --sign \"$CODE_SIGN_IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"\n\nfi";
+			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n\ncodesign --verbose --force --sign \"$CODE_SIGN_IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"\n";
 		};
 		F3BE1E1634598C8378AFC5A4 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -801,64 +865,71 @@
 				E7F3EA021CC62D0600DA9A97 /* PHPreferencesWindowController.swift in Sources */,
 				E7F3EA181CC62D3C00DA9A97 /* LLManager.m in Sources */,
 				E7F3E9E21CC62C9400DA9A97 /* PHTokenTests.swift in Sources */,
+				E736DBD41CDA71D300C83AA1 /* PHPostViewModelTests.swift in Sources */,
 				E7F3EA061CC62D0600DA9A97 /* PHPostListViewController.swift in Sources */,
 				E7F3EA081CC62D0B00DA9A97 /* NSError+ProductHunt.swift in Sources */,
 				E7F3EA171CC62D1B00DA9A97 /* AppDelegate.swift in Sources */,
 				E7F3E9E91CC62CA300DA9A97 /* XCTestCase+ProductHunt.swift in Sources */,
 				E7F3EA001CC62CEF00DA9A97 /* PHAPI.swift in Sources */,
 				E7F3EA241CC62D6A00DA9A97 /* PHSeenView.swift in Sources */,
+				E736DBD61CDA733900C83AA1 /* PHPostSorterTests.swift in Sources */,
+				E736DBBE1CD9FA8900C83AA1 /* PHAPIOperation.swift in Sources */,
 				E7F3E9FE1CC62CE800DA9A97 /* PHToken.swift in Sources */,
 				E7F3EA121CC62D1100DA9A97 /* PHOpenSettingsAction.swift in Sources */,
+				E736DBCB1CDA263C00C83AA1 /* PHSeenPostsModuleTests.swift in Sources */,
 				E7F3EA091CC62D0B00DA9A97 /* NSImage+ProductHunt.swift in Sources */,
+				E765F78B1CD8D5430044CE41 /* PHSeenPosts.swift in Sources */,
 				E7F3EA221CC62D6A00DA9A97 /* PHScrollView.swift in Sources */,
+				E779A12B1CD2339C002C69D9 /* PHAppState.swift in Sources */,
 				E7F3EA201CC62D6A00DA9A97 /* PHLoadingView.swift in Sources */,
+				E765F7851CD8D1580044CE41 /* PHLoadPostOperation.swift in Sources */,
 				E7F3EA101CC62D1100DA9A97 /* PHShareAction.swift in Sources */,
-				E7F3E9E71CC62C9E00DA9A97 /* PHKeychainTests.swift in Sources */,
+				E736DBCD1CDA304D00C83AA1 /* PHSettingsModuleTests.swift in Sources */,
 				E7F3EA011CC62CEF00DA9A97 /* PHAPIEndpoint.swift in Sources */,
-				E7F3E9F01CC62CCB00DA9A97 /* PHSeenPosts.swift in Sources */,
 				E7F3E9EF1CC62CC900DA9A97 /* PHShareMessage.swift in Sources */,
 				E7F3E9EA1CC62CA500DA9A97 /* PHTestCase.swift in Sources */,
+				E78D36CF1CD27410001BF122 /* PHPostsModule.swift in Sources */,
 				E7F3EA0F1CC62D1100DA9A97 /* PHPopoverAction.swift in Sources */,
+				E736DBBB1CD9E44E00C83AA1 /* PHMiddleware.swift in Sources */,
 				E723F2541CBBC6BA00E46A7D /* PHConfiguration.m in Sources */,
+				E736DBD11CDA548C00C83AA1 /* PHDateFormatterTests.swift in Sources */,
 				E7F3E9EE1CC62CC600DA9A97 /* PHStatusBarUpdater.swift in Sources */,
 				E7F3EA211CC62D6A00DA9A97 /* PHPostCell.swift in Sources */,
-				E7F3E9E31CC62C9600DA9A97 /* PHSeenPostsTests.swift in Sources */,
-				E7F3E9E61CC62C9C00DA9A97 /* PHPostDataSourceTests.swift in Sources */,
-				E7F3EA111CC62D1100DA9A97 /* PHOpenPostAction.swift in Sources */,
 				E7F3E9F11CC62CCD00DA9A97 /* PHPostsDataSource.swift in Sources */,
+				E736DBC91CDA1C3300C83AA1 /* PHPostsModuleTests.swift in Sources */,
 				E7F3EA231CC62D6A00DA9A97 /* PHSectionCell.swift in Sources */,
 				E7F3EA0C1CC62D1100DA9A97 /* PHFirstLaunchAction.swift in Sources */,
+				E736DBAE1CD9279300C83AA1 /* PHTokenModule.swift in Sources */,
 				E7F3E9FB1CC62CE800DA9A97 /* PHPost.swift in Sources */,
 				E7F3E9EB1CC62CA700DA9A97 /* PHFakeFactory.swift in Sources */,
-				E7F3EA0D1CC62D1100DA9A97 /* PHGetTokenAction.swift in Sources */,
+				E779A12D1CD233A1002C69D9 /* PHSettingsModule.swift in Sources */,
 				E7F3EA041CC62D0600DA9A97 /* PHAdvancedSettingsViewController.swift in Sources */,
+				E736DBD81CDA736B00C83AA1 /* PHPostDataSourceTests.swift in Sources */,
 				E7F3E9FF1CC62CE800DA9A97 /* PHTokenFactory.swift in Sources */,
 				E7F3EA051CC62D0600DA9A97 /* PHGeneralSettingsViewController.swift in Sources */,
 				E7F3E9FC1CC62CE800DA9A97 /* PHPostFactory.swift in Sources */,
 				E7F3EA071CC62D0B00DA9A97 /* NSColor+ProductHunt.swift in Sources */,
+				E779A1311CD23749002C69D9 /* PHDefaults.swift in Sources */,
+				E765F78E1CD8D5970044CE41 /* PHSeenPostsModule.swift in Sources */,
 				E7F3E9FA1CC62CE400DA9A97 /* PHPostViewModel.swift in Sources */,
 				E7F3E9F91CC62CDF00DA9A97 /* PHBundle.swift in Sources */,
-				E7F3E9E81CC62CA000DA9A97 /* PHDateFormatterTests.swift in Sources */,
-				E7F3E9E11CC62C9100DA9A97 /* PHUserDefaultsTests.swift in Sources */,
 				E7F3EA031CC62D0600DA9A97 /* PHPreferencesWindowControllerProtocol.swift in Sources */,
-				E7F3EA311CC6570700DA9A97 /* PHAppContext.swift in Sources */,
 				E7F3EA151CC62D1100DA9A97 /* PHOpenProductHuntAction.swift in Sources */,
 				E7F3EA0E1CC62D1100DA9A97 /* PHOpenURLAction.swift in Sources */,
 				E7F3EA161CC62D1100DA9A97 /* PHScheduleAsSeenAction.swift in Sources */,
-				E7F3E9F61CC62CD800DA9A97 /* PHKeychain.swift in Sources */,
-				E7F3E9E51CC62C9A00DA9A97 /* PHPostFetcherTests.swift in Sources */,
+				E779A12C1CD2339E002C69D9 /* PHAppReducer.swift in Sources */,
+				E765F7911CD8D8690044CE41 /* PHMarkAsSeenOperation.swift in Sources */,
+				E779A12E1CD233AE002C69D9 /* PHSettings.swift in Sources */,
+				E765F7881CD8D4BA0044CE41 /* PHAppStatePosts.swift in Sources */,
+				E736DBC51CDA195F00C83AA1 /* PHOpenPostOperation.swift in Sources */,
 				E7F3E9FD1CC62CE800DA9A97 /* PHSection.swift in Sources */,
-				E7F3E9E41CC62C9800DA9A97 /* PHPostViewModelTests.swift in Sources */,
 				E7F3EA131CC62D1100DA9A97 /* PHOpenSettingsMenuAction.swift in Sources */,
 				E7F3E9F81CC62CDD00DA9A97 /* PHCallbacks.swift in Sources */,
 				E7F3E9DE1CC62B2700DA9A97 /* PHPostSorter.swift in Sources */,
 				E7F3EA141CC62D1100DA9A97 /* PHStartAtLoginAction.swift in Sources */,
-				E7F3E9ED1CC62CC400DA9A97 /* PHUserDefaults.swift in Sources */,
-				E7F3E9F41CC62CD400DA9A97 /* PHPostFetcher.swift in Sources */,
 				E7F3EA0A1CC62D0B00DA9A97 /* NSButton+ProductHunt.swift in Sources */,
 				E7F3EA1F1CC62D6A00DA9A97 /* PHButton.swift in Sources */,
 				E7F3E9F71CC62CDA00DA9A97 /* PHDateFormatter.swift in Sources */,
-				E7F3EA2E1CC62E8300DA9A97 /* PHPostSorterTests.swift in Sources */,
 				E7F3E9EC1CC62CA900DA9A97 /* PHFakeEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -867,56 +938,65 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E75900CE1C9C141E003C15B9 /* PHOpenPostAction.swift in Sources */,
 				E7F3E9D61CC5189700DA9A97 /* NSButton+ProductHunt.swift in Sources */,
 				E7CD02791CA98F6900C9FA7B /* PHBundle.swift in Sources */,
-				E7F3EA301CC6570700DA9A97 /* PHAppContext.swift in Sources */,
 				E75900BB1C9BF88D003C15B9 /* PHPostViewModel.swift in Sources */,
 				E706618D1CA2E70600BF8F36 /* PHPostsDataSource.swift in Sources */,
 				E791308C1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift in Sources */,
 				E7E4239D1C98575D00EF464D /* PHPostFactory.swift in Sources */,
+				E779A1301CD23749002C69D9 /* PHDefaults.swift in Sources */,
 				E7324EC41C9AE3220065525B /* PHLoadingView.swift in Sources */,
+				E732F4721CD1016A00F57DEA /* PHSettingsModule.swift in Sources */,
 				E7BC08941C973D3200990066 /* PHTokenFactory.swift in Sources */,
 				E7B017E71CABF3AC0019E654 /* PHCallbacks.swift in Sources */,
 				E7F3E9D31CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.swift in Sources */,
+				E736DBAB1CD9256D00C83AA1 /* PHTokenModule.swift in Sources */,
+				E732F46C1CD0FDE400F57DEA /* PHSettings.swift in Sources */,
 				E7E423981C98371300EF464D /* PHDateFormatter.swift in Sources */,
 				E72DBA671CA17F1B0049F83A /* PHPreferencesWindowControllerProtocol.swift in Sources */,
 				E7EBBA6D1CAA5A8A00C09770 /* NSError+ProductHunt.swift in Sources */,
-				E75900ED1CA027D4003C15B9 /* PHGetTokenAction.swift in Sources */,
 				E75F5EB61CA4383F003B6D60 /* PHButton.swift in Sources */,
 				E7CF19B71CA9764300535CC4 /* PHPopoverAction.swift in Sources */,
 				E7324EC61C9AF2F50065525B /* PHScrollView.swift in Sources */,
 				E7A85BB21CA040BE00E48329 /* PHOpenSettingsAction.swift in Sources */,
 				E78A30E61CA2930200987B4F /* LLManager.m in Sources */,
 				E7324EBE1C99C8AD0065525B /* PHOpenURLAction.swift in Sources */,
+				E765F78A1CD8D5430044CE41 /* PHSeenPosts.swift in Sources */,
 				E7B017D81CABE66A0019E654 /* PHStatusBarUpdater.swift in Sources */,
 				E79130921CB436E3009AAB9B /* PHShareAction.swift in Sources */,
 				E72526D11C96E54C00942F0E /* PHAPI.swift in Sources */,
+				E765F7871CD8D4BA0044CE41 /* PHAppStatePosts.swift in Sources */,
 				E7E423961C98342100EF464D /* PHPost.swift in Sources */,
+				E765F78D1CD8D5970044CE41 /* PHSeenPostsModule.swift in Sources */,
 				E7E0C0FB1CC0C8BA002D0085 /* PHScheduleAsSeenAction.swift in Sources */,
 				E72DBA641CA17EC20049F83A /* PHPreferencesWindowController.swift in Sources */,
+				E732F46A1CD0F4B200F57DEA /* PHAppState.swift in Sources */,
 				E723F2531CBBC6BA00E46A7D /* PHConfiguration.m in Sources */,
+				E765F7901CD8D8690044CE41 /* PHMarkAsSeenOperation.swift in Sources */,
+				E736DBBA1CD9E44E00C83AA1 /* PHMiddleware.swift in Sources */,
 				E79130941CB5072B009AAB9B /* PHShareMessage.swift in Sources */,
+				E736DBC41CDA195F00C83AA1 /* PHOpenPostOperation.swift in Sources */,
+				E736DBBD1CD9FA8900C83AA1 /* PHAPIOperation.swift in Sources */,
 				E781FB9E1CA19BA800A7CFCE /* PHStartAtLoginAction.swift in Sources */,
 				E7F3E9DD1CC62B2700DA9A97 /* PHPostSorter.swift in Sources */,
 				E781FB9C1CA198C000A7CFCE /* PHFirstLaunchAction.swift in Sources */,
-				E75900C81C9C06CE003C15B9 /* PHSeenPosts.swift in Sources */,
+				E78D36CE1CD27410001BF122 /* PHPostsModule.swift in Sources */,
+				E732F46E1CD1009400F57DEA /* PHAppReducer.swift in Sources */,
 				E7FC79851CC0BEA100FBEAC5 /* PHOpenProductHuntAction.swift in Sources */,
 				E7BC08921C973D2A00990066 /* PHToken.swift in Sources */,
 				E7324ED41C9B51180065525B /* PHSeenView.swift in Sources */,
-				E7324ECF1C9B481F0065525B /* PHUserDefaults.swift in Sources */,
 				E7A94CB51CC0D432008606AB /* KPCScaleToFillNSImageView.m in Sources */,
 				E75F5EB41CA40521003B6D60 /* NSColor+ProductHunt.swift in Sources */,
 				E72DBA6A1CA180920049F83A /* PHGeneralSettingsViewController.swift in Sources */,
 				E7324EBC1C999BA40065525B /* PHSectionCell.swift in Sources */,
 				E72526D81C96EB9200942F0E /* PHAPIEndpoint.swift in Sources */,
-				E7BC08901C97246E00990066 /* PHKeychain.swift in Sources */,
 				E7E423921C982B9600EF464D /* PHPostCell.swift in Sources */,
+				E765F7841CD8D1580044CE41 /* PHLoadPostOperation.swift in Sources */,
 				E72526C71C96C64700942F0E /* PHPostListViewController.swift in Sources */,
 				E7EBBA6F1CAA710000C09770 /* PHSection.swift in Sources */,
-				E72394DF1CA909F2000F4070 /* PHPostFetcher.swift in Sources */,
 				E7324ECA1C9AF7250065525B /* PHOpenSettingsMenuAction.swift in Sources */,
 				E76ED6391C96BD0C005B3EC7 /* AppDelegate.swift in Sources */,
+				E736DBAD1CD9257D00C83AA1 /* PHTokenOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

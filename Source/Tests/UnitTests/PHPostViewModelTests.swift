@@ -7,18 +7,16 @@
 //
 
 import XCTest
+import ReSwift
 
 class PHPostViewModelTests: PHTestCase {
-
-    override func setUp() {
-        super.setUp()
-        PHUserDefaults.resetUserDefaults()
-    }
 
     func testThatRerurnsTitle() {
         let post = fake.post()
 
-        let model = PHPostViewModel(withPost: post)
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+
+        let model = PHPostViewModel(withPost: post, store: store)
 
         XCTAssertTrue(model.title == post.title)
     }
@@ -26,7 +24,9 @@ class PHPostViewModelTests: PHTestCase {
     func testThatReturnsThumbnailUrl() {
         let post = fake.post()
 
-        let model = PHPostViewModel(withPost: post)
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+
+        let model = PHPostViewModel(withPost: post, store: store)
 
         XCTAssertNotNil(model.thumbnailUrl)
     }
@@ -34,7 +34,9 @@ class PHPostViewModelTests: PHTestCase {
     func testThatRerurnsTagline() {
         let post = fake.post()
 
-        let model = PHPostViewModel(withPost: post)
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+
+        let model = PHPostViewModel(withPost: post, store: store)
 
         XCTAssertTrue(model.tagline == post.tagline)
     }
@@ -42,9 +44,11 @@ class PHPostViewModelTests: PHTestCase {
     func testThatSeenIsTrueIfPostIsOlderThanOneDay() {
         let post = fake.post(1.days)
 
-        PHSeenPosts.markAsSeen(post)
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
 
-        let model = PHPostViewModel(withPost: post)
+        let model = PHPostViewModel(withPost: post, store: store)
+
+        store.dispatch( PHMarkPostsAsSeenAction(posts: [post]) )
 
         XCTAssertTrue(model.isSeen)
     }
@@ -52,7 +56,9 @@ class PHPostViewModelTests: PHTestCase {
     func testThatSeenIsFalseIfNotInInteractions() {
         let post = fake.post()
 
-        let model = PHPostViewModel(withPost: post)
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+
+        let model = PHPostViewModel(withPost: post, store: store)
 
         XCTAssertFalse(model.isSeen)
     }
@@ -60,9 +66,11 @@ class PHPostViewModelTests: PHTestCase {
     func testThatSeenIsTrueIfPostIsInInteractions() {
         let post = fake.post()
 
-        PHSeenPosts.markAsSeen(post)
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
 
-        let model = PHPostViewModel(withPost: post)
+        let model = PHPostViewModel(withPost: post, store: store)
+
+        store.dispatch( PHMarkPostsAsSeenAction(posts: [post]) )
 
         XCTAssertTrue(model.isSeen)
     }
@@ -70,7 +78,9 @@ class PHPostViewModelTests: PHTestCase {
     func testThatReturnsVotesCount() {
         let post = fake.post(0.seconds, votes: 10, commentsCount: 10)
 
-        let model = PHPostViewModel(withPost: post)
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+
+        let model = PHPostViewModel(withPost: post, store: store)
 
         XCTAssertTrue(model.votesCount == "10")
     }
@@ -78,7 +88,9 @@ class PHPostViewModelTests: PHTestCase {
     func testThatReturnsCommentsCount() {
         let post = fake.post(0.seconds, votes: 10, commentsCount: 10)
 
-        let model = PHPostViewModel(withPost: post)
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+
+        let model = PHPostViewModel(withPost: post, store: store)
 
         XCTAssertTrue(model.commentsCount == "10")
     }
