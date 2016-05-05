@@ -12,8 +12,9 @@ import SwiftyTimer
 
 class PHTestCase: XCTestCase {
 
-    var endpoint = PHAPIFakeEndpoint()
     var fake = PHFakeFactory.sharedInstance
+    
+    var endpoint = PHAPIFakeEndpoint(token: PHFakeFactory.sharedInstance.token())
 
     override func setUp() {
         super.setUp()
@@ -24,5 +25,4 @@ class PHTestCase: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
-
 }

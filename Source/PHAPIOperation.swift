@@ -37,7 +37,8 @@ class PHAPIOperation {
         api.getToken { (token, error) in
             if let token = token {
                 // TODO: Other mechanism to update token
-                api.endpoint.updateAuthorizationToken(token)
+
+                api.endpoint = PHAPIEndpoint(token: token)
                 store.dispatch( PHTokenGetAction(token: token) )
             }
 

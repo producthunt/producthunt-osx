@@ -12,7 +12,7 @@ class PHAPI {
 
     static let sharedInstance = PHAPI()
 
-    var endpoint = PHAPIEndpoint()
+    var endpoint = PHAPIEndpoint(token: store.state.token)
 
     private(set) var isThereOngoingRequest = false
 

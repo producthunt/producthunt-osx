@@ -31,7 +31,6 @@
 		E732F46E1CD1009400F57DEA /* PHAppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F46D1CD1009400F57DEA /* PHAppReducer.swift */; };
 		E732F4721CD1016A00F57DEA /* PHSettingsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F4711CD1016A00F57DEA /* PHSettingsModule.swift */; };
 		E736DBAB1CD9256D00C83AA1 /* PHTokenModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBAA1CD9256D00C83AA1 /* PHTokenModule.swift */; };
-		E736DBAD1CD9257D00C83AA1 /* PHTokenOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBAC1CD9257D00C83AA1 /* PHTokenOperation.swift */; };
 		E736DBAE1CD9279300C83AA1 /* PHTokenModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBAA1CD9256D00C83AA1 /* PHTokenModule.swift */; };
 		E736DBBA1CD9E44E00C83AA1 /* PHMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBB91CD9E44E00C83AA1 /* PHMiddleware.swift */; };
 		E736DBBB1CD9E44E00C83AA1 /* PHMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBB91CD9E44E00C83AA1 /* PHMiddleware.swift */; };
@@ -218,7 +217,6 @@
 		E732F46D1CD1009400F57DEA /* PHAppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAppReducer.swift; sourceTree = "<group>"; };
 		E732F4711CD1016A00F57DEA /* PHSettingsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSettingsModule.swift; sourceTree = "<group>"; };
 		E736DBAA1CD9256D00C83AA1 /* PHTokenModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHTokenModule.swift; sourceTree = "<group>"; };
-		E736DBAC1CD9257D00C83AA1 /* PHTokenOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHTokenOperation.swift; sourceTree = "<group>"; };
 		E736DBB91CD9E44E00C83AA1 /* PHMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHMiddleware.swift; sourceTree = "<group>"; };
 		E736DBBC1CD9FA8900C83AA1 /* PHAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAPIOperation.swift; sourceTree = "<group>"; };
 		E736DBC31CDA195F00C83AA1 /* PHOpenPostOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHOpenPostOperation.swift; sourceTree = "<group>"; };
@@ -470,7 +468,6 @@
 			children = (
 				E765F7821CD8CF990044CE41 /* PHLoadPostOperation.swift */,
 				E765F78F1CD8D8690044CE41 /* PHMarkAsSeenOperation.swift */,
-				E736DBAC1CD9257D00C83AA1 /* PHTokenOperation.swift */,
 				E736DBBC1CD9FA8900C83AA1 /* PHAPIOperation.swift */,
 				E736DBC31CDA195F00C83AA1 /* PHOpenPostOperation.swift */,
 			);
@@ -996,7 +993,6 @@
 				E7EBBA6F1CAA710000C09770 /* PHSection.swift in Sources */,
 				E7324ECA1C9AF7250065525B /* PHOpenSettingsMenuAction.swift in Sources */,
 				E76ED6391C96BD0C005B3EC7 /* AppDelegate.swift in Sources */,
-				E736DBAD1CD9257D00C83AA1 /* PHTokenOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
