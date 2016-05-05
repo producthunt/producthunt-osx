@@ -47,6 +47,8 @@ class PHPostListViewController: NSViewController, NSTableViewDataSource, NSTable
         updateUITimer = NSTimer.every(15.seconds) { [weak self] in self?.updateUI() }
 
         updateUI()
+
+        PHAnalitycsOperation.performTrackVisit("home")
     }
 
     override func viewWillDisappear() {

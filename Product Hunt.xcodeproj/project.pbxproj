@@ -73,6 +73,18 @@
 		E791308C1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E791308B1CB3A1EA009AAB9B /* NSImage+ProductHunt.swift */; };
 		E79130921CB436E3009AAB9B /* PHShareAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79130911CB436E3009AAB9B /* PHShareAction.swift */; };
 		E79130941CB5072B009AAB9B /* PHShareMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79130931CB5072B009AAB9B /* PHShareMessage.swift */; };
+		E797BEA11CDB4DAB00EB0D82 /* PHAnalitycs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797BEA01CDB4DAB00EB0D82 /* PHAnalitycs.swift */; };
+		E797BEA31CDB53B900EB0D82 /* PHAnalitycsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797BEA21CDB53B900EB0D82 /* PHAnalitycsModule.swift */; };
+		E797BEA41CDB53B900EB0D82 /* PHAnalitycsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797BEA21CDB53B900EB0D82 /* PHAnalitycsModule.swift */; };
+		E797BEA61CDB542600EB0D82 /* PHAnalitycsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797BEA51CDB542600EB0D82 /* PHAnalitycsOperation.swift */; };
+		E797BEA71CDB542600EB0D82 /* PHAnalitycsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797BEA51CDB542600EB0D82 /* PHAnalitycsOperation.swift */; };
+		E797BEA81CDB54C300EB0D82 /* PHAnalitycs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797BEA01CDB4DAB00EB0D82 /* PHAnalitycs.swift */; };
+		E797BEAA1CDB58DA00EB0D82 /* PHAnalitycsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797BEA91CDB58DA00EB0D82 /* PHAnalitycsAPI.swift */; };
+		E797BEAB1CDB58DA00EB0D82 /* PHAnalitycsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797BEA91CDB58DA00EB0D82 /* PHAnalitycsAPI.swift */; };
+		E797BEAD1CDB58E700EB0D82 /* PHAnalitycsAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797BEAC1CDB58E700EB0D82 /* PHAnalitycsAPIEndpoint.swift */; };
+		E797BEAE1CDB58E700EB0D82 /* PHAnalitycsAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797BEAC1CDB58E700EB0D82 /* PHAnalitycsAPIEndpoint.swift */; };
+		E797BEB01CDB644A00EB0D82 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797BEAF1CDB644A00EB0D82 /* Credentials.swift */; };
+		E797BEB11CDB644A00EB0D82 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797BEAF1CDB644A00EB0D82 /* Credentials.swift */; };
 		E7A85BB21CA040BE00E48329 /* PHOpenSettingsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A85BB11CA040BE00E48329 /* PHOpenSettingsAction.swift */; };
 		E7A94CB51CC0D432008606AB /* KPCScaleToFillNSImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A94CB41CC0D432008606AB /* KPCScaleToFillNSImageView.m */; };
 		E7B017D81CABE66A0019E654 /* PHStatusBarUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B017D71CABE66A0019E654 /* PHStatusBarUpdater.swift */; };
@@ -189,7 +201,6 @@
 		E34B14744B9FFB01A730F6BE /* Pods_ProductHuntTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductHuntTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E706618C1CA2E70600BF8F36 /* PHPostsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostsDataSource.swift; sourceTree = "<group>"; };
 		E708BED11CB6FBDA0068D97B /* ProductHuntTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductHuntTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E723F2501CBBC4E600E46A7D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		E723F2511CBBC6BA00E46A7D /* PHConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHConfiguration.h; sourceTree = "<group>"; };
 		E723F2521CBBC6BA00E46A7D /* PHConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHConfiguration.m; sourceTree = "<group>"; };
 		E723F2551CBBC82700E46A7D /* Keys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
@@ -250,6 +261,14 @@
 		E79130911CB436E3009AAB9B /* PHShareAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHShareAction.swift; sourceTree = "<group>"; };
 		E79130931CB5072B009AAB9B /* PHShareMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHShareMessage.swift; sourceTree = "<group>"; };
 		E79659391C9708090010F358 /* XCTestCase+ProductHunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+ProductHunt.swift"; sourceTree = "<group>"; };
+		E797BEA01CDB4DAB00EB0D82 /* PHAnalitycs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAnalitycs.swift; sourceTree = "<group>"; };
+		E797BEA21CDB53B900EB0D82 /* PHAnalitycsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAnalitycsModule.swift; sourceTree = "<group>"; };
+		E797BEA51CDB542600EB0D82 /* PHAnalitycsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAnalitycsOperation.swift; sourceTree = "<group>"; };
+		E797BEA91CDB58DA00EB0D82 /* PHAnalitycsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAnalitycsAPI.swift; sourceTree = "<group>"; };
+		E797BEAC1CDB58E700EB0D82 /* PHAnalitycsAPIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAnalitycsAPIEndpoint.swift; sourceTree = "<group>"; };
+		E797BEAF1CDB644A00EB0D82 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		E797BEB21CDB9E6B00EB0D82 /* ConfigRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigRelease.xcconfig; sourceTree = "<group>"; };
+		E797BEB31CDB9E7800EB0D82 /* ConfigDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigDebug.xcconfig; sourceTree = "<group>"; };
 		E7A85BB11CA040BE00E48329 /* PHOpenSettingsAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHOpenSettingsAction.swift; sourceTree = "<group>"; };
 		E7A94CB31CC0D432008606AB /* KPCScaleToFillNSImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPCScaleToFillNSImageView.h; sourceTree = "<group>"; };
 		E7A94CB41CC0D432008606AB /* KPCScaleToFillNSImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPCScaleToFillNSImageView.m; sourceTree = "<group>"; };
@@ -311,7 +330,8 @@
 		E723F2561CBBC86700E46A7D /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				E723F2501CBBC4E600E46A7D /* Config.xcconfig */,
+				E797BEB21CDB9E6B00EB0D82 /* ConfigRelease.xcconfig */,
+				E797BEB31CDB9E7800EB0D82 /* ConfigDebug.xcconfig */,
 				E723F2571CBBC88D00E46A7D /* Keys-Example.xcconfig */,
 				E723F2551CBBC82700E46A7D /* Keys.xcconfig */,
 				E723F2511CBBC6BA00E46A7D /* PHConfiguration.h */,
@@ -365,6 +385,7 @@
 		E72526C91C96DE8600942F0E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E797BE9F1CDB4D7E00EB0D82 /* Analitycs */,
 				E72526D91C96EB9400942F0E /* API */,
 				E7E4239E1C985FD300EF464D /* Domain Objects */,
 				E75900B91C9BF87F003C15B9 /* ViewModels */,
@@ -451,6 +472,7 @@
 				E78D36CD1CD27410001BF122 /* PHPostsModule.swift */,
 				E765F78C1CD8D5970044CE41 /* PHSeenPostsModule.swift */,
 				E736DBAA1CD9256D00C83AA1 /* PHTokenModule.swift */,
+				E797BEA21CDB53B900EB0D82 /* PHAnalitycsModule.swift */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -462,6 +484,7 @@
 				E765F78F1CD8D8690044CE41 /* PHMarkAsSeenOperation.swift */,
 				E736DBBC1CD9FA8900C83AA1 /* PHAPIOperation.swift */,
 				E736DBC31CDA195F00C83AA1 /* PHOpenPostOperation.swift */,
+				E797BEA51CDB542600EB0D82 /* PHAnalitycsOperation.swift */,
 			);
 			name = Opearations;
 			sourceTree = "<group>";
@@ -572,6 +595,17 @@
 				E78A30E91CA2930200987B4F /* LaunchAtLoginHelper.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E797BE9F1CDB4D7E00EB0D82 /* Analitycs */ = {
+			isa = PBXGroup;
+			children = (
+				E797BEA01CDB4DAB00EB0D82 /* PHAnalitycs.swift */,
+				E797BEA91CDB58DA00EB0D82 /* PHAnalitycsAPI.swift */,
+				E797BEAC1CDB58E700EB0D82 /* PHAnalitycsAPIEndpoint.swift */,
+				E797BEAF1CDB644A00EB0D82 /* Credentials.swift */,
+			);
+			name = Analitycs;
 			sourceTree = "<group>";
 		};
 		E7A94CB21CC0D427008606AB /* KPCScaleToFillNSImageView */ = {
@@ -851,6 +885,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E797BEA41CDB53B900EB0D82 /* PHAnalitycsModule.swift in Sources */,
 				E7F3EA021CC62D0600DA9A97 /* PHPreferencesWindowController.swift in Sources */,
 				E7F3EA181CC62D3C00DA9A97 /* LLManager.m in Sources */,
 				E7F3E9E21CC62C9400DA9A97 /* PHTokenTests.swift in Sources */,
@@ -860,6 +895,7 @@
 				E7F3EA171CC62D1B00DA9A97 /* AppDelegate.swift in Sources */,
 				E7F3E9E91CC62CA300DA9A97 /* XCTestCase+ProductHunt.swift in Sources */,
 				E7F3EA001CC62CEF00DA9A97 /* PHAPI.swift in Sources */,
+				E797BEAE1CDB58E700EB0D82 /* PHAnalitycsAPIEndpoint.swift in Sources */,
 				E7F3EA241CC62D6A00DA9A97 /* PHSeenView.swift in Sources */,
 				E736DBD61CDA733900C83AA1 /* PHPostSorterTests.swift in Sources */,
 				E736DBBE1CD9FA8900C83AA1 /* PHAPIOperation.swift in Sources */,
@@ -871,6 +907,7 @@
 				E779A12B1CD2339C002C69D9 /* PHAppState.swift in Sources */,
 				E7F3EA201CC62D6A00DA9A97 /* PHLoadingView.swift in Sources */,
 				E765F7851CD8D1580044CE41 /* PHLoadPostOperation.swift in Sources */,
+				E797BEA71CDB542600EB0D82 /* PHAnalitycsOperation.swift in Sources */,
 				E7F3EA101CC62D1100DA9A97 /* PHShareAction.swift in Sources */,
 				E736DBCD1CDA304D00C83AA1 /* PHSettingsModuleTests.swift in Sources */,
 				E7F3EA011CC62CEF00DA9A97 /* PHAPIEndpoint.swift in Sources */,
@@ -879,6 +916,7 @@
 				E78D36CF1CD27410001BF122 /* PHPostsModule.swift in Sources */,
 				E7F3EA0F1CC62D1100DA9A97 /* PHPopoverAction.swift in Sources */,
 				E736DBBB1CD9E44E00C83AA1 /* PHMiddleware.swift in Sources */,
+				E797BEA81CDB54C300EB0D82 /* PHAnalitycs.swift in Sources */,
 				E723F2541CBBC6BA00E46A7D /* PHConfiguration.m in Sources */,
 				E736DBD11CDA548C00C83AA1 /* PHDateFormatterTests.swift in Sources */,
 				E7F3E9EE1CC62CC600DA9A97 /* PHStatusBarUpdater.swift in Sources */,
@@ -897,6 +935,7 @@
 				E7F3EA051CC62D0600DA9A97 /* PHGeneralSettingsViewController.swift in Sources */,
 				E7F3E9FC1CC62CE800DA9A97 /* PHPostFactory.swift in Sources */,
 				E7F3EA071CC62D0B00DA9A97 /* NSColor+ProductHunt.swift in Sources */,
+				E797BEAB1CDB58DA00EB0D82 /* PHAnalitycsAPI.swift in Sources */,
 				E779A1311CD23749002C69D9 /* PHDefaults.swift in Sources */,
 				E765F78E1CD8D5970044CE41 /* PHSeenPostsModule.swift in Sources */,
 				E7F3E9FA1CC62CE400DA9A97 /* PHPostViewModel.swift in Sources */,
@@ -912,6 +951,7 @@
 				E7F3E9FD1CC62CE800DA9A97 /* PHSection.swift in Sources */,
 				E7F3EA131CC62D1100DA9A97 /* PHOpenSettingsMenuAction.swift in Sources */,
 				E7F3E9F81CC62CDD00DA9A97 /* PHCallbacks.swift in Sources */,
+				E797BEB11CDB644A00EB0D82 /* Credentials.swift in Sources */,
 				E7F3E9DE1CC62B2700DA9A97 /* PHPostSorter.swift in Sources */,
 				E7F3EA141CC62D1100DA9A97 /* PHStartAtLoginAction.swift in Sources */,
 				E7F3EA0A1CC62D0B00DA9A97 /* NSButton+ProductHunt.swift in Sources */,
@@ -949,6 +989,8 @@
 				E7324EBE1C99C8AD0065525B /* PHOpenURLAction.swift in Sources */,
 				E7B017D81CABE66A0019E654 /* PHStatusBarUpdater.swift in Sources */,
 				E79130921CB436E3009AAB9B /* PHShareAction.swift in Sources */,
+				E797BEB01CDB644A00EB0D82 /* Credentials.swift in Sources */,
+				E797BEA31CDB53B900EB0D82 /* PHAnalitycsModule.swift in Sources */,
 				E72526D11C96E54C00942F0E /* PHAPI.swift in Sources */,
 				E765F7871CD8D4BA0044CE41 /* PHAppStatePosts.swift in Sources */,
 				E7E423961C98342100EF464D /* PHPost.swift in Sources */,
@@ -961,14 +1003,17 @@
 				E736DBBA1CD9E44E00C83AA1 /* PHMiddleware.swift in Sources */,
 				E79130941CB5072B009AAB9B /* PHShareMessage.swift in Sources */,
 				E736DBC41CDA195F00C83AA1 /* PHOpenPostOperation.swift in Sources */,
+				E797BEAA1CDB58DA00EB0D82 /* PHAnalitycsAPI.swift in Sources */,
 				E736DBBD1CD9FA8900C83AA1 /* PHAPIOperation.swift in Sources */,
 				E781FB9E1CA19BA800A7CFCE /* PHStartAtLoginAction.swift in Sources */,
 				E7F3E9DD1CC62B2700DA9A97 /* PHPostSorter.swift in Sources */,
+				E797BEA61CDB542600EB0D82 /* PHAnalitycsOperation.swift in Sources */,
 				E781FB9C1CA198C000A7CFCE /* PHFirstLaunchAction.swift in Sources */,
 				E78D36CE1CD27410001BF122 /* PHPostsModule.swift in Sources */,
 				E732F46E1CD1009400F57DEA /* PHAppReducer.swift in Sources */,
 				E7FC79851CC0BEA100FBEAC5 /* PHOpenProductHuntAction.swift in Sources */,
 				E7BC08921C973D2A00990066 /* PHToken.swift in Sources */,
+				E797BEA11CDB4DAB00EB0D82 /* PHAnalitycs.swift in Sources */,
 				E7324ED41C9B51180065525B /* PHSeenView.swift in Sources */,
 				E7A94CB51CC0D432008606AB /* KPCScaleToFillNSImageView.m in Sources */,
 				E75F5EB41CA40521003B6D60 /* NSColor+ProductHunt.swift in Sources */,
@@ -980,6 +1025,7 @@
 				E72526C71C96C64700942F0E /* PHPostListViewController.swift in Sources */,
 				E7EBBA6F1CAA710000C09770 /* PHSection.swift in Sources */,
 				E7324ECA1C9AF7250065525B /* PHOpenSettingsMenuAction.swift in Sources */,
+				E797BEAD1CDB58E700EB0D82 /* PHAnalitycsAPIEndpoint.swift in Sources */,
 				E76ED6391C96BD0C005B3EC7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1070,7 +1116,7 @@
 		};
 		E76ED6561C96BD0C005B3EC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E723F2501CBBC4E600E46A7D /* Config.xcconfig */;
+			baseConfigurationReference = E797BEB31CDB9E7800EB0D82 /* ConfigDebug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1115,7 +1161,7 @@
 		};
 		E76ED6571C96BD0C005B3EC7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E723F2501CBBC4E600E46A7D /* Config.xcconfig */;
+			baseConfigurationReference = E797BEB21CDB9E6B00EB0D82 /* ConfigRelease.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1197,7 +1243,7 @@
 		};
 		E7AC4DFE1CA9435C0099AB0E /* Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E723F2501CBBC4E600E46A7D /* Config.xcconfig */;
+			baseConfigurationReference = E797BEB31CDB9E7800EB0D82 /* ConfigDebug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
