@@ -33,7 +33,7 @@ class PHDefaults: StoreSubscriber {
 
         store.dispatch( PHSettingsSetAction(settings: readSettings()) )
         store.dispatch( PHSeenPostsSetAction(seenPost: readSeenPosts()) )
-        store.dispatch( PHTokenGet(token: readToken()) )
+        store.dispatch( PHTokenGetAction(token: readToken()) )
 
         store.subscribe(self)
     }

@@ -22,7 +22,7 @@ class PHTokenOperation {
                 return
             }
 
-            store.dispatch( PHTokenGet(token: token) )
+            store.dispatch( PHTokenGetAction(token: token) )
         }
     }
 }

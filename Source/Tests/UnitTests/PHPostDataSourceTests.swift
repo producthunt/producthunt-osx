@@ -20,7 +20,7 @@ class PHPostDataSourceTests: PHTestCase {
 
         let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
 
-        store.dispatch( PHTokenGet(token: fake.token() ))
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
 
         let source = PHPostsDataSource(store: store)
         
@@ -34,7 +34,7 @@ class PHPostDataSourceTests: PHTestCase {
 
         let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
 
-        store.dispatch( PHTokenGet(token: fake.token() ))
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
 
         let source = PHPostsDataSource(store: store)
 
@@ -48,7 +48,7 @@ class PHPostDataSourceTests: PHTestCase {
 
         let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
 
-        store.dispatch( PHTokenGet(token: fake.token() ))
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
 
         let source = PHPostsDataSource(store: store)
 
@@ -62,7 +62,7 @@ class PHPostDataSourceTests: PHTestCase {
 
         let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
 
-        store.dispatch( PHTokenGet(token: fake.token() ))
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
 
         let source = PHPostsDataSource(store: store)
 
@@ -77,7 +77,7 @@ class PHPostDataSourceTests: PHTestCase {
 
         let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
 
-        store.dispatch( PHTokenGet(token: fake.token() ))
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
 
         let source = PHPostsDataSource(store: store)
 
@@ -92,7 +92,7 @@ class PHPostDataSourceTests: PHTestCase {
 
         let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
 
-        store.dispatch( PHTokenGet(token: fake.token() ))
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
 
         let source = PHPostsDataSource(store: store)
 
@@ -110,7 +110,7 @@ class PHPostDataSourceTests: PHTestCase {
 
         let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
 
-        store.dispatch( PHTokenGet(token: fake.token() ))
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
 
         store.dispatch( PHSettngsActionFilterCount(filterCount: 50) )
 

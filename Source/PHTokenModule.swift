@@ -9,7 +9,7 @@
 import Foundation
 import ReSwift
 
-struct PHTokenGet: Action {
+struct PHTokenGetAction: Action {
     var token: PHToken
 }
 
@@ -17,7 +17,7 @@ func tokenReducer(action: Action, state: PHToken?) -> PHToken {
     let state = state ?? PHToken(accessToken: "", expirationDate: NSDate(timeIntervalSince1970: 0) )
 
     switch action {
-        case let action as PHTokenGet:
+        case let action as PHTokenGetAction:
             return action.token
 
         default:
