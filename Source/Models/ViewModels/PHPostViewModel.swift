@@ -6,12 +6,12 @@
 //  Copyright © 2016 ProductHunt. All rights reserved.
 //
 
-import Foundation
+import ReSwift
 
 class PHPostViewModel {
 
     var isSeen: Bool {
-        return PHSeenPosts.isSeen(post)
+        return  store.state.seenPosts.isSeen(post)
     }
 
     var title: String {
@@ -39,9 +39,11 @@ class PHPostViewModel {
     }
 
     private var post: PHPost
+    private var store: Store<PHAppState>
     private var formatter = PHDateFormatter()
 
-    init(withPost post: PHPost) {
+    init(withPost post: PHPost, store: Store<PHAppState>) {
         self.post = post
+        self.store = store
     }
 }

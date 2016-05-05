@@ -25,6 +25,10 @@ class PHAPIFakeEndpoint: PHAPIEndpoint {
 
     private var fakes = [PHTestFakeAPIEndpointStub]()
 
+    override init(token: PHToken?) {
+        super.init(token: token)
+    }
+
     func addFake(method: String, url: String, parameters: [String: AnyObject], response: [String: AnyObject]?, error: NSError?)  {
         let stub = PHTestFakeAPIEndpointStub(method: method, url: url, parameters: parameters, response: response, error: error)
         fakes.append(stub)

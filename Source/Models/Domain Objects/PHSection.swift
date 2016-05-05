@@ -10,6 +10,10 @@ import Foundation
 
 struct PHSection {
 
+    static func section(posts: [PHPost]) -> PHSection {
+        return PHSection(day: posts.first!.day, posts: posts)
+    }
+
     var day: String
     var posts: [PHPost]
 

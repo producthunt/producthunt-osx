@@ -17,17 +17,13 @@ class PHAPIEndpoint {
 
     private let manager = AFHTTPSessionManager(baseURL: NSURL(string: "\(kPHEndpointHost)/v1"))
 
-    init() {
+    init(token: PHToken?) {
         manager.responseSerializer  = AFJSONResponseSerializer()
         manager.requestSerializer   = AFJSONRequestSerializer()
 
         manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept")
         manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        updateAuthorizationToken()
-    }
-
-    func updateAuthorizationToken(token: PHToken? = PHKeychain.getToken()) {
         if let token = token {
             manager.requestSerializer.setValue("Bearer \(token.accessToken)", forHTTPHeaderField: "Authorization")
         }

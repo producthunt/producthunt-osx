@@ -10,16 +10,6 @@ import XCTest
 
 class PHTokenTests: PHTestCase {
 
-    override func setUp() {
-        super.setUp()
-        PHUserDefaults.resetUserDefaults()
-    }
-
-    override func tearDown() {
-        PHUserDefaults.resetUserDefaults()
-        super.tearDown()
-    }
-
     func testTokenFactoryRetunsNilIfInvalidAccessToken() {
         let data = ["access_token": NSNull(), "expires_in" : 60]
         XCTAssertNil(PHToken.token(fromDictionary: data))
@@ -38,4 +28,15 @@ class PHTokenTests: PHTestCase {
         XCTAssertEqualWithAccuracy(date.timeIntervalSinceNow, token.expirationDate.timeIntervalSinceNow, accuracy: 0.01)
     }
 
+    func testThatReturnsFalseIfTokenIsExpired() {
+        let token = PHToken(accessToken: "", expirationDate: NSDate(timeIntervalSince1970: 0) )
+
+        XCTAssertFalse(token.isValid)
+    }
+
+    func testThatReturnsTrueIfTokenIsExpired() {
+        let token = PHToken(accessToken: "", expirationDate: NSDate(timeIntervalSinceNow: 100) )
+
+        XCTAssertTrue(token.isValid)
+    }
 }

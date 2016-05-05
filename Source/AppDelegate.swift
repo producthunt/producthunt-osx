@@ -9,6 +9,9 @@
 import Cocoa
 import SwiftyTimer
 import Sparkle
+import ReSwift
+
+let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -21,8 +24,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var settingsWindow = PHPreferencesWindowController()
     var countdownToMarkAsSeen: NSTimer?
 
-    private(set) var statusBarUpdater: PHStatusBarUpdater!
+    private var statusBarUpdater: PHStatusBarUpdater!
     private var updatePostTimer: NSTimer?
+    private let defaults = PHDefaults(store: store)
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         if let button = statusItem.button {
@@ -37,26 +41,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         popover.behavior = .Transient
 
         PHFirstLaunchAction.perform {
-            PHUserDefaults.registerDefaults()
             PHStartAtLoginAction.perform(true)
             
             SUUpdater.sharedUpdater().automaticallyChecksForUpdates = true
             SUUpdater.sharedUpdater().automaticallyDownloadsUpdates = false
         }
 
-        statusBarUpdater = PHStatusBarUpdater(button: statusItem.button)
-        PHAppContext.sharedInstance.addObserver(statusBarUpdater)
+        statusBarUpdater = PHStatusBarUpdater(button: statusItem.button, store: store)
 
-        PHAppContext.sharedInstance.fetcher.loadNewer()
+        PHLoadPostOperation.performNewer()
 
         updatePostTimer = NSTimer.every(10.minutes) {
-            PHAppContext.sharedInstance.fetcher.loadNewer()
+            PHLoadPostOperation.performNewer()
         }
 
-        NSApp.registerForRemoteNotificationTypes(.Alert)
-
         SUUpdater.sharedUpdater().feedURL = NSURL(string: kPHFeedUrl)!
-        SUUpdater.sharedUpdater().updateCheckInterval = 60 * 60 * 24
+        SUUpdater.sharedUpdater().updateCheckInterval = 1.day
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

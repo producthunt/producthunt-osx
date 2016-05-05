@@ -8,8 +8,9 @@
 
 import Cocoa
 import ServiceManagement
+import ReSwift
 
-class PHGeneralSettingsViewController: NSViewController, PHPreferencesWindowControllerProtocol {
+class PHGeneralSettingsViewController: NSViewController, PHPreferencesWindowControllerProtocol, StoreSubscriber {
 
     @IBOutlet weak var startAtLoginButton: NSButton!
     @IBOutlet weak var showsCountButton: NSButton!
@@ -20,44 +21,43 @@ class PHGeneralSettingsViewController: NSViewController, PHPreferencesWindowCont
     var currenSliderValue: Int {
         return Int(5 * Int(round(filterVotesSlider.floatValue / 5.0)))
     }
-    
+
     override func viewWillAppear() {
         super.viewWillAppear()
-
-        startAtLoginButton.setState(forBool: PHUserDefaults.getAutoLogin())
-        showsCountButton.setState(forBool: PHUserDefaults.getShowsCount())
 
         filterVotesSlider.minValue = 0
         filterVotesSlider.maxValue = 100
 
-        filterVotesSlider.integerValue = PHUserDefaults.getFilterCount()
-
         versionLabel.stringValue = "Product Hunt for OSX \(PHBundle.version())"
 
-        updateUI()
+        store.subscribe(self)
+
+        newState(store.state)
+    }
+
+    override func viewWillDisappear() {
+        super.viewWillDisappear()
+        store.unsubscribe(self)
     }
 
     @IBAction func startAtLoginAction(sender: NSButton) {
-        let startAtLogin = sender.boolState
-
-        PHUserDefaults.setAutoLogin(startAtLogin)
-        PHStartAtLoginAction.perform(startAtLogin)
+        store.dispatch( PHSettingsActionAutoLogin(autologin: sender.boolState) )
     }
 
     @IBAction func showPostsCountAction(sender: NSButton) {
-        let showsCount = sender.boolState
-        PHUserDefaults.setShowsCount(showsCount)
-
-        PHAppContext.sharedInstance.notify(.Newer)
+        store.dispatch( PHSettingsActionShowsCount(showsCount: sender.boolState) )
     }
 
     @IBAction func filterSliderValueChanged(sender: NSSlider) {
-        PHUserDefaults.setFilterCount(currenSliderValue)
-        PHAppContext.sharedInstance.notify(.Newer)
-        updateUI()
+        store.dispatch( PHSettngsActionFilterCount(filterCount: currenSliderValue) )
     }
 
-    private func updateUI() {
+    func newState(state: PHAppState) {
+        startAtLoginButton.setState(forBool: state.settings.autologinEnabled)
+        showsCountButton.setState(forBool: state.settings.showsCount)
+
+        filterVotesSlider.integerValue = state.settings.filterCount
+
         filterVotesLabel.stringValue = currenSliderValue == 0 ? "Don't filter out posts by votes" : "Filter out posts with less than \(currenSliderValue) votes"
     }
 

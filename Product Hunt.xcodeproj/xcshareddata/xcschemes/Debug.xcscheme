@@ -37,6 +37,11 @@
                BlueprintName = "ProductHuntTests"
                ReferencedContainer = "container:Product Hunt.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "PHTestCase">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

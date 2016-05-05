@@ -8,16 +8,15 @@
 
 import Foundation
 
-typealias PHAPICompletion       = ((token: PHToken?, error: NSError?) -> ())
-typealias PHAPIPostCompletion   = ((posts: [PHPost]?, error: NSError?) -> ())
-
 class PHAPI {
 
     static let sharedInstance = PHAPI()
 
-    var endpoint = PHAPIEndpoint()
+    var endpoint = PHAPIEndpoint(token: store.state.token)
 
-    func getToken(completion: PHAPICompletion) {
+    private(set) var isThereOngoingRequest = false
+
+    func getToken(completion: PHAPITokenCompletion) {
         let params = ["client_id" : kPHAppID, "client_secret": kPHAppSecret, "grant_type": "client_credentials"]
 
         endpoint.post("oauth/token", parameters: params) { (response, error) -> Void in
@@ -26,28 +25,25 @@ class PHAPI {
     }
 
     func getPosts(daysAgo: Int, completion: PHAPIPostCompletion) {
-            getPosts(daysAgo, retries: 2, completion: completion)
+        getPostsPosted(daysAgo, retries: 20, completion: completion)
     }
 
-    private func getPosts(daysAgo: Int, retries: Int, completion: PHAPIPostCompletion) {
+    private func getPostsPosted(daysAgo: Int, retries: Int, completion: PHAPIPostCompletion) {
         if retries == 0 {
-            completion(posts: nil, error: NSError.unauthorizedError())
+            isThereOngoingRequest = false
+            completion(posts: [], error: NSError.unauthorizedError())
             return
         }
 
-        PHGetTokenAction.perform {
-            self.endpoint.get("posts", parameters: ["days_ago": daysAgo, "search[category]": "all"]) { (response, error) -> Void in
-                if let error = error where NSError.parseError(error) == NSError.unauthorizedError() {
-                    PHKeychain.resetToken()
-                    self.getPosts(daysAgo, retries: retries-1, completion: completion)
-                } else {
-                    guard let response = response, let rawPosts = response["posts"] as? [[String : AnyObject]] else {
-                        completion(posts: nil, error: NSError.parseError(error))
-                        return
-                    }
+        isThereOngoingRequest = true
 
-                    completion(posts: PHPost.posts(fromArray: rawPosts) ?? [PHPost](), error: nil)
-                }
+        self.endpoint.get("posts", parameters: ["days_ago": daysAgo, "search[category]": "all"]) { (response, error) -> Void in
+            self.isThereOngoingRequest = false
+
+            if let response = response, let rawPosts = response["posts"] as? [[String : AnyObject]] {
+                completion(posts: PHPost.posts(fromArray: rawPosts) ?? [PHPost](), error: nil)
+            } else {
+                self.getPostsPosted(daysAgo + 1, retries: retries - 1, completion: completion)
             }
         }
     }

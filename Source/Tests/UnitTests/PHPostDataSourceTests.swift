@@ -7,18 +7,22 @@
 //
 
 import XCTest
+import ReSwift
 
 class PHPostDataSourceTests: PHTestCase {
 
     override func tearDown() {
         super.tearDown()
-        PHUserDefaults.setFilterCount(10)
     }
 
     func testReturnsCountOfRows() {
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [fake.post().description()]], error: nil)
 
-        let source = PHPostsDataSource(context: PHAppContext())
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
+
+        let source = PHPostsDataSource(store: store)
         
         source.loadNewer()
 
@@ -28,7 +32,11 @@ class PHPostDataSourceTests: PHTestCase {
     func testThatReturnsSectionAtIndex() {
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [fake.post().description()]], error: nil)
 
-        let source = PHPostsDataSource(context: PHAppContext())
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
+
+        let source = PHPostsDataSource(store: store)
 
         source.loadNewer()
 
@@ -38,7 +46,11 @@ class PHPostDataSourceTests: PHTestCase {
     func testThatReturnsPostAtIndex() {
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [fake.post().description()]], error: nil)
 
-        let source = PHPostsDataSource(context: PHAppContext())
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
+
+        let source = PHPostsDataSource(store: store)
 
         source.loadNewer()
 
@@ -48,7 +60,11 @@ class PHPostDataSourceTests: PHTestCase {
     func testThatRerurnsTrueIfSectionIsGroup() {
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [fake.post().description()]], error: nil)
 
-        let source = PHPostsDataSource(context: PHAppContext())
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
+
+        let source = PHPostsDataSource(store: store)
 
         source.loadNewer()
 
@@ -59,7 +75,11 @@ class PHPostDataSourceTests: PHTestCase {
     func testLoadsNewer() {
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [fake.post().description()]], error: nil)
 
-        let source = PHPostsDataSource(context: PHAppContext())
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
+
+        let source = PHPostsDataSource(store: store)
 
         source.loadNewer()
 
@@ -68,9 +88,13 @@ class PHPostDataSourceTests: PHTestCase {
 
     func testLoadsOlder() {
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [fake.post().description()]], error: nil)
-        endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 1, "search[category]": "all"], response: ["posts" : [fake.post().description()]], error: nil)
+        endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 1, "search[category]": "all"], response: ["posts" : [fake.post(-1.day, votes: 10, commentsCount: 0).description()]], error: nil)
 
-        let source = PHPostsDataSource(context: PHAppContext())
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
+
+        let source = PHPostsDataSource(store: store)
 
         source.loadNewer()
         source.loadOlder()
@@ -79,14 +103,18 @@ class PHPostDataSourceTests: PHTestCase {
     }
 
     func testThatFiltersPostsWithGivenVoteCount() {
-        PHUserDefaults.setFilterCount(50)
-
         let firstPost = fake.post(0, votes: 51, commentsCount: 0)
         let secondPosts = fake.post(0, votes: 25, commentsCount: 0)
 
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [firstPost.description(), secondPosts.description()]], error: nil)
 
-        let source = PHPostsDataSource(context: PHAppContext())
+        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+
+        store.dispatch( PHTokenGetAction(token: fake.token() ))
+
+        store.dispatch( PHSettngsActionFilterCount(filterCount: 50) )
+
+        let source = PHPostsDataSource(store: store)
 
         source.loadNewer()
 

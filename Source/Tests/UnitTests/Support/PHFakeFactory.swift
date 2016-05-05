@@ -14,19 +14,23 @@ class PHFakeFactory {
 
     private var fakePostId = 0
 
+    func token() -> PHToken {
+        return PHToken(accessToken: "FakeToken", expirationDate: NSDate(timeIntervalSinceNow: 10))
+    }
+
     func post(daysAgo: NSTimeInterval = 0.days, votes: Int = 20, commentsCount: Int = 0) -> PHPost {
         let id          = fakePostId
         let title       = "Title \(fakePostId)"
         let tagline     = "Tagline \(fakePostId)"
         let url         = NSURL(string: "https//example.com/\(fakePostId)")!
-        let day         = createdAt()
+        let day         = daysAgoAsString(daysAgo)
         let redirectUrl = NSURL(string: "https//example.com/\(fakePostId)")!
         
         defer {
             fakePostId += 1
         }
 
-        return PHPost(id: id,title: title, tagline: tagline, thumbnailUrl: url, discussionUrl: url, day: day, votesCount: votes, commentsCount: commentsCount, createdAt: daysAgoAsString(daysAgo), redirectUrl: redirectUrl)
+        return PHPost(id: id,title: title, tagline: tagline, thumbnailUrl: url, discussionUrl: url, day: day, votesCount: votes, commentsCount: commentsCount, createdAt: createdAt(), redirectUrl: redirectUrl)
     }
 
     private func daysAgoAsString(days: NSTimeInterval) -> String {
