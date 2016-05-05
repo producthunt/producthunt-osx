@@ -8,6 +8,12 @@
 
 import ReSwift
 
+struct PHSettings {
+    var autologinEnabled: Bool
+    var showsCount: Bool
+    var filterCount: Int
+}
+
 struct PHSettingsSetAction: Action {
     var settings: PHSettings
 }
@@ -50,10 +56,4 @@ func settingsReducer(action: Action, state: PHSettings?) -> PHSettings {
         default:
             return state
     }
-}
-
-struct PHSettings {
-    var autologinEnabled: Bool
-    var showsCount: Bool
-    var filterCount: Int
 }
