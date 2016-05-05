@@ -11,11 +11,7 @@ import ReSwift
 class PHPostViewModel {
 
     var isSeen: Bool {
-        if PHDateFormatter.daysAgo(post.day) > 0 {
-            return true
-        }
-
-        return  store.state.seenPosts.postIds.contains(post.id)
+        return  store.state.seenPosts.isSeen(post)
     }
 
     var title: String {
