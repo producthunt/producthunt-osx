@@ -27,7 +27,6 @@
 		E7324ECA1C9AF7250065525B /* PHOpenSettingsMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324EC91C9AF7250065525B /* PHOpenSettingsMenuAction.swift */; };
 		E7324ED41C9B51180065525B /* PHSeenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7324ED31C9B51180065525B /* PHSeenView.swift */; };
 		E732F46A1CD0F4B200F57DEA /* PHAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F4691CD0F4B200F57DEA /* PHAppState.swift */; };
-		E732F46C1CD0FDE400F57DEA /* PHSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F46B1CD0FDE400F57DEA /* PHSettings.swift */; };
 		E732F46E1CD1009400F57DEA /* PHAppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F46D1CD1009400F57DEA /* PHAppReducer.swift */; };
 		E732F4721CD1016A00F57DEA /* PHSettingsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F4711CD1016A00F57DEA /* PHSettingsModule.swift */; };
 		E736DBAB1CD9256D00C83AA1 /* PHTokenModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E736DBAA1CD9256D00C83AA1 /* PHTokenModule.swift */; };
@@ -53,8 +52,6 @@
 		E765F7851CD8D1580044CE41 /* PHLoadPostOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F7821CD8CF990044CE41 /* PHLoadPostOperation.swift */; };
 		E765F7871CD8D4BA0044CE41 /* PHAppStatePosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F7861CD8D4BA0044CE41 /* PHAppStatePosts.swift */; };
 		E765F7881CD8D4BA0044CE41 /* PHAppStatePosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F7861CD8D4BA0044CE41 /* PHAppStatePosts.swift */; };
-		E765F78A1CD8D5430044CE41 /* PHSeenPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F7891CD8D5430044CE41 /* PHSeenPosts.swift */; };
-		E765F78B1CD8D5430044CE41 /* PHSeenPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F7891CD8D5430044CE41 /* PHSeenPosts.swift */; };
 		E765F78D1CD8D5970044CE41 /* PHSeenPostsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F78C1CD8D5970044CE41 /* PHSeenPostsModule.swift */; };
 		E765F78E1CD8D5970044CE41 /* PHSeenPostsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F78C1CD8D5970044CE41 /* PHSeenPostsModule.swift */; };
 		E765F7901CD8D8690044CE41 /* PHMarkAsSeenOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765F78F1CD8D8690044CE41 /* PHMarkAsSeenOperation.swift */; };
@@ -65,7 +62,6 @@
 		E779A12B1CD2339C002C69D9 /* PHAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F4691CD0F4B200F57DEA /* PHAppState.swift */; };
 		E779A12C1CD2339E002C69D9 /* PHAppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F46D1CD1009400F57DEA /* PHAppReducer.swift */; };
 		E779A12D1CD233A1002C69D9 /* PHSettingsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F4711CD1016A00F57DEA /* PHSettingsModule.swift */; };
-		E779A12E1CD233AE002C69D9 /* PHSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732F46B1CD0FDE400F57DEA /* PHSettings.swift */; };
 		E779A1301CD23749002C69D9 /* PHDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E779A12F1CD23749002C69D9 /* PHDefaults.swift */; };
 		E779A1311CD23749002C69D9 /* PHDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E779A12F1CD23749002C69D9 /* PHDefaults.swift */; };
 		E781FB9C1CA198C000A7CFCE /* PHFirstLaunchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E781FB9B1CA198C000A7CFCE /* PHFirstLaunchAction.swift */; };
@@ -213,7 +209,6 @@
 		E7324EC91C9AF7250065525B /* PHOpenSettingsMenuAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHOpenSettingsMenuAction.swift; sourceTree = "<group>"; };
 		E7324ED31C9B51180065525B /* PHSeenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSeenView.swift; sourceTree = "<group>"; };
 		E732F4691CD0F4B200F57DEA /* PHAppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAppState.swift; sourceTree = "<group>"; };
-		E732F46B1CD0FDE400F57DEA /* PHSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSettings.swift; sourceTree = "<group>"; };
 		E732F46D1CD1009400F57DEA /* PHAppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAppReducer.swift; sourceTree = "<group>"; };
 		E732F4711CD1016A00F57DEA /* PHSettingsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSettingsModule.swift; sourceTree = "<group>"; };
 		E736DBAA1CD9256D00C83AA1 /* PHTokenModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHTokenModule.swift; sourceTree = "<group>"; };
@@ -235,7 +230,6 @@
 		E75F5EB51CA4383F003B6D60 /* PHButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHButton.swift; sourceTree = "<group>"; };
 		E765F7821CD8CF990044CE41 /* PHLoadPostOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHLoadPostOperation.swift; sourceTree = "<group>"; };
 		E765F7861CD8D4BA0044CE41 /* PHAppStatePosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAppStatePosts.swift; sourceTree = "<group>"; };
-		E765F7891CD8D5430044CE41 /* PHSeenPosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSeenPosts.swift; sourceTree = "<group>"; };
 		E765F78C1CD8D5970044CE41 /* PHSeenPostsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSeenPostsModule.swift; sourceTree = "<group>"; };
 		E765F78F1CD8D8690044CE41 /* PHMarkAsSeenOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHMarkAsSeenOperation.swift; sourceTree = "<group>"; };
 		E76ED6351C96BD0C005B3EC7 /* Product Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Product Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -381,9 +375,7 @@
 				E79130931CB5072B009AAB9B /* PHShareMessage.swift */,
 				E7B017D71CABE66A0019E654 /* PHStatusBarUpdater.swift */,
 				E7F3E9DC1CC62B2700DA9A97 /* PHPostSorter.swift */,
-				E732F46B1CD0FDE400F57DEA /* PHSettings.swift */,
 				E779A12F1CD23749002C69D9 /* PHDefaults.swift */,
-				E765F7891CD8D5430044CE41 /* PHSeenPosts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -875,7 +867,6 @@
 				E7F3EA121CC62D1100DA9A97 /* PHOpenSettingsAction.swift in Sources */,
 				E736DBCB1CDA263C00C83AA1 /* PHSeenPostsModuleTests.swift in Sources */,
 				E7F3EA091CC62D0B00DA9A97 /* NSImage+ProductHunt.swift in Sources */,
-				E765F78B1CD8D5430044CE41 /* PHSeenPosts.swift in Sources */,
 				E7F3EA221CC62D6A00DA9A97 /* PHScrollView.swift in Sources */,
 				E779A12B1CD2339C002C69D9 /* PHAppState.swift in Sources */,
 				E7F3EA201CC62D6A00DA9A97 /* PHLoadingView.swift in Sources */,
@@ -916,7 +907,6 @@
 				E7F3EA161CC62D1100DA9A97 /* PHScheduleAsSeenAction.swift in Sources */,
 				E779A12C1CD2339E002C69D9 /* PHAppReducer.swift in Sources */,
 				E765F7911CD8D8690044CE41 /* PHMarkAsSeenOperation.swift in Sources */,
-				E779A12E1CD233AE002C69D9 /* PHSettings.swift in Sources */,
 				E765F7881CD8D4BA0044CE41 /* PHAppStatePosts.swift in Sources */,
 				E736DBC51CDA195F00C83AA1 /* PHOpenPostOperation.swift in Sources */,
 				E7F3E9FD1CC62CE800DA9A97 /* PHSection.swift in Sources */,
@@ -948,7 +938,6 @@
 				E7B017E71CABF3AC0019E654 /* PHCallbacks.swift in Sources */,
 				E7F3E9D31CC4D52A00DA9A97 /* PHAdvancedSettingsViewController.swift in Sources */,
 				E736DBAB1CD9256D00C83AA1 /* PHTokenModule.swift in Sources */,
-				E732F46C1CD0FDE400F57DEA /* PHSettings.swift in Sources */,
 				E7E423981C98371300EF464D /* PHDateFormatter.swift in Sources */,
 				E72DBA671CA17F1B0049F83A /* PHPreferencesWindowControllerProtocol.swift in Sources */,
 				E7EBBA6D1CAA5A8A00C09770 /* NSError+ProductHunt.swift in Sources */,
@@ -958,7 +947,6 @@
 				E7A85BB21CA040BE00E48329 /* PHOpenSettingsAction.swift in Sources */,
 				E78A30E61CA2930200987B4F /* LLManager.m in Sources */,
 				E7324EBE1C99C8AD0065525B /* PHOpenURLAction.swift in Sources */,
-				E765F78A1CD8D5430044CE41 /* PHSeenPosts.swift in Sources */,
 				E7B017D81CABE66A0019E654 /* PHStatusBarUpdater.swift in Sources */,
 				E79130921CB436E3009AAB9B /* PHShareAction.swift in Sources */,
 				E72526D11C96E54C00942F0E /* PHAPI.swift in Sources */,

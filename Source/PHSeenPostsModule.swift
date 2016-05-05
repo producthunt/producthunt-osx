@@ -36,3 +36,16 @@ func seenPostsReducer(action: Action, state: PHSeenPosts?) -> PHSeenPosts {
             return state
     }
 }
+
+struct PHSeenPosts {
+    var date: NSDate
+    var postIds: Set<Int>
+
+    func isSeen(post: PHPost) -> Bool {
+        if PHDateFormatter.daysAgo(post.day) > 0 {
+            return true
+        }
+
+        return postIds.contains(post.id)
+    }
+}

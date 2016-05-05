@@ -25,9 +25,7 @@ struct PHSettngsActionFilterCount: Action {
 }
 
 func settingsReducer(action: Action, state: PHSettings?) -> PHSettings {
-    guard let state = state else {
-        return PHSettings(autologinEnabled: true, showsCount: true, filterCount: 10)
-    }
+    var state = state ?? PHSettings(autologinEnabled: true, showsCount: true, filterCount: 10)
 
     switch action {
 
@@ -35,15 +33,27 @@ func settingsReducer(action: Action, state: PHSettings?) -> PHSettings {
             return action.settings
 
         case let action as PHSettingsActionAutoLogin:
-            return PHSettings(autologinEnabled: action.autologin, showsCount: state.showsCount, filterCount: state.filterCount)
+            state.autologinEnabled = action.autologin
+
+            return state
 
         case let action as PHSettingsActionShowsCount:
-            return PHSettings(autologinEnabled: state.autologinEnabled, showsCount: action.showsCount, filterCount: state.filterCount)
+            state.showsCount = action.showsCount
+
+            return state
 
         case let action as PHSettngsActionFilterCount:
-            return PHSettings(autologinEnabled: state.autologinEnabled, showsCount: state.showsCount, filterCount: action.filterCount)
+            state.filterCount = action.filterCount
+
+            return state
 
         default:
             return state
     }
+}
+
+struct PHSettings {
+    var autologinEnabled: Bool
+    var showsCount: Bool
+    var filterCount: Int
 }
