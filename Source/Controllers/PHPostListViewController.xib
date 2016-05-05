@@ -27,13 +27,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnReordering="NO" columnSelection="YES" multipleSelection="NO" rowHeight="75" viewBased="YES" id="Qhn-HZ-I1p">
-                                <rect key="frame" x="0.0" y="0.0" width="465" height="455"/>
+                                <rect key="frame" x="0.0" y="0.0" width="451" height="455"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <tableViewGridLines key="gridStyleMask" horizontal="YES"/>
                                 <color key="gridColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn identifier="" editable="NO" width="465" minWidth="100" maxWidth="465" id="ysw-EW-bRM">
+                                    <tableColumn identifier="" editable="NO" width="450" minWidth="100" maxWidth="465" id="ysw-EW-bRM">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -69,7 +69,7 @@
                                                         </connections>
                                                     </imageView>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="369" translatesAutoresizingMaskIntoConstraints="NO" id="HWW-sQ-48n">
-                                                        <rect key="frame" x="81" y="46" width="374" height="17"/>
+                                                        <rect key="frame" x="81" y="48" width="359" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="7as-c6-DU9"/>
                                                         </constraints>
@@ -80,7 +80,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="369" translatesAutoresizingMaskIntoConstraints="NO" id="sE2-4l-YhU">
-                                                        <rect key="frame" x="81" y="27" width="374" height="17"/>
+                                                        <rect key="frame" x="81" y="29" width="359" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="fEM-qU-deN"/>
                                                         </constraints>
@@ -91,7 +91,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lWV-Td-R8r" userLabel="Upvote Imagage View">
-                                                        <rect key="frame" x="81" y="8" width="15" height="15"/>
+                                                        <rect key="frame" x="81" y="9" width="15" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="15" id="QuZ-HP-538"/>
                                                             <constraint firstAttribute="height" constant="15" id="oUi-7V-Hla"/>
@@ -99,7 +99,7 @@
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-upvote" id="6s0-tu-pPi"/>
                                                     </imageView>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="69a-Iy-tSt" userLabel="Upvote Count Label">
-                                                        <rect key="frame" x="96" y="7" width="30" height="15"/>
+                                                        <rect key="frame" x="96" y="8" width="30" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="XZ2-WS-tEP"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="ZfH-4m-p3o"/>
@@ -111,7 +111,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bkL-bk-ZRi" userLabel="Comment Image View">
-                                                        <rect key="frame" x="136" y="8" width="15" height="15"/>
+                                                        <rect key="frame" x="136" y="9" width="15" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="euu-Lo-Vfp"/>
                                                             <constraint firstAttribute="width" constant="15" id="sEy-fP-1no"/>
@@ -119,7 +119,7 @@
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="comment-icon" id="XYI-Tf-mSr"/>
                                                     </imageView>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9dP-pK-Qkv">
-                                                        <rect key="frame" x="153" y="7" width="30" height="15"/>
+                                                        <rect key="frame" x="153" y="8" width="30" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="2rd-WK-LgD"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="RVs-Gk-5CV"/>
@@ -131,7 +131,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vb7-Hw-5sJ">
-                                                        <rect key="frame" x="191" y="7" width="79" height="15"/>
+                                                        <rect key="frame" x="191" y="8" width="79" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="0B0-G9-vmz"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="5U7-xS-izx"/>
@@ -143,7 +143,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ars-Ml-pmh" customClass="PHButton" customModule="Product_Hunt" customModuleProvider="target">
-                                                        <rect key="frame" x="387" y="7" width="30" height="15"/>
+                                                        <rect key="frame" x="372" y="8" width="30" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="jXN-KC-om6"/>
                                                             <constraint firstAttribute="height" constant="15" id="mET-6K-WXU"/>
@@ -157,7 +157,7 @@
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="heS-bp-SrQ" customClass="PHButton" customModule="Product_Hunt" customModuleProvider="target">
-                                                        <rect key="frame" x="419" y="7" width="30" height="15"/>
+                                                        <rect key="frame" x="404" y="8" width="30" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="ank-KT-s5M"/>
                                                             <constraint firstAttribute="width" constant="30" id="tlh-97-ekI"/>
@@ -173,24 +173,24 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="heS-bp-SrQ" secondAttribute="trailing" constant="16" id="0eK-H5-z50"/>
-                                                    <constraint firstItem="69a-Iy-tSt" firstAttribute="top" secondItem="sE2-4l-YhU" secondAttribute="bottom" constant="5" id="5SB-RS-ydL"/>
+                                                    <constraint firstItem="69a-Iy-tSt" firstAttribute="top" secondItem="sE2-4l-YhU" secondAttribute="bottom" constant="6" id="5SB-RS-ydL"/>
                                                     <constraint firstAttribute="trailing" secondItem="sE2-4l-YhU" secondAttribute="trailing" constant="12" id="8bV-Nf-DyH"/>
-                                                    <constraint firstItem="lWV-Td-R8r" firstAttribute="top" secondItem="sE2-4l-YhU" secondAttribute="bottom" constant="4" id="GUm-h3-qhs"/>
+                                                    <constraint firstItem="lWV-Td-R8r" firstAttribute="top" secondItem="sE2-4l-YhU" secondAttribute="bottom" constant="5" id="GUm-h3-qhs"/>
                                                     <constraint firstItem="Vb7-Hw-5sJ" firstAttribute="leading" secondItem="9dP-pK-Qkv" secondAttribute="trailing" constant="12" id="I7W-od-0Is"/>
                                                     <constraint firstItem="9dP-pK-Qkv" firstAttribute="leading" secondItem="bkL-bk-ZRi" secondAttribute="trailing" constant="4" id="JbY-Rk-JE2"/>
                                                     <constraint firstItem="lWV-Td-R8r" firstAttribute="leading" secondItem="9ZY-Yc-Tbq" secondAttribute="trailing" constant="10" id="Nnv-6X-mgg"/>
-                                                    <constraint firstItem="9dP-pK-Qkv" firstAttribute="top" secondItem="sE2-4l-YhU" secondAttribute="bottom" constant="5" id="PUf-bN-Ddl"/>
+                                                    <constraint firstItem="9dP-pK-Qkv" firstAttribute="top" secondItem="sE2-4l-YhU" secondAttribute="bottom" constant="6" id="PUf-bN-Ddl"/>
                                                     <constraint firstItem="sE2-4l-YhU" firstAttribute="top" secondItem="HWW-sQ-48n" secondAttribute="bottom" constant="2" id="QpO-u4-rl9"/>
                                                     <constraint firstItem="9ZY-Yc-Tbq" firstAttribute="leading" secondItem="gtY-eC-UiO" secondAttribute="leading" constant="16" id="U3g-Ha-emq"/>
-                                                    <constraint firstItem="Vb7-Hw-5sJ" firstAttribute="top" secondItem="sE2-4l-YhU" secondAttribute="bottom" constant="5" id="WOh-5c-7Iu"/>
+                                                    <constraint firstItem="Vb7-Hw-5sJ" firstAttribute="top" secondItem="sE2-4l-YhU" secondAttribute="bottom" constant="6" id="WOh-5c-7Iu"/>
                                                     <constraint firstItem="69a-Iy-tSt" firstAttribute="leading" secondItem="lWV-Td-R8r" secondAttribute="trailing" constant="2" id="YtM-yD-N3V"/>
                                                     <constraint firstAttribute="trailing" secondItem="HWW-sQ-48n" secondAttribute="trailing" constant="12" id="ZGM-l6-Cyo"/>
                                                     <constraint firstItem="sE2-4l-YhU" firstAttribute="leading" secondItem="9ZY-Yc-Tbq" secondAttribute="trailing" constant="12" id="aPG-Fy-6P0"/>
                                                     <constraint firstItem="bkL-bk-ZRi" firstAttribute="leading" secondItem="69a-Iy-tSt" secondAttribute="trailing" priority="750" constant="12" id="bg1-Ac-XUK"/>
                                                     <constraint firstItem="heS-bp-SrQ" firstAttribute="leading" secondItem="ars-Ml-pmh" secondAttribute="trailing" constant="2" id="cDb-FP-uQM"/>
                                                     <constraint firstItem="9ZY-Yc-Tbq" firstAttribute="centerY" secondItem="gtY-eC-UiO" secondAttribute="centerY" id="fm8-yn-UhE"/>
-                                                    <constraint firstItem="HWW-sQ-48n" firstAttribute="top" secondItem="gtY-eC-UiO" secondAttribute="top" constant="12" id="ikh-k0-kd0"/>
-                                                    <constraint firstItem="bkL-bk-ZRi" firstAttribute="top" secondItem="sE2-4l-YhU" secondAttribute="bottom" constant="4" id="jhz-9W-ts0"/>
+                                                    <constraint firstItem="HWW-sQ-48n" firstAttribute="top" secondItem="gtY-eC-UiO" secondAttribute="top" constant="10" id="ikh-k0-kd0"/>
+                                                    <constraint firstItem="bkL-bk-ZRi" firstAttribute="top" secondItem="sE2-4l-YhU" secondAttribute="bottom" constant="5" id="jhz-9W-ts0"/>
                                                     <constraint firstItem="omS-De-rND" firstAttribute="leading" secondItem="gtY-eC-UiO" secondAttribute="leading" constant="5" id="p32-MI-rjD"/>
                                                     <constraint firstItem="omS-De-rND" firstAttribute="centerY" secondItem="gtY-eC-UiO" secondAttribute="centerY" constant="-2.5" id="r2W-Qe-OCI"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vb7-Hw-5sJ" secondAttribute="trailing" priority="999" constant="16" id="rtJ-A5-Mmg"/>
@@ -217,7 +217,7 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="418" translatesAutoresizingMaskIntoConstraints="NO" id="Ybx-Bc-DFb">
-                                                        <rect key="frame" x="14" y="8" width="437" height="17"/>
+                                                        <rect key="frame" x="14" y="8" width="422" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="RZB-71-VAs"/>
                                                         </constraints>

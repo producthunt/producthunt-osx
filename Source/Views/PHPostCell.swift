@@ -62,6 +62,7 @@ class PHPostCell: NSTableCellView {
 
     private func commonInit() {
         wantsLayer = true
+
         thumbnailImageView.wantsLayer = true
         thumbnailImageView.layer?.masksToBounds = true
         thumbnailImageView.layer?.cornerRadius = 3
@@ -70,12 +71,12 @@ class PHPostCell: NSTableCellView {
         facebookButton.setImages("icon-facebook", highlitedImage: "icon-facebook-hovered")
 
         taglineLabel.textColor          = NSColor.ph_grayColor()
-        voteCountLabel.textColor        = NSColor.ph_lightGrayColor()
-        commentsCountLabel.textColor    = NSColor.ph_lightGrayColor()
-        timeAgoLabel.textColor          = NSColor.ph_lightGrayColor()
+        voteCountLabel.textColor        = NSColor.ph_grayColor()
+        commentsCountLabel.textColor    = NSColor.ph_grayColor()
+        timeAgoLabel.textColor          = NSColor.ph_grayColor()
 
-        voteImageView.image     = NSImage(named: "icon-upvote")!.tintedImageWithColor(NSColor.ph_lightGrayColor())
-        commentImageView.image  = NSImage(named: "comment-icon")!.tintedImageWithColor(NSColor.ph_lightGrayColor())
+        voteImageView.image     = NSImage(named: "icon-upvote")!.tintedImageWithColor(NSColor.ph_grayColor())
+        commentImageView.image  = NSImage(named: "comment-icon")!.tintedImageWithColor(NSColor.ph_grayColor())
     }
 
     private func setPost(post: PHPost?) {
