@@ -24,7 +24,11 @@ class PHDefaults: StoreSubscriber {
     private let kTokenKeyDate = "expirationDate"
     private let kTokenKeyAccess = "accessToken"
 
-    init() {
+    private var store: Store<PHAppState>
+
+    init(store: Store<PHAppState>) {
+        self.store = store
+
         migrate()
 
         store.dispatch( PHSettingsSetAction(settings: readSettings()) )

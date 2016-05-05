@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private var statusBarUpdater: PHStatusBarUpdater!
     private var updatePostTimer: NSTimer?
-    private let defaults = PHDefaults()
+    private let defaults = PHDefaults(store: store)
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         if let button = statusItem.button {
