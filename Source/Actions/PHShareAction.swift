@@ -8,6 +8,7 @@
 
 import Cocoa
 import Kingfisher
+import ReSwift
 
 class PHShareAction: NSObject, NSSharingServiceDelegate {
 
@@ -18,6 +19,8 @@ class PHShareAction: NSObject, NSSharingServiceDelegate {
             return
         }
 
+        store.dispatch( PHTrackPostShare(post: post, medium: "twitter") )
+
         KingfisherManager.sharedManager.retrieveImageWithURL(post.thumbnailUrl, optionsInfo: nil, progressBlock: nil) { (image, error, cacheType, imageURL) in
             self.perform(NSSharingServiceNamePostOnTwitter, title: PHShareMessage.message(fromPost: post), url: post.discussionUrl, image: image)
         }
@@ -27,6 +30,8 @@ class PHShareAction: NSObject, NSSharingServiceDelegate {
         guard let post = post else {
             return
         }
+
+        store.dispatch( PHTrackPostShare(post: post, medium: "facebook") )
 
         KingfisherManager.sharedManager.retrieveImageWithURL(post.thumbnailUrl, optionsInfo: nil, progressBlock: nil) { (image, error, cacheType, imageURL) in
             self.perform(NSSharingServiceNamePostOnFacebook, title: PHShareMessage.message(fromPost: post), url: post.discussionUrl, image: image)
@@ -47,10 +52,5 @@ class PHShareAction: NSObject, NSSharingServiceDelegate {
 
             service.performWithItems(items)
         }
-    }
-
-    func sharingService(sharingService: NSSharingService, sourceWindowForShareItems items: [AnyObject], sharingContentScope: UnsafeMutablePointer<NSSharingContentScope>) -> NSWindow? {
-        let delegate = NSApplication.sharedApplication().delegate as! AppDelegate
-        return delegate.popover.contentViewController?.view.window
     }
 }

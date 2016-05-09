@@ -1,0 +1,11 @@
+//
+//  ConfigRelease.xcconfig
+//  Product Hunt
+//
+//  Created by Vlado on 5/5/16.
+//  Copyright © 2016 ProductHunt. All rights reserved.
+//
+
+#include "Keys.xcconfig"
+
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) PRODUCT_HUNT_APP_ID='$(PRODUCT_HUNT_APP_ID)' PRODUCT_HUNT_APP_SECRET='$(PRODUCT_HUNT_APP_SECRET)' PRODUCT_HUNT_FEED_URL='$(PRODUCT_HUNT_FEED_URL)' SEGMENT_WRITE_KEY='$(SEGMENT_PRODUCTION_WRITE_KEY)'

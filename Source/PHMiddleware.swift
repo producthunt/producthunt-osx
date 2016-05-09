@@ -13,7 +13,17 @@ let PHTrackingMiddleware: Middleware = { dispatch, getState in
     return { next in
         return { action in
 
-            // TODO: Implement tracking
+            if let action = action as? PHTrackPostAction {
+                PHAnalitycs.sharedInstance.trackClickPost(action.post.id)
+            }
+
+            if let action = action as? PHTrackPostShare {
+                PHAnalitycs.sharedInstance.trackShare("post", subjectId: action.post.id, medium: action.medium)
+            }
+
+            if let action = action as? PHTrackVisit {
+                PHAnalitycs.sharedInstance.trackVisit(action.page)
+            }
 
             return next(action)
         }

@@ -26,6 +26,8 @@ class PHOpenPostOperation {
         PHOpenURLAction.perform(withUrl:  url, closeAfterLaunch: true)
 
         PHMarkAsSeenOperation.perform(post)
+
+        PHAnalitycsOperation.performTrack(post)
     }
 
 }

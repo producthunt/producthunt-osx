@@ -11,3 +11,4 @@
 extern NSString * const kPHAppID;
 extern NSString * const kPHAppSecret;
 extern NSString * const kPHFeedUrl;
+extern NSString * const kSegmentKey;
