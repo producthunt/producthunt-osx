@@ -21,7 +21,6 @@ class PHDefaults: StoreSubscriber {
     private let kSeenPostsKeyIds = "seenPostsDateIds"
 
     private let kTokenKey = "oauthToken"
-    private let kTokenKeyDate = "expirationDate"
     private let kTokenKeyAccess = "accessToken"
 
     private var store: Store<PHAppState>
@@ -49,7 +48,7 @@ class PHDefaults: StoreSubscriber {
 
         set([ kSeenPostsKeyDate: state.seenPosts.date, kSeenPostsKeyIds: Array(state.seenPosts.postIds) ], key: kSeenPostsKey)
 
-        set([ kTokenKeyDate: state.token.expirationDate, kTokenKeyAccess: state.token.accessToken], key: kTokenKey)
+        set([kTokenKeyAccess: state.token.accessToken], key: kTokenKey)
     }
 
     private func readSettings() -> PHSettings {
@@ -81,17 +80,12 @@ class PHDefaults: StoreSubscriber {
         let data = get(kTokenKey, objectType: [String : AnyObject]()) ?? [String : AnyObject]()
 
         var access = ""
-        var date = NSDate(timeIntervalSince1970: 0)
 
         if let accessToken = data[kTokenKeyAccess] as? String {
             access = accessToken
         }
 
-        if let expirationDate = data[kTokenKeyDate] as? NSDate {
-            date = expirationDate
-        }
-
-        return PHToken(accessToken: access, expirationDate: date)
+        return PHToken(accessToken: access)
     }
 
     // TODO: Remove migrate in V1.1
@@ -104,7 +98,7 @@ class PHDefaults: StoreSubscriber {
         let deprecatedLastUpdatedKey    = "lastUpdatedDate"
 
         if let tokenData =  get(deprecatedTokenKey, objectType: [String : AnyObject]()), let token = PHToken.token(fromDictionary: tokenData) {
-            set([ kTokenKeyDate: token.expirationDate, kTokenKeyAccess: token.accessToken], key: kTokenKey)
+            set([kTokenKeyAccess: token.accessToken], key: kTokenKey)
         }
 
         if let showsCount = get(deprecatedShowsCountKey, objectType: Bool()) {

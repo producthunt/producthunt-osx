@@ -11,16 +11,11 @@ import Foundation
 extension PHToken {
 
     static func token(fromDictionary dictionary: [String: AnyObject]?) -> PHToken? {
-        guard let dictionary = dictionary, let accessToken = dictionary["access_token"] as? String, let expires = dictionary["expires_in"] as? NSTimeInterval else {
+        guard let dictionary = dictionary, let accessToken = dictionary["access_token"] as? String else {
             return nil
         }
 
-        let expirationDate = NSDate(timeIntervalSinceNow: expires)
-        if expirationDate.compare(NSDate()) == NSComparisonResult.OrderedAscending {
-            return nil
-        }
-
-        return PHToken(accessToken: accessToken, expirationDate: expirationDate)
+        return PHToken(accessToken: accessToken)
     }
 
 }

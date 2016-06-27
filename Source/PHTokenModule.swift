@@ -14,7 +14,7 @@ struct PHTokenGetAction: Action {
 }
 
 func tokenReducer(action: Action, state: PHToken?) -> PHToken {
-    let state = state ?? PHToken(accessToken: "", expirationDate: NSDate(timeIntervalSince1970: 0) )
+    let state = state ?? PHToken(accessToken: "")
 
     switch action {
         case let action as PHTokenGetAction:

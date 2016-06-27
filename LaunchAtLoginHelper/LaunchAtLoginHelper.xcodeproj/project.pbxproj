@@ -226,6 +226,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				INFOPLIST_FILE = "LaunchAtLoginHelper/LaunchAtLoginHelper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.producthunt.producthuntosx.LaunchAtLoginHelper;
@@ -239,6 +240,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				INFOPLIST_FILE = "LaunchAtLoginHelper/LaunchAtLoginHelper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.producthunt.producthuntosx.LaunchAtLoginHelper;
@@ -291,6 +293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				INFOPLIST_FILE = "LaunchAtLoginHelper/LaunchAtLoginHelper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.producthunt.producthuntosx.LaunchAtLoginHelper;
