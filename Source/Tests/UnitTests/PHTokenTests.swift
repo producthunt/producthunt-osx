@@ -11,31 +11,18 @@ import XCTest
 class PHTokenTests: PHTestCase {
 
     func testTokenFactoryRetunsNilIfInvalidAccessToken() {
-        let data = ["access_token": NSNull(), "expires_in" : 60]
+        let data = ["access_token": NSNull()]
         XCTAssertNil(PHToken.token(fromDictionary: data))
-    }
-
-    func testTokenFactoryReturnsNilIfInvalidExpirationInterval() {
-        let data = ["access_token": "123abc", "expires_in" : NSNull()]
-        XCTAssertNil(PHToken.token(fromDictionary: data))
-    }
-
-    func testTokenValidityDate() {
-        let data = ["access_token": "123abc", "expires_in" : 60]
-        let token = PHToken.token(fromDictionary: data)!
-        let date = NSDate(timeIntervalSinceNow: 60)
-
-        XCTAssertEqualWithAccuracy(date.timeIntervalSinceNow, token.expirationDate.timeIntervalSinceNow, accuracy: 0.01)
     }
 
     func testThatReturnsFalseIfTokenIsExpired() {
-        let token = PHToken(accessToken: "", expirationDate: NSDate(timeIntervalSince1970: 0) )
+        let token = PHToken(accessToken: "")
 
         XCTAssertFalse(token.isValid)
     }
 
     func testThatReturnsTrueIfTokenIsExpired() {
-        let token = PHToken(accessToken: "", expirationDate: NSDate(timeIntervalSinceNow: 100) )
+        let token = PHToken(accessToken: "3asdsfgdsv" )
 
         XCTAssertTrue(token.isValid)
     }

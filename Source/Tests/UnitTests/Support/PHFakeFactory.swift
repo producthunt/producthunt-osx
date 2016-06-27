@@ -15,7 +15,7 @@ class PHFakeFactory {
     private var fakePostId = 0
 
     func token() -> PHToken {
-        return PHToken(accessToken: "FakeToken", expirationDate: NSDate(timeIntervalSinceNow: 10))
+        return PHToken(accessToken: "FakeToken")
     }
 
     func post(daysAgo: NSTimeInterval = 0.days, votes: Int = 20, commentsCount: Int = 0) -> PHPost {

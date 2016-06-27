@@ -15,7 +15,7 @@ class PHAPIOperation {
         withToken(store, api: api) { (token, error) in
             operation(api: api, errorClosure: { (error) in
                 if NSError.parseError(error) == NSError.unauthorizedError() {
-                    let token = PHToken(accessToken: "", expirationDate: NSDate(timeIntervalSince1970: 0))
+                    let token = PHToken(accessToken: "")
                     store.dispatch( PHTokenGetAction(token: token) )
                 }
 
