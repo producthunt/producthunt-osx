@@ -42,6 +42,8 @@ class PHAPI {
 
             if let response = response, let rawPosts = response["posts"] as? [[String : AnyObject]] {
                 completion(posts: PHPost.posts(fromArray: rawPosts) ?? [PHPost](), error: nil)
+            } else if let error = error {
+                completion(posts: [PHPost](), error: error)
             } else {
                 self.getPostsPosted(daysAgo + 1, retries: retries - 1, completion: completion)
             }

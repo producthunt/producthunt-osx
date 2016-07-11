@@ -40,9 +40,13 @@ class PHLoadPostOperation {
     }
 
     class func createOperation(daysAgo: Int, complete: ([PHPost]) -> ()) -> PHAPIOperationClosure {
-        return { (api: PHAPI,errorClosure: PHAPIErrorClosure) in
+        return { (api: PHAPI, errorClosure: PHAPIErrorClosure) in
             api.getPosts(daysAgo, completion: { (posts, error) in
-                 complete(posts)
+                if let error = error {
+                    errorClosure(error: error)
+                }
+
+                complete(posts)
             })
         }
     }
