@@ -14,16 +14,16 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - DateTools (1.7.0)
   - ISO8601 (0.6.0)
-  - Kingfisher (2.4.2)
-  - ReSwift (2.0.0)
+  - Kingfisher (3.2.1)
+  - ReSwift (3.0.0)
   - Sparkle (1.14.0)
-  - SwiftyTimer (1.4.0)
+  - SwiftyTimer (2.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - DateTools
   - ISO8601 (~> 0.5)
-  - Kingfisher (~> 2.1)
+  - Kingfisher (~> 3.0)
   - ReSwift
   - Sparkle (~> 1.10)
   - SwiftyTimer
@@ -32,11 +32,11 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   ISO8601: d3ea3ba9b752820cf92c6b47a9ee327e9f0e13fc
-  Kingfisher: 05bf8d04408aaa70fcd2c8c81b9f1d0f1ad313dd
-  ReSwift: 7abc536a87955c34bf60de3fd32ce9a02ee3ad87
+  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
+  ReSwift: f0255f4b4f2dacd12c5d97d34d13fc5dad6d6371
   Sparkle: ccd95233b12a3e3d4eeb55ff01dd4c8bb8188b07
-  SwiftyTimer: db4458cfaf67fc71e16ad6e4637c60b86f76a649
+  SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
 
-PODFILE CHECKSUM: abdb1f4533d27fc99c262698ccdb1cc99c927999
+PODFILE CHECKSUM: 0c2da53eff0df8f3e786fcf03f1b2e64333b6a28
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
