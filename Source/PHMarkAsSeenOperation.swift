@@ -11,16 +11,16 @@ import ReSwift
 
 class PHMarkAsSeenOperation {
 
-    class func perform(post: PHPost) {
+    class func perform(_ post: PHPost) {
         perform(store, posts: [post])
     }
 
-    class func perform(posts: [PHPost]) {
+    class func perform(_ posts: [PHPost]) {
         perform(store, posts: posts)
     }
 
-    class func perform(store: Store<PHAppState>, posts: [PHPost]) {
-        let filters: [PHPostFilter] = [.Seen(false), .Votes(store.state.settings.filterCount)]
+    class func perform(_ store: Store<PHAppState>, posts: [PHPost]) {
+        let filters: [PHPostFilter] = [.seen(false), .votes(store.state.settings.filterCount)]
         store.dispatch( PHMarkPostsAsSeenAction(posts: PHPostSorter.filter(store, posts: posts, by: filters) ) )
     }
 }

@@ -13,7 +13,7 @@ class PHAnalitycsAPIEndpoint {
 
     static let kPHAnalitycsEndpointHost = "https://api.segment.io"
 
-    private let manager = AFHTTPSessionManager(baseURL: NSURL(string: "\(kPHAnalitycsEndpointHost)/v1"))
+    fileprivate let manager = AFHTTPSessionManager(baseURL: URL(string: "\(kPHAnalitycsEndpointHost)/v1"))
 
     init(key: String) {
         manager.responseSerializer  = AFJSONResponseSerializer()
@@ -25,21 +25,21 @@ class PHAnalitycsAPIEndpoint {
         manager.requestSerializer.setValue(Credentials.basic(key, password: ""), forHTTPHeaderField: "Authorization")
     }
 
-    func get(url: String, parameters: [String: AnyObject]?, completion: PHAPIEndpointCompletion? = nil) {
-        manager.GET(url, parameters: parameters, progress: nil, success: { (task, response) in
-            completion?(response: (response as? [String: AnyObject]), error: nil)
+    func get(_ url: String, parameters: [String: Any]?, completion: PHAPIEndpointCompletion? = nil) {
+        manager.get(url, parameters: parameters, progress: nil, success: { (task, response) in
+            completion?((response as? [String: AnyObject]), nil)
         }) { (task, error) in
             print(error)
-            completion?(response: nil, error: error)
+            completion?(nil, error as NSError?)
         }
     }
 
-    func post(url: String, parameters: [String: AnyObject]?, completion: PHAPIEndpointCompletion? = nil) {
-        manager.POST(url, parameters: parameters, progress: nil, success: { (task, response) in
-            completion?(response: (response as? [String: AnyObject]), error: nil)
+    func post(_ url: String, parameters: [String: Any]?, completion: PHAPIEndpointCompletion? = nil) {
+        manager.post(url, parameters: parameters, progress: nil, success: { (task, response) in
+            completion?((response as? [String: AnyObject]), nil)
         }) { (task, error) in
             print(error)
-            completion?(response: nil, error: error)
+            completion?(nil, error as NSError?)
         }
     }
 

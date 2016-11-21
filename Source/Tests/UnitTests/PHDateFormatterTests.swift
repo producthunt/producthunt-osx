@@ -13,27 +13,27 @@ class PHDateFormatterTests: PHTestCase {
     let formatter = PHDateFormatter()
 
     func testThatItFormatsToday() {
-        let dateformatter = NSDateFormatter()
+        let dateformatter = DateFormatter()
         dateformatter.dateFormat = "yyyy-MM-dd"
 
-        let dateAsString = dateformatter.stringFromDate(NSDate())
+        let dateAsString = dateformatter.string(from: Date())
 
         let formattedString = formatter.format(withDateString: dateAsString)!
 
-        XCTAssertTrue(formattedString.rangeOfString("Today") != nil)
+        XCTAssertTrue(formattedString.range(of: "Today") != nil)
     }
 
     func testThatItFormatsYesterday() {
-        let date = NSDate(timeIntervalSinceNow: -(60*60*24 + 1))
+        let date = Date(timeIntervalSinceNow: -(60*60*24 + 1))
 
-        let dateformatter = NSDateFormatter()
+        let dateformatter = DateFormatter()
         dateformatter.dateFormat = "yyyy-MM-dd"
 
-        let dateAsString = dateformatter.stringFromDate(date)
+        let dateAsString = dateformatter.string(from: date)
 
         let formattedString = formatter.format(withDateString: dateAsString)!
 
-        XCTAssertTrue(formattedString.rangeOfString("Yesterday") != nil)
+        XCTAssertTrue(formattedString.range(of: "Yesterday") != nil)
     }
 
     func testThatAddsStSuffux() {
@@ -41,7 +41,7 @@ class PHDateFormatterTests: PHTestCase {
 
         let formattedString = formatter.format(withDateString: dateString)!
 
-        XCTAssertTrue(formattedString.rangeOfString("31st") != nil)
+        XCTAssertTrue(formattedString.range(of: "31st") != nil)
     }
 
     func testThatAddsRdSuffix() {
@@ -49,7 +49,7 @@ class PHDateFormatterTests: PHTestCase {
         
         let formattedString = formatter.format(withDateString: dateString)!
 
-        XCTAssertTrue(formattedString.rangeOfString("3rd") != nil)
+        XCTAssertTrue(formattedString.range(of: "3rd") != nil)
     }
 
     func testThatHandlesInvalidDate() {
@@ -59,12 +59,12 @@ class PHDateFormatterTests: PHTestCase {
     }
 
     func testThatItReturnsDaysAgo() {
-        let date = NSDate(timeIntervalSinceNow: -1.day)
+        let date = Date(timeIntervalSinceNow: -1.day)
 
-        let dateformatter = NSDateFormatter()
+        let dateformatter = DateFormatter()
         dateformatter.dateFormat = "yyyy-MM-dd"
 
-        let dateAsString = dateformatter.stringFromDate(date)
+        let dateAsString = dateformatter.string(from: date)
 
         XCTAssertEqual(formatter.daysAgo(fromDateAsString: dateAsString), 1)
     }

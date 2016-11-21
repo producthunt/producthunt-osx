@@ -16,9 +16,9 @@ let escapeKey = 53
 
 class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSWindowDelegate {
 
-    private var toolbar: NSToolbar?
-    private var toolbarDefaultItemIdentifiers = [String]()
-    private var activeViewController: PHPreferencesWindowControllerProtocol?
+    fileprivate var toolbar: NSToolbar?
+    fileprivate var toolbarDefaultItemIdentifiers = [String]()
+    fileprivate var activeViewController: PHPreferencesWindowControllerProtocol?
 
     var viewControllers = [PHPreferencesWindowControllerProtocol]() {
         didSet {
@@ -27,9 +27,10 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
     }
 
     init() {
-        let window = PHPreferencesWindow(contentRect: PHPreferencesDefaultWindowRect, styleMask: NSTitledWindowMask | NSClosableWindowMask | NSMiniaturizableWindowMask | NSUnifiedTitleAndToolbarWindowMask, backing: .Buffered, defer: true)
+        let masks: NSWindowStyleMask = [.closable, .miniaturizable, .resizable, .fullScreen, .fullScreen]
+        let window = PHPreferencesWindow(contentRect: PHPreferencesDefaultWindowRect, styleMask: masks, backing: .buffered, defer: true)
 
-        window.movableByWindowBackground = true
+        window.isMovableByWindowBackground = true
 
         super.init(window: window)
     }
@@ -39,20 +40,20 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
     }
 
     func showPreferencesWindow() {
-        guard let window = window where !window.visible else {
+        guard let window = window, !window.isVisible else {
             return
         }
 
         showWindow(self)
         window.makeKeyAndOrderFront(self)
-        NSApplication.sharedApplication().activateIgnoringOtherApps(true)
+        NSApplication.shared().activate(ignoringOtherApps: true)
 
         if activeViewController == nil {
             activateViewController(viewControllers[0], animate:false)
             window.center()
         }
 
-        if let toolbar = window.toolbar where toolbarDefaultItemIdentifiers.count > 0 {
+        if let toolbar = window.toolbar, toolbarDefaultItemIdentifiers.count > 0 {
             toolbar.selectedItemIdentifier = toolbarDefaultItemIdentifiers.first
         }
     }
@@ -61,7 +62,7 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
         close()
     }
 
-    private func setupToolbar() {
+    fileprivate func setupToolbar() {
         guard let window = window else {
             return
         }
@@ -81,13 +82,13 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
         }
     }
 
-    private func activateViewController(viewController: PHPreferencesWindowControllerProtocol, animate: Bool) {
+    fileprivate func activateViewController(_ viewController: PHPreferencesWindowControllerProtocol, animate: Bool) {
         if let preferencesViewController = viewController as? NSViewController {
 
             let viewControllerFrame = preferencesViewController.view.frame
 
             if  let currentWindowFrame = window?.frame,
-                let frameRectForContentRect = window?.frameRectForContentRect(viewControllerFrame) {
+                let frameRectForContentRect = window?.frameRect(forContentRect: viewControllerFrame) {
 
                 let deltaY = NSHeight(currentWindowFrame) - NSHeight(frameRectForContentRect)
                 let newWindowFrame = NSMakeRect(NSMinX(currentWindowFrame), NSMinY(currentWindowFrame) + deltaY, NSWidth(frameRectForContentRect), NSHeight(frameRectForContentRect))
@@ -123,9 +124,9 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
         }
     }
 
-    private func viewControllerWithIdentifier(identifier: NSString) -> PHPreferencesWindowControllerProtocol? {
+    fileprivate func viewControllerWithIdentifier(_ identifier: NSString) -> PHPreferencesWindowControllerProtocol? {
         for viewController in viewControllers {
-            if viewController.preferencesIdentifier() == identifier {
+            if viewController.preferencesIdentifier() == identifier as String {
                 return viewController
             }
         }
@@ -133,8 +134,8 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
         return nil
     }
 
-    func toolbar(toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: String, willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
-        guard let viewController = viewControllerWithIdentifier(itemIdentifier) else {
+    func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: String, willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
+        guard let viewController = viewControllerWithIdentifier(itemIdentifier as NSString) else {
             return nil
         }
 
@@ -155,7 +156,7 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
         return toolbarItem
     }
 
-    func toolbarDefaultItemIdentifiers(toolbar: NSToolbar) -> [String] {
+    func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [String] {
         var identifiers = [String]()
 
         for viewController in viewControllers {
@@ -167,20 +168,20 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
         return identifiers
     }
 
-    func toolbarAllowedItemIdentifiers(toolbar: NSToolbar) -> [String] {
+    func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [String] {
         return toolbarDefaultItemIdentifiers(toolbar)
     }
 
-    func toolbarSelectableItemIdentifiers(toolbar: NSToolbar) -> [String] {
+    func toolbarSelectableItemIdentifiers(_ toolbar: NSToolbar) -> [String] {
         return toolbarDefaultItemIdentifiers(toolbar)
     }
 
-    func toolbarItemAction(toolbarItem: NSToolbarItem) {
-        guard let activeViewController = activeViewController where activeViewController.preferencesIdentifier() != toolbarItem.itemIdentifier else {
+    func toolbarItemAction(_ toolbarItem: NSToolbarItem) {
+        guard let activeViewController = activeViewController, activeViewController.preferencesIdentifier() != toolbarItem.itemIdentifier else {
             return
         }
 
-        if let viewController = viewControllerWithIdentifier(toolbarItem.itemIdentifier) {
+        if let viewController = viewControllerWithIdentifier(toolbarItem.itemIdentifier as NSString) {
             activateViewController(viewController, animate: true)
         }
     }
@@ -188,24 +189,19 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
 
 class PHPreferencesWindow : NSWindow {
 
-    override init(contentRect: NSRect, styleMask aStyle: Int, backing bufferingType: NSBackingStoreType, defer flag: Bool) {
+    override init(contentRect: NSRect, styleMask aStyle: NSWindowStyleMask, backing bufferingType: NSBackingStoreType, defer flag: Bool) {
         super.init(contentRect: contentRect, styleMask: aStyle, backing: bufferingType, defer: flag)
         commonInit()
     }
 
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        commonInit()
-    }
-
-    private func commonInit() {
+    fileprivate func commonInit() {
         center()
 
         setFrameAutosaveName(PHPreferencesWindowFrameAutoSaveName)
-        setFrameFromString(PHPreferencesWindowFrameAutoSaveName)
+        setFrameFrom(PHPreferencesWindowFrameAutoSaveName)
     }
 
-    override func keyDown(theEvent: NSEvent) {
+    override func keyDown(with theEvent: NSEvent) {
         switch Int(theEvent.keyCode) {
 
         case escapeKey:
@@ -213,7 +209,7 @@ class PHPreferencesWindow : NSWindow {
             close()
 
         default:
-            super.keyDown(theEvent)
+            super.keyDown(with: theEvent)
         }
     }
 

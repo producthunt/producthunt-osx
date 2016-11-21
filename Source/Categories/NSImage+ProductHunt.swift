@@ -10,13 +10,13 @@ import Cocoa
 
 extension NSImage {
 
-    func tintedImageWithColor(color: NSColor) -> NSImage {
+    func tintedImageWithColor(_ color: NSColor) -> NSImage {
         let tinted = self.copy() as! NSImage
         tinted.lockFocus()
         color.set()
 
         let imageRect = NSRect(origin: NSZeroPoint, size: self.size)
-        NSRectFillUsingOperation(imageRect, NSCompositingOperation.CompositeSourceAtop)
+        NSRectFillUsingOperation(imageRect, NSCompositingOperation.sourceAtop)
 
         tinted.unlockFocus()
         return tinted

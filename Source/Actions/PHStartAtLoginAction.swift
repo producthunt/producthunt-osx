@@ -11,7 +11,7 @@ import ServiceManagement
 
 class PHStartAtLoginAction {
 
-    class func perform(startAtLogin: Bool) {
+    class func perform(_ startAtLogin: Bool) {
         LLManager.setLaunchAtLogin(startAtLogin)
     }
 }

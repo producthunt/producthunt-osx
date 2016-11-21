@@ -12,18 +12,18 @@ import ReSwift
 
 class PHDefaults: StoreSubscriber {
 
-    private let kAutoLoginKey = "autoLoginKey"
-    private let kShowCountKey = "showBadgeCount"
-    private let kFilterCountKey = "filterPostsCount"
+    fileprivate let kAutoLoginKey = "autoLoginKey"
+    fileprivate let kShowCountKey = "showBadgeCount"
+    fileprivate let kFilterCountKey = "filterPostsCount"
 
-    private let kSeenPostsKey = "seenPostsKey"
-    private let kSeenPostsKeyDate = "seenPostsDate"
-    private let kSeenPostsKeyIds = "seenPostsDateIds"
+    fileprivate let kSeenPostsKey = "seenPostsKey"
+    fileprivate let kSeenPostsKeyDate = "seenPostsDate"
+    fileprivate let kSeenPostsKeyIds = "seenPostsDateIds"
 
-    private let kTokenKey = "oauthToken"
-    private let kTokenKeyAccess = "accessToken"
+    fileprivate let kTokenKey = "oauthToken"
+    fileprivate let kTokenKeyAccess = "accessToken"
 
-    private var store: Store<PHAppState>
+    fileprivate var store: Store<PHAppState>
 
     init(store: Store<PHAppState>) {
         self.store = store
@@ -51,7 +51,7 @@ class PHDefaults: StoreSubscriber {
         set([kTokenKeyAccess: state.token.accessToken], key: kTokenKey)
     }
 
-    private func readSettings() -> PHSettings {
+    fileprivate func readSettings() -> PHSettings {
         let autologinEnabled    = get(kAutoLoginKey, objectType: Bool()) ?? true
         let showCountKey        = get(kShowCountKey, objectType: Bool()) ?? true
         let filterCount         = get(kFilterCountKey, objectType: Int()) ?? 10
@@ -59,13 +59,13 @@ class PHDefaults: StoreSubscriber {
         return PHSettings(autologinEnabled: autologinEnabled, showsCount: showCountKey, filterCount: filterCount)
     }
 
-    private func readSeenPosts() -> PHSeenPosts {
+    fileprivate func readSeenPosts() -> PHSeenPosts {
         let data = get( kSeenPostsKey, objectType: [String : AnyObject]() ) ?? [String : AnyObject]()
 
-        var day = NSDate()
+        var day = Date()
         var ids = Set<Int>()
 
-        if let date = data[kSeenPostsKeyDate] as? NSDate {
+        if let date = data[kSeenPostsKeyDate] as? Date {
             day = date
         }
 
@@ -76,7 +76,7 @@ class PHDefaults: StoreSubscriber {
         return PHSeenPosts(date: day, postIds: ids)
     }
 
-    private func readToken() -> PHToken {
+    fileprivate func readToken() -> PHToken {
         let data = get(kTokenKey, objectType: [String : AnyObject]()) ?? [String : AnyObject]()
 
         var access = ""
@@ -89,7 +89,7 @@ class PHDefaults: StoreSubscriber {
     }
 
     // TODO: Remove migrate in V1.1
-    private func migrate() {
+    fileprivate func migrate() {
         let deprecatedTokenKey          = "authToken"
         let deprecatedShowsCountKey     = "showsCount"
         let deprecatedFilterCountKey    = "filterCount"
@@ -97,23 +97,23 @@ class PHDefaults: StoreSubscriber {
         let deprecatedSeenPostsKey      = "seenPosts"
         let deprecatedLastUpdatedKey    = "lastUpdatedDate"
 
-        if let tokenData =  get(deprecatedTokenKey, objectType: [String : AnyObject]()), let token = PHToken.token(fromDictionary: tokenData) {
+        if let tokenData =  get(deprecatedTokenKey, objectType: [String : Any]()), let token = PHToken.token(fromDictionary: tokenData) {
             set([kTokenKeyAccess: token.accessToken], key: kTokenKey)
         }
 
         if let showsCount = get(deprecatedShowsCountKey, objectType: Bool()) {
-            set(showsCount, key: kShowCountKey)
+            set(showsCount as AnyObject, key: kShowCountKey)
         }
 
         if let filterCount = get(deprecatedFilterCountKey, objectType: Int()) {
-            set(filterCount, key: kFilterCountKey)
+            set(filterCount as AnyObject, key: kFilterCountKey)
         }
 
         if let autologin = get(deprecatedAutoLoginKey, objectType: Bool()) {
-            set(autologin, key: kAutoLoginKey)
+            set(autologin as AnyObject, key: kAutoLoginKey)
         }
 
-        if let seenPosts = get(deprecatedSeenPostsKey, objectType: [String : [Int]]()), let key = seenPosts.keys.first, let date = NSDate(ISO8601String: key), let ids = seenPosts[key] {
+        if let seenPosts = get(deprecatedSeenPostsKey, objectType: [String : [Int]]()), let key = seenPosts.keys.first, let date = NSDate(iso8601String: key), let ids = seenPosts[key] {
             set([ kSeenPostsKeyDate: date, kSeenPostsKeyIds: ids ], key: kSeenPostsKey)
         }
 
@@ -125,23 +125,23 @@ class PHDefaults: StoreSubscriber {
         remove(deprecatedLastUpdatedKey)
     }
 
-    private func set(object: AnyObject, key: String) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(object, forKey: key)
+    fileprivate func set(_ object: Any, key: String) {
+        let defaults = UserDefaults.standard
+        defaults.set(object, forKey: key)
         defaults.synchronize()
     }
 
-    private func get<T>(key: String, objectType: T) -> T? {
-        guard let object = NSUserDefaults.standardUserDefaults().objectForKey(key) as? T else {
+    fileprivate func get<T>(_ key: String, objectType: T) -> T? {
+        guard let object = UserDefaults.standard.object(forKey: key) as? T else {
             return nil
         }
 
         return object
     }
 
-    private func remove(key: String) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.removeObjectForKey(key)
+    fileprivate func remove(_ key: String) {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: key)
         defaults.synchronize()
     }
 }

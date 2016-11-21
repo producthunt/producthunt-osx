@@ -17,8 +17,8 @@ class PHPostsDataSource: StoreSubscriber {
 
     var delegate: PHDataSourceDelegate?
 
-    private var store: Store<PHAppState>
-    private var content = [AnyObject]()
+    fileprivate var store: Store<PHAppState>
+    fileprivate var content = [AnyObject]()
 
     init(store: Store<PHAppState>) {
         self.store = store
@@ -55,12 +55,12 @@ class PHPostsDataSource: StoreSubscriber {
         PHLoadPostOperation.performOlder(store)
     }
 
-    private func flatContent(content: [PHSection]) -> [AnyObject] {
+    fileprivate func flatContent(_ content: [PHSection]) -> [AnyObject] {
         let formatter = PHDateFormatter()
         var output = [AnyObject]()
 
         content.forEach { (section) in
-            output.append(formatter.format(withDateString: section.day) ?? "")
+            output.append(formatter.format(withDateString: section.day) as AnyObject? ?? "" as AnyObject)
 
             PHPostSorter.sort(store, posts: section.posts, votes: store.state.settings.filterCount).forEach({ (post) in
                 output.append(post)

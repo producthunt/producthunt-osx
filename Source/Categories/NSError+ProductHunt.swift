@@ -10,8 +10,8 @@ import Foundation
 
 extension NSError {
 
-    class func parseError(error: NSError?) -> NSError? {
-        if let error = error where (error.userInfo[NSLocalizedDescriptionKey] as? String)?.containsString("401") != nil {
+    class func parseError(_ error: NSError?) -> NSError? {
+        if let error = error, (error.userInfo[NSLocalizedDescriptionKey] as? String)?.contains("401") != nil {
             return unauthorizedError()
         }
 

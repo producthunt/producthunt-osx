@@ -24,22 +24,22 @@ class PHBundle {
 
         let platformExpert: io_service_t = IOServiceGetMatchingService(kIOMasterPortDefault, dev)
 
-        let serialNumberAsCFString = IORegistryEntryCreateCFProperty(platformExpert, kIOPlatformUUIDKey, kCFAllocatorDefault, 0)
+        let serialNumberAsCFString = IORegistryEntryCreateCFProperty(platformExpert, kIOPlatformUUIDKey as CFString!, kCFAllocatorDefault, 0)
 
         IOObjectRelease(platformExpert)
 
-        let serialNumber: CFTypeRef = serialNumberAsCFString.takeUnretainedValue()
+        let serialNumber: CFTypeRef = serialNumberAsCFString!.takeUnretainedValue()
 
         return serialNumber as? String ?? ""
     }
 
     class func ipAddress() -> String {
-        let address = NSHost.currentHost().addresses.filter{  $0.containsString(".") && ($0 != "127.0.0.1") }
+        let address = Host.current().addresses.filter{  $0.contains(".") && ($0 != "127.0.0.1") }
         return address.isEmpty ? "" : address.first!
     }
 
-    private class func getValueFromInfoDictionary<T>(key: String, subjectType: T) -> T? {
-        guard let infoDictionary = NSBundle.mainBundle().infoDictionary else {
+    fileprivate class func getValueFromInfoDictionary<T>(_ key: String, subjectType: T) -> T? {
+        guard let infoDictionary = Bundle.main.infoDictionary else {
             return nil
         }
 

@@ -10,10 +10,10 @@ import Foundation
 
 class PHOpenPostOperation {
 
-    private class var openExternalLink: Bool {
+    fileprivate class var openExternalLink: Bool {
         var openExternalLink = false
 
-        if let event = NSApp.currentEvent where event.modifierFlags.contains(.CommandKeyMask) && event.modifierFlags.contains(.AlternateKeyMask)  {
+        if let event = NSApp.currentEvent, event.modifierFlags.contains(.command) && event.modifierFlags.contains(.option)  {
             openExternalLink = true
         }
 

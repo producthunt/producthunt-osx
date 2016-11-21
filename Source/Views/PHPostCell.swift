@@ -23,18 +23,18 @@ class PHPostCell: NSTableCellView {
     @IBOutlet weak var twitterButton: PHButton!
     @IBOutlet weak var facebookButton: PHButton!
 
-    private let cursor = NSCursor.pointingHandCursor()
-    private var model: PHPostViewModel?
-    private var post: PHPost?
-    private var trackingArea: NSTrackingArea?
-    private var mouseInside = false {
+    fileprivate let cursor = NSCursor.pointingHand()
+    fileprivate var model: PHPostViewModel?
+    fileprivate var post: PHPost?
+    fileprivate var trackingArea: NSTrackingArea?
+    fileprivate var mouseInside = false {
         didSet {
             updateUI()
         }
     }
 
-    class func view(tableView: NSTableView, owner: AnyObject?, subject: AnyObject?) -> NSView {
-        let view = tableView.makeViewWithIdentifier("postCellIdentifier", owner: owner) as! PHPostCell
+    class func view(_ tableView: NSTableView, owner: AnyObject?, subject: AnyObject?) -> NSView {
+        let view = tableView.make(withIdentifier: "postCellIdentifier", owner: owner) as! PHPostCell
 
         if let post = subject as? PHPost {
             view.setPost(post)
@@ -60,7 +60,7 @@ class PHPostCell: NSTableCellView {
         cursor.set()
     }
 
-    private func commonInit() {
+    fileprivate func commonInit() {
         wantsLayer = true
 
         thumbnailImageView.wantsLayer = true
@@ -79,7 +79,7 @@ class PHPostCell: NSTableCellView {
         commentImageView.image  = NSImage(named: "comment-icon")!.tintedImageWithColor(NSColor.ph_grayColor())
     }
 
-    private func setPost(post: PHPost?) {
+    fileprivate func setPost(_ post: PHPost?) {
         self.post = post
 
         guard let post = post else {
@@ -90,14 +90,14 @@ class PHPostCell: NSTableCellView {
         updateUI()
     }
 
-    private func updateUI() {
+    fileprivate func updateUI() {
         guard let model = model else {
             return
         }
 
-        layer?.backgroundColor = mouseInside ? NSColor.ph_highlightColor().CGColor : NSColor.ph_whiteColor().CGColor
+        layer?.backgroundColor = mouseInside ? NSColor.ph_highlightColor().cgColor : NSColor.ph_whiteColor().cgColor
 
-        seenView.hidden = model.isSeen
+        seenView.isHidden = model.isSeen
 
         titleLabel.stringValue          = model.title
         taglineLabel.stringValue        = model.tagline
@@ -105,15 +105,15 @@ class PHPostCell: NSTableCellView {
         commentsCountLabel.stringValue  = model.commentsCount
         timeAgoLabel.stringValue        = model.createdAt
 
-        thumbnailImageView.kf_setImageWithURL(model.thumbnailUrl, placeholderImage: NSImage(named: "placeholder"))
+        thumbnailImageView.kf.setImage(with: model.thumbnailUrl, placeholder: NSImage(named: "placeholder"), options: nil, progressBlock: nil, completionHandler: nil)
 
-        twitterButton.hidden = !mouseInside
-        facebookButton.hidden = !mouseInside
+        twitterButton.isHidden = !mouseInside
+        facebookButton.isHidden = !mouseInside
     }
 
-    private func createTrackingAreaIfNeeded() {
+    fileprivate func createTrackingAreaIfNeeded() {
         if trackingArea == nil {
-            trackingArea = NSTrackingArea(rect: CGRect.zero, options: [NSTrackingAreaOptions.InVisibleRect, NSTrackingAreaOptions.MouseEnteredAndExited, NSTrackingAreaOptions.ActiveAlways], owner: self, userInfo: nil)
+            trackingArea = NSTrackingArea(rect: CGRect.zero, options: [NSTrackingAreaOptions.inVisibleRect, NSTrackingAreaOptions.mouseEnteredAndExited, NSTrackingAreaOptions.activeAlways], owner: self, userInfo: nil)
         }
     }
 
@@ -127,19 +127,19 @@ class PHPostCell: NSTableCellView {
         }
     }
 
-    override func mouseEntered(theEvent: NSEvent) {
+    override func mouseEntered(with theEvent: NSEvent) {
         mouseInside = true
     }
 
-    override func mouseExited(theEvent: NSEvent) {
+    override func mouseExited(with theEvent: NSEvent) {
         mouseInside = false
     }
 
-    @IBAction func toggleTwitterShare(sender: AnyObject) {
+    @IBAction func toggleTwitterShare(_ sender: AnyObject) {
         PHShareAction.sharedInstance.performTwitter(post)
     }
 
-    @IBAction func toggleFacebookShare(sender: AnyObject) {
+    @IBAction func toggleFacebookShare(_ sender: AnyObject) {
         PHShareAction.sharedInstance.performFacebook(post)
     }
 }

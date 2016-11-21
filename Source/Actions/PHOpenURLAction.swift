@@ -11,11 +11,11 @@ import Cocoa
 class PHOpenURLAction {
 
     class func perform(withPath path: String, closeAfterLaunch: Bool = false) {
-        perform(withUrl: NSURL(string: path)!, closeAfterLaunch: closeAfterLaunch)
+        perform(withUrl: URL(string: path)!, closeAfterLaunch: closeAfterLaunch)
     }
 
-    class func perform(withUrl url: NSURL, closeAfterLaunch: Bool = false) {
-        let handle = NSWorkspace.sharedWorkspace().openURL(url)
+    class func perform(withUrl url: URL, closeAfterLaunch: Bool = false) {
+        let handle = NSWorkspace.shared().open(url)
 
         if handle && closeAfterLaunch {
             PHPopoverAction.close()

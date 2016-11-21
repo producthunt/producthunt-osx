@@ -16,7 +16,7 @@ import AppKit
 
     func preferencesIcon() -> NSImage
 
-    optional func firstResponder() -> NSResponder
+    @objc optional func firstResponder() -> NSResponder
 
-    optional func preferencesToolTip() -> String
+    @objc optional func preferencesToolTip() -> String
 }

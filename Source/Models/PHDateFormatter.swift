@@ -12,12 +12,12 @@ import ISO8601
 
 class PHDateFormatter {
 
-    class func daysAgo(dateString: String) -> Int {
+    class func daysAgo(_ dateString: String) -> Int {
         return PHDateFormatter().daysAgo(fromDateAsString: dateString)
     }
 
-    private let formatter = NSDateFormatter()
-    private var units: [Int : String] {
+    fileprivate let formatter = DateFormatter()
+    fileprivate var units: [Int : String] {
         return [0: "th", 1: "st", 21: "st", 31: "st", 2: "nd", 22: "nd", 3: "rd", 23: "rd"]
     }
 
@@ -29,7 +29,7 @@ class PHDateFormatter {
         return format(date)
     }
 
-    func format(date: NSDate) -> String {
+    func format(_ date: Date) -> String {
         let day     = getDayName(date)
         let month   = getMonthName(date)
         let suffix  = getDaySuffix(date)
@@ -46,45 +46,44 @@ class PHDateFormatter {
     }
 
     func timeAgo(fromDateAsString dateString: String) -> String {
-        var timeZone = NSTimeZone(abbreviation: "PST")
-        guard let date = NSDate(ISO8601String: dateString, timeZone: &timeZone, usingCalendar: nil) else {
+        guard var timeZone = NSTimeZone(abbreviation: "PST"), let date = NSDate(iso8601String: dateString, timeZone: &timeZone, using: nil) else {
             return ""
         }
 
         return date.shortTimeAgoSinceNow()
     }
 
-    private func parseDate(dateAsString: String) -> NSDate? {
+    fileprivate func parseDate(_ dateAsString: String) -> Date? {
         formatter.dateFormat = "yyyy-MM-dd"
 
-        guard let date = formatter.dateFromString(dateAsString) else {
+        guard let date = formatter.date(from: dateAsString) else {
             return nil
         }
 
         return date
     }
 
-    private func daysAgo(date: NSDate) -> Int {
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.Day, fromDate: date, toDate: NSDate(), options: []).day
+    fileprivate func daysAgo(_ date: Date) -> Int {
+        return (Calendar.current as NSCalendar).components(NSCalendar.Unit.day, from: date, to: Date(), options: []).day!
     }
 
-    private func getDayName(date: NSDate) -> String {
+    fileprivate func getDayName(_ date: Date) -> String {
         formatter.dateFormat = "EEEE"
 
         switch daysAgo(date) {
         case 0  : return "Today"
         case 1  : return "Yesterday"
-        default : return self.formatter.stringFromDate(date)
+        default : return self.formatter.string(from: date)
         }
     }
 
-    private func getMonthName(date: NSDate) -> String {
+    fileprivate func getMonthName(_ date: Date) -> String {
         formatter.dateFormat = "MMMM"
-        return self.formatter.stringFromDate(date)
+        return self.formatter.string(from: date)
     }
 
-    private func getDaySuffix(date: NSDate) -> String {
-        let day = NSCalendar.currentCalendar().component(NSCalendarUnit.Day, fromDate: date)
+    fileprivate func getDaySuffix(_ date: Date) -> String {
+        let day = (Calendar.current as NSCalendar).component(NSCalendar.Unit.day, from: date)
         let unit = units[day] ?? units[0]
 
         return "\(day)\(unit!)"

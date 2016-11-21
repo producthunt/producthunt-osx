@@ -11,8 +11,8 @@ import ReSwift
 
 class PHStatusBarUpdater: StoreSubscriber {
 
-    private var button: NSStatusBarButton?
-    private var store: Store<PHAppState>
+    fileprivate var button: NSStatusBarButton?
+    fileprivate var store: Store<PHAppState>
 
     init(button: NSStatusBarButton?, store: Store<PHAppState>) {
         self.button = button
@@ -29,17 +29,17 @@ class PHStatusBarUpdater: StoreSubscriber {
         updateTitle()
     }
 
-    private func updateTitle() {
+    fileprivate func updateTitle() {
         guard let button = button, let posts = store.state.posts.todayPosts  else {
             return
         }
 
-        let sortedPosts = PHPostSorter.filter(store, posts: posts, by: [.Seen(false), .Votes(store.state.settings.filterCount)])
+        let sortedPosts = PHPostSorter.filter(store, posts: posts, by: [.seen(false), .votes(store.state.settings.filterCount)])
 
         button.title = title(fromCount: sortedPosts.count)
     }
 
-    private func title(fromCount count: Int) -> String {
+    fileprivate func title(fromCount count: Int) -> String {
         if !store.state.settings.showsCount {
             return ""
         }

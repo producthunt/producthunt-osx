@@ -15,9 +15,9 @@ class PHAdvancedSettingsViewController: NSViewController, PHPreferencesWindowCon
     @IBOutlet weak var automaticallyCheckForUpdatesButton: NSButton!
     @IBOutlet weak var automaticallyDownloadUpdatesButton: NSButton!
 
-    private let formatter = PHDateFormatter()
-    private var updater: SUUpdater {
-        return SUUpdater.sharedUpdater()
+    fileprivate let formatter = PHDateFormatter()
+    fileprivate var updater: SUUpdater {
+        return SUUpdater.shared()
     }
 
     override func viewDidLoad() {
@@ -29,11 +29,11 @@ class PHAdvancedSettingsViewController: NSViewController, PHPreferencesWindowCon
 
     // MARK: Actions
 
-    @IBAction func automaticallyCheckForUpdatesAction(sender: NSButton) {
+    @IBAction func automaticallyCheckForUpdatesAction(_ sender: NSButton) {
         updater.automaticallyChecksForUpdates = sender.boolState
     }
 
-    @IBAction func automaticallyDownloadUpdatesAction(sender: NSButton) {
+    @IBAction func automaticallyDownloadUpdatesAction(_ sender: NSButton) {
         updater.automaticallyDownloadsUpdates = sender.boolState
     }
 

@@ -14,11 +14,11 @@ class PHSeenView: NSView {
         super.awakeFromNib()
 
         wantsLayer = true
-        layer?.backgroundColor = NSColor.ph_orangeColor().CGColor
+        layer?.backgroundColor = NSColor.ph_orangeColor().cgColor
     }
 
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
 
         layer?.cornerRadius = dirtyRect.size.height/2
     }

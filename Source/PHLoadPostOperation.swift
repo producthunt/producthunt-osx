@@ -11,7 +11,7 @@ import ReSwift
 
 class PHLoadPostOperation {
 
-    class func performNewer(store: Store<PHAppState>? = store) {
+    class func performNewer(_ store: Store<PHAppState>? = store) {
         guard let store = store else {
             return
         }
@@ -19,7 +19,7 @@ class PHLoadPostOperation {
         perform(store, api: PHAPI.sharedInstance, daysAgo: store.state.posts.today)
     }
 
-    class func performOlder(store: Store<PHAppState>? = store) {
+    class func performOlder(_ store: Store<PHAppState>? = store) {
         guard let store = store  else {
             return
         }
@@ -27,7 +27,7 @@ class PHLoadPostOperation {
         perform(store, api: PHAPI.sharedInstance, daysAgo: store.state.posts.nextDay)
     }
 
-    class func perform(app: Store<PHAppState>, api: PHAPI, daysAgo: Int) {
+    class func perform(_ app: Store<PHAppState>, api: PHAPI, daysAgo: Int) {
         if api.isThereOngoingRequest {
             return
         }
@@ -39,15 +39,15 @@ class PHLoadPostOperation {
         PHAPIOperation.perform(app, api: api, operation: operation)
     }
 
-    class func createOperation(daysAgo: Int, complete: ([PHPost]) -> ()) -> PHAPIOperationClosure {
-        return { (api: PHAPI, errorClosure: PHAPIErrorClosure) in
+    class func createOperation(_ daysAgo: Int, complete: @escaping ([PHPost]) -> ()) -> PHAPIOperationClosure {
+        return { (api: PHAPI, errorClosure: @escaping PHAPIErrorClosure) in
             api.getPosts(daysAgo, completion: { (posts, error) in
                 if let error = error {
-                    errorClosure(error: error)
+                    errorClosure(error)
                 }
 
                 complete(posts)
             })
-        }
+        } as! PHAPIOperationClosure
     }
 }

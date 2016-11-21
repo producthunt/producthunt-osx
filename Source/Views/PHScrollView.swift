@@ -10,11 +10,11 @@ import Cocoa
 
 class PHScrollView: NSScrollView {
 
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
 
         let layer = CALayer()
-        layer.borderColor = NSColor.windowBackgroundColor().CGColor
+        layer.borderColor = NSColor.windowBackgroundColor.cgColor
         layer.borderWidth = 1
         layer.frame = NSRect(x: 0, y: dirtyRect.size.height - 1, width: dirtyRect.size.width, height: 1)
 

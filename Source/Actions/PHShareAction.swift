@@ -14,43 +14,43 @@ class PHShareAction: NSObject, NSSharingServiceDelegate {
 
     static let sharedInstance = PHShareAction()
 
-    func performTwitter(post: PHPost?) {
+    func performTwitter(_ post: PHPost?) {
         guard let post = post else {
             return
         }
 
         store.dispatch( PHTrackPostShare(post: post, medium: "twitter") )
 
-        KingfisherManager.sharedManager.retrieveImageWithURL(post.thumbnailUrl, optionsInfo: nil, progressBlock: nil) { (image, error, cacheType, imageURL) in
+        KingfisherManager.shared.retrieveImage(with: post.thumbnailUrl, options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) in
             self.perform(NSSharingServiceNamePostOnTwitter, title: PHShareMessage.message(fromPost: post), url: post.discussionUrl, image: image)
-        }
+        })
     }
 
-    func performFacebook(post: PHPost?) {
+    func performFacebook(_ post: PHPost?) {
         guard let post = post else {
             return
         }
 
         store.dispatch( PHTrackPostShare(post: post, medium: "facebook") )
 
-        KingfisherManager.sharedManager.retrieveImageWithURL(post.thumbnailUrl, optionsInfo: nil, progressBlock: nil) { (image, error, cacheType, imageURL) in
+        KingfisherManager.shared.retrieveImage(with: post.thumbnailUrl, options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) in
             self.perform(NSSharingServiceNamePostOnFacebook, title: PHShareMessage.message(fromPost: post), url: post.discussionUrl, image: image)
-        }
+        })
     }
 
-    private func perform(service: String, title: String, url: NSURL, image: NSImage?) {
+    fileprivate func perform(_ service: String, title: String, url: URL, image: NSImage?) {
         if let service =  NSSharingService(named: service) {
             service.delegate = self
 
             var items = [AnyObject]()
 
-            items.append(title)
+            items.append(title as AnyObject)
 
             if let image = image {
                 items.append(image)
             }
 
-            service.performWithItems(items)
+            service.perform(withItems: items)
         }
     }
 }

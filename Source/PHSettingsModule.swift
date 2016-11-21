@@ -30,7 +30,7 @@ struct PHSettngsActionFilterCount: Action {
     var filterCount: Int
 }
 
-func settingsReducer(action: Action, state: PHSettings?) -> PHSettings {
+func settingsReducer(_ action: Action, state: PHSettings?) -> PHSettings {
     var state = state ?? PHSettings(autologinEnabled: true, showsCount: true, filterCount: 10)
 
     switch action {

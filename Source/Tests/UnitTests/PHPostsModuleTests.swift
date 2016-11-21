@@ -20,7 +20,7 @@ class PHPostsModuleTests: PHTestCase {
     }
 
     func testThatAcceptsEmptyArray() {
-        let state = PHAppStatePosts(sections: [], lastUpdated: NSDate())
+        let state = PHAppStatePosts(sections: [], lastUpdated: Date())
 
         let reducer = postsReducer(PHPostsLoadAction(posts: []) , state: state)
 
@@ -30,7 +30,7 @@ class PHPostsModuleTests: PHTestCase {
     func testThatOldPostsAppendsSectionAtTheEnd() {
         let section = PHSection.section( [fake.post(-1.day, votes: 10, commentsCount: 10)] )
 
-        let state = PHAppStatePosts(sections: [section], lastUpdated: NSDate())
+        let state = PHAppStatePosts(sections: [section], lastUpdated: Date())
 
         let post = fake.post(-2.day, votes: 10, commentsCount: 10)
 
@@ -45,7 +45,7 @@ class PHPostsModuleTests: PHTestCase {
     func testThatNewPostsAppendsSectionAtFront() {
         let section = PHSection.section( [fake.post(-1.day, votes: 10, commentsCount: 10)] )
 
-        let state = PHAppStatePosts(sections: [section], lastUpdated: NSDate())
+        let state = PHAppStatePosts(sections: [section], lastUpdated: Date())
 
         let post = fake.post()
 
@@ -60,7 +60,7 @@ class PHPostsModuleTests: PHTestCase {
     func testThatReplacesTodaySection() {
         let section = PHSection.section( [fake.post()] )
 
-        let state = PHAppStatePosts(sections: [section], lastUpdated: NSDate())
+        let state = PHAppStatePosts(sections: [section], lastUpdated: Date())
 
         let post = fake.post()
 

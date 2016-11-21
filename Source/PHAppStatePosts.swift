@@ -33,5 +33,5 @@ struct PHAppStatePosts {
         return section.posts
     }
 
-    var lastUpdated: NSDate
+    var lastUpdated: Date
 }

@@ -16,6 +16,6 @@ struct PHToken {
     }
 
     func description() -> [String: AnyObject] {
-        return ["access_token" : accessToken]
+        return ["access_token" : accessToken as AnyObject]
     }
 }

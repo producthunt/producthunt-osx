@@ -8,32 +8,32 @@
 
 import Foundation
 
-typealias PHAnalitycsProperties = [String: AnyObject]
+typealias PHAnalitycsProperties = [String: Any]
 
 class PHAnalitycs {
 
     static let sharedInstance = PHAnalitycs()
 
-    private let kTrackEventVisit    = "visit"
-    private let kTrackEventClick    = "click"
-    private let kTrackEventShare    = "share"
-    private let kTrackPlatform      = "osx"
+    fileprivate let kTrackEventVisit    = "visit"
+    fileprivate let kTrackEventClick    = "click"
+    fileprivate let kTrackEventShare    = "share"
+    fileprivate let kTrackPlatform      = "osx"
 
-    private var api = PHAnalitycsAPI()
+    fileprivate var api = PHAnalitycsAPI()
 
-    private var context: PHAnalitycsProperties {
-        return [ "uuid"  : PHBundle.systemUUID() ]
+    fileprivate var context: PHAnalitycsProperties {
+        return [ "uuid"  : PHBundle.systemUUID() as AnyObject ]
     }
 
-    private var timestamp: String {
-        return NSDate().ISO8601String() ?? ""
+    fileprivate var timestamp: String {
+        return (Date() as NSDate).iso8601String() ?? ""
     }
 
-    func trackClickPost(id: Int)  {
+    func trackClickPost(_ id: Int)  {
         trackClick("post", subjectId: id)
     }
 
-    func trackClick(subjectType: String, subjectId: Int) {
+    func trackClick(_ subjectType: String, subjectId: Int) {
         let properties: PHAnalitycsProperties = [
             "event"     : kTrackEventClick,
             "properties": [
@@ -51,7 +51,7 @@ class PHAnalitycs {
         api.track(properties)
     }
 
-    func trackShare(subjectType: String, subjectId: Int, medium: String) {
+    func trackShare(_ subjectType: String, subjectId: Int, medium: String) {
         let properties: PHAnalitycsProperties = [
             "event"     : kTrackEventShare,
             "properties": [
@@ -70,11 +70,11 @@ class PHAnalitycs {
         api.track(properties)
     }
 
-    func trackVisit(page: String) {
+    func trackVisit(_ page: String) {
         let properties: PHAnalitycsProperties = [
-            "event"     : kTrackEventVisit,
-            "page"      : page,
-            "timestamp" : timestamp
+            "event"     : kTrackEventVisit as AnyObject,
+            "page"      : page as AnyObject,
+            "timestamp" : timestamp as AnyObject
         ]
 
         api.visit(properties)

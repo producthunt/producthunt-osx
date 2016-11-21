@@ -13,7 +13,7 @@ struct PHTokenGetAction: Action {
     var token: PHToken
 }
 
-func tokenReducer(action: Action, state: PHToken?) -> PHToken {
+func tokenReducer(_ action: Action, state: PHToken?) -> PHToken {
     let state = state ?? PHToken(accessToken: "")
 
     switch action {
