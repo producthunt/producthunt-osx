@@ -13,16 +13,16 @@ class PHAnalitycsAPI {
 
     var endpoint = PHAnalitycsAPIEndpoint(key: kSegmentKey)
 
-    func track(properties: PHAnalitycsProperties) {
+    func track(_ properties: PHAnalitycsProperties) {
         endpoint.post("track", parameters: properties)
     }
 
     // Use `page` instead of `screen`
-    func visit(properties: PHAnalitycsProperties) {
+    func visit(_ properties: PHAnalitycsProperties) {
         endpoint.post("page", parameters: properties)
     }
 
-    func identify(properties: PHAnalitycsProperties) {
+    func identify(_ properties: PHAnalitycsProperties) {
         endpoint.post("identify", parameters: properties)
     }
 }

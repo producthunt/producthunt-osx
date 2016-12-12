@@ -8,16 +8,16 @@
 
 import Foundation
 
-public class Credentials {
+open class Credentials {
 
     /** Returns this string encoded as Base64. */
-    static func base64(string: String) -> String {
-        let utf8str = string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
-        return utf8str.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+    static func base64(_ string: String) -> String {
+        let utf8str = string.data(using: String.Encoding.utf8, allowLossyConversion: false)!
+        return utf8str.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
     }
 
     /** Returns an auth credential for the Basic scheme. Exposed for testing. */
-    static func basic(username: String, password: String) -> String {
+    static func basic(_ username: String, password: String) -> String {
         return String(format: "Basic %@", base64(String(format: "%@:%@", username, password)))
     }
 

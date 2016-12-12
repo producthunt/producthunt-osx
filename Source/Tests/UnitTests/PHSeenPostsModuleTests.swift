@@ -22,7 +22,7 @@ class PHSeenPostsModuleTests: PHTestCase {
     func testThatmarksPostAsSeen() {
         let post = fake.post()
 
-        let seenPosts = PHSeenPosts(date: NSDate(timeIntervalSinceNow: 0), postIds: [])
+        let seenPosts = PHSeenPosts(date: Date(timeIntervalSinceNow: 0), postIds: [])
 
         let action = PHMarkPostsAsSeenAction(posts: [post])
 
@@ -38,7 +38,7 @@ class PHSeenPostsModuleTests: PHTestCase {
 
         let post = fake.post()
 
-        let seenPosts = PHSeenPosts(date: NSDate(timeIntervalSinceNow: daysAgo), postIds: Set([yesterdayPost.id]))
+        let seenPosts = PHSeenPosts(date: Date(timeIntervalSinceNow: daysAgo), postIds: Set([yesterdayPost.id]))
 
         let action = PHMarkPostsAsSeenAction(posts: [post])
 
@@ -53,7 +53,7 @@ class PHSeenPostsModuleTests: PHTestCase {
     func testThatAddsOnlyUnqueIds() {
         let post = fake.post()
 
-        let seenPosts = PHSeenPosts(date: NSDate(), postIds: Set([post.id]))
+        let seenPosts = PHSeenPosts(date: Date(), postIds: Set([post.id]))
 
         let action = PHMarkPostsAsSeenAction(posts: [post])
 

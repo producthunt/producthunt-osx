@@ -11,7 +11,7 @@ import Cocoa
 class PHOpenSettingsAction {
 
     class func perform() {
-        let delegate = NSApplication.sharedApplication().delegate as! AppDelegate
+        let delegate = NSApplication.shared().delegate as! AppDelegate
 
         delegate.settingsWindow = PHPreferencesWindowController()
         delegate.settingsWindow.viewControllers = [ PHGeneralSettingsViewController(nibName: "PHGeneralSettingsViewController", bundle: nil)!, PHAdvancedSettingsViewController(nibName: "PHAdvancedSettingsViewController", bundle: nil)! ]

@@ -10,7 +10,7 @@ import Foundation
 
 extension PHPost {
 
-    class func post(fromDictionary dictionary: [String: AnyObject]) -> PHPost? {
+    class func post(fromDictionary dictionary: [String: Any]) -> PHPost? {
         guard
             let id              = dictionary["id"] as? Int,
             let title           = dictionary["name"] as? String,
@@ -27,15 +27,15 @@ extension PHPost {
             return nil
         }
 
-        let thumbnailURL    = NSURL(string: thumbnailPath)!
-        let discussionURL   = NSURL(string: discussionPath)!
-        let redirectURL     = NSURL(string: redirectUrl)!
+        let thumbnailURL    = URL(string: thumbnailPath)!
+        let discussionURL   = URL(string: discussionPath)!
+        let redirectURL     = URL(string: redirectUrl)!
 
         return PHPost(id: id,title: title, tagline: tagline, thumbnailUrl: thumbnailURL, discussionUrl: discussionURL, day: day, votesCount: votesCount, commentsCount: commentsCount, createdAt: createdAt, redirectUrl: redirectURL)
     }
 
-    class func posts(fromArray array: [[String: AnyObject]]) -> [PHPost] {
-        return array.map{ PHPost.post(fromDictionary: $0)! }.filter({ $0 != nil })
+    class func posts(fromArray array: [[String: Any]]) -> [PHPost] {
+        return array.flatMap{ PHPost.post(fromDictionary: $0)! }
     }
 
 }

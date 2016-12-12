@@ -32,7 +32,7 @@ class PHGeneralSettingsViewController: NSViewController, PHPreferencesWindowCont
 
         store.subscribe(self)
 
-        newState(store.state)
+        newState(state: store.state)
     }
 
     override func viewWillDisappear() {
@@ -40,15 +40,15 @@ class PHGeneralSettingsViewController: NSViewController, PHPreferencesWindowCont
         store.unsubscribe(self)
     }
 
-    @IBAction func startAtLoginAction(sender: NSButton) {
+    @IBAction func startAtLoginAction(_ sender: NSButton) {
         store.dispatch( PHSettingsActionAutoLogin(autologin: sender.boolState) )
     }
 
-    @IBAction func showPostsCountAction(sender: NSButton) {
+    @IBAction func showPostsCountAction(_ sender: NSButton) {
         store.dispatch( PHSettingsActionShowsCount(showsCount: sender.boolState) )
     }
 
-    @IBAction func filterSliderValueChanged(sender: NSSlider) {
+    @IBAction func filterSliderValueChanged(_ sender: NSSlider) {
         store.dispatch( PHSettngsActionFilterCount(filterCount: currenSliderValue) )
     }
 

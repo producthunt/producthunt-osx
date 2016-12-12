@@ -9,13 +9,13 @@
 import Cocoa
 import AFNetworking
 
-typealias PHAPIEndpointCompletion = (response: [String: AnyObject]?, error: NSError?) -> Void
+typealias PHAPIEndpointCompletion = (_ response: [String: Any]?, _ error: NSError?) -> Void
 
 class PHAPIEndpoint {
 
     static let kPHEndpointHost = "https://api.producthunt.com"
 
-    private let manager = AFHTTPSessionManager(baseURL: NSURL(string: "\(kPHEndpointHost)/v1"))
+    fileprivate let manager = AFHTTPSessionManager(baseURL: URL(string: "\(kPHEndpointHost)/v1"))
 
     init(token: PHToken?) {
         manager.responseSerializer  = AFJSONResponseSerializer()
@@ -29,21 +29,21 @@ class PHAPIEndpoint {
         }
     }
 
-    func get(url: String, parameters: [String: AnyObject]?, completion: PHAPIEndpointCompletion) {
-        manager.GET(url, parameters: parameters, progress: nil, success: { (task, response) in
-            completion(response: (response as? [String: AnyObject]), error: nil)
+    func get(_ url: String, parameters: [String: Any]?, completion: @escaping PHAPIEndpointCompletion) {
+        manager.get(url, parameters: parameters, progress: nil, success: { (task, response) in
+            completion((response as? [String: AnyObject]), nil)
             }) { (task, error) in
                 print(error)
-                completion(response: nil, error: error)
+                completion(nil, error as NSError?)
         }
     }
 
-    func post(url: String, parameters: [String: AnyObject]?, completion: PHAPIEndpointCompletion) {
-        manager.POST(url, parameters: parameters, progress: nil, success: { (task, response) in
-            completion(response: (response as? [String: AnyObject]), error: nil)
+    func post(_ url: String, parameters: [String: Any]?, completion: @escaping PHAPIEndpointCompletion) {
+        manager.post(url, parameters: parameters, progress: nil, success: { (task, response) in
+            completion((response as? [String: AnyObject]), nil)
             }) { (task, error) in
                 print(error)
-                completion(response: nil, error: error)
+                completion(nil, error as NSError?)
         }
     }
 }

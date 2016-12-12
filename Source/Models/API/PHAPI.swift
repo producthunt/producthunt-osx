@@ -14,24 +14,24 @@ class PHAPI {
 
     var endpoint = PHAPIEndpoint(token: store.state.token)
 
-    private(set) var isThereOngoingRequest = false
+    fileprivate(set) var isThereOngoingRequest = false
 
-    func getToken(completion: PHAPITokenCompletion) {
+    func getToken(_ completion: @escaping PHAPITokenCompletion) {
         let params = ["client_id" : kPHAppID, "client_secret": kPHAppSecret, "grant_type": "client_credentials"]
 
         endpoint.post("oauth/token", parameters: params) { (response, error) -> Void in
-            completion(token: PHToken.token(fromDictionary: response), error: error)
+            completion(PHToken.token(fromDictionary: response), error)
         }
     }
 
-    func getPosts(daysAgo: Int, completion: PHAPIPostCompletion) {
+    func getPosts(_ daysAgo: Int, completion: @escaping PHAPIPostCompletion) {
         getPostsPosted(daysAgo, retries: 20, completion: completion)
     }
 
-    private func getPostsPosted(daysAgo: Int, retries: Int, completion: PHAPIPostCompletion) {
+    fileprivate func getPostsPosted(_ daysAgo: Int, retries: Int, completion: @escaping PHAPIPostCompletion) {
         if retries == 0 {
             isThereOngoingRequest = false
-            completion(posts: [], error: NSError.unauthorizedError())
+            completion([], NSError.unauthorizedError())
             return
         }
 
@@ -41,9 +41,9 @@ class PHAPI {
             self.isThereOngoingRequest = false
 
             if let response = response, let rawPosts = response["posts"] as? [[String : AnyObject]] {
-                completion(posts: PHPost.posts(fromArray: rawPosts) ?? [PHPost](), error: nil)
+                completion(PHPost.posts(fromArray: rawPosts), nil)
             } else if let error = error {
-                completion(posts: [PHPost](), error: error)
+                completion([PHPost](), error)
             } else {
                 self.getPostsPosted(daysAgo + 1, retries: retries - 1, completion: completion)
             }

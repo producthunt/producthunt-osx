@@ -11,16 +11,16 @@ import ReSwift
 
 class PHAPIOperation {
 
-    class func perform(store: Store<PHAppState>, api: PHAPI, operation: PHAPIOperationClosure) {
+    class func perform(_ store: Store<PHAppState>, api: PHAPI, operation: @escaping PHAPIOperationClosure) {
         withToken(store, api: api) { (token, error) in
-            operation(api: api, errorClosure: { (error) in
+            operation(api, { (error) in
                 if NSError.parseError(error) == NSError.unauthorizedError() {
                     let token = PHToken(accessToken: "")
                     store.dispatch( PHTokenGetAction(token: token) )
                 }
 
                 withToken(store, api: api, callback: { (token, error) in
-                    operation(api: api, errorClosure: { (error) in
+                    operation(api, { (error) in
                         //TODO : Dispatch errror
                     })
                 })
@@ -28,9 +28,9 @@ class PHAPIOperation {
         }
     }
 
-    private class func withToken(store: Store<PHAppState>, api: PHAPI, callback: PHAPITokenCompletion) {
+    fileprivate class func withToken(_ store: Store<PHAppState>, api: PHAPI, callback: @escaping PHAPITokenCompletion) {
         if store.state.token.isValid {
-            callback(token: store.state.token, error: nil)
+            callback(store.state.token, nil)
             return
         }
 
@@ -42,7 +42,7 @@ class PHAPIOperation {
                 store.dispatch( PHTokenGetAction(token: token) )
             }
 
-            callback(token: token, error: error)
+            callback(token, error)
         }
     }
 }

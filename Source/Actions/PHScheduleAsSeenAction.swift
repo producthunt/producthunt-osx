@@ -10,14 +10,14 @@ import Cocoa
 
 class PHScheduleAsSeenAction {
 
-    private class var delegate: AppDelegate {
-        return NSApplication.sharedApplication().delegate as! AppDelegate
+    fileprivate class var delegate: AppDelegate {
+        return NSApplication.shared().delegate as! AppDelegate
     }
 
     class func performSchedule() {
         performCancel()
 
-        delegate.countdownToMarkAsSeen = NSTimer.after(30.seconds, {
+        delegate.countdownToMarkAsSeen = Timer.after(30.seconds, {
             guard let posts = store.state.posts.todayPosts else {
                 return
             }

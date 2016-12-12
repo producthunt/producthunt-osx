@@ -10,10 +10,10 @@ import Cocoa
 
 class PHButton: NSButton {
 
-    private let cursor = NSCursor.pointingHandCursor()
-    private var normalStateImage: NSImage?
-    private var highlightedStateImage: NSImage?
-    private var trackingArea: NSTrackingArea?
+    fileprivate let cursor = NSCursor.pointingHand()
+    fileprivate var normalStateImage: NSImage?
+    fileprivate var highlightedStateImage: NSImage?
+    fileprivate var trackingArea: NSTrackingArea?
 
     override func resetCursorRects() {
         addCursorRect(bounds, cursor: cursor)
@@ -38,8 +38,8 @@ class PHButton: NSButton {
     func commonInit() {
     }
 
-    func setImages(normalImage: String, highlitedImage: String) {
-        self.setButtonType(.MomentaryChangeButton)
+    func setImages(_ normalImage: String, highlitedImage: String) {
+        self.setButtonType(.momentaryChange)
 
         normalStateImage = NSImage(named: normalImage)
         highlightedStateImage = NSImage(named: highlitedImage)
@@ -53,9 +53,9 @@ class PHButton: NSButton {
         }
     }
 
-    private func createTrackingAreaIfNeeded() {
+    fileprivate func createTrackingAreaIfNeeded() {
         if trackingArea == nil {
-            trackingArea = NSTrackingArea(rect: CGRect.zero, options: [.InVisibleRect, .MouseEnteredAndExited, .ActiveAlways], owner: self, userInfo: nil)
+            trackingArea = NSTrackingArea(rect: CGRect.zero, options: [.inVisibleRect, .mouseEnteredAndExited, .activeAlways], owner: self, userInfo: nil)
         }
     }
 
@@ -69,13 +69,13 @@ class PHButton: NSButton {
         }
     }
 
-    override func mouseEntered(theEvent: NSEvent) {
+    override func mouseEntered(with theEvent: NSEvent) {
         if let highlightedImage = highlightedStateImage {
             image = highlightedImage
         }
     }
 
-    override func mouseExited(theEvent: NSEvent) {
+    override func mouseExited(with theEvent: NSEvent) {
         if let normalStateImage = normalStateImage {
             image = normalStateImage
         }

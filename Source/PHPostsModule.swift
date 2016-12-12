@@ -13,8 +13,8 @@ struct PHPostsLoadAction: Action {
     var posts: [PHPost]
 }
 
-func postsReducer(action: Action, state: PHAppStatePosts?) -> PHAppStatePosts {
-    let state = state ?? PHAppStatePosts(sections: [], lastUpdated: NSDate())
+func postsReducer(_ action: Action, state: PHAppStatePosts?) -> PHAppStatePosts {
+    let state = state ?? PHAppStatePosts(sections: [], lastUpdated: Date())
 
     switch action {
         case let action as PHPostsLoadAction:
@@ -28,13 +28,13 @@ func postsReducer(action: Action, state: PHAppStatePosts?) -> PHAppStatePosts {
             var newLastUpdated = state.lastUpdated
 
             if PHDateFormatter.daysAgo(section.day) == 0 {
-                if let firstSection = newSections.first where firstSection.day == section.day {
+                if let firstSection = newSections.first, firstSection.day == section.day {
                     newSections[0] = section
                 } else {
-                    newSections.insert(section, atIndex: 0)
+                    newSections.insert(section, at: 0)
                 }
 
-                newLastUpdated = NSDate()
+                newLastUpdated = Date()
             } else {
                 newSections.append(PHSection.section(action.posts))
             }

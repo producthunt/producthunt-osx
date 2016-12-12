@@ -10,12 +10,12 @@ import Cocoa
 
 class PHSectionCell: NSTableCellView {
 
-    class func view(tableView: NSTableView, owner: AnyObject?, subject: AnyObject?) -> NSView? {
+    class func view(_ tableView: NSTableView, owner: AnyObject?, subject: AnyObject?) -> NSView? {
         guard let section = subject as? String else {
             return nil
         }
 
-        let view = tableView.makeViewWithIdentifier("sectionCellIdentifier", owner: owner) as! PHSectionCell
+        let view = tableView.make(withIdentifier: "sectionCellIdentifier", owner: owner) as! PHSectionCell
         view.textField?.stringValue = section
         return view
     }
@@ -24,6 +24,6 @@ class PHSectionCell: NSTableCellView {
         super.awakeFromNib()
 
         wantsLayer = true
-        layer?.backgroundColor = NSColor.whiteColor().CGColor
+        layer?.backgroundColor = NSColor.white.cgColor
     }
 }

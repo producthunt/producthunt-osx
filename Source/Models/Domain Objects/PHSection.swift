@@ -10,7 +10,7 @@ import Foundation
 
 struct PHSection {
 
-    static func section(posts: [PHPost]) -> PHSection {
+    static func section(_ posts: [PHPost]) -> PHSection {
         return PHSection(day: posts.first!.day, posts: posts)
     }
 

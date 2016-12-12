@@ -10,12 +10,12 @@ import XCTest
 
 extension XCTestCase {
 
-    func ph_expectation(description: String, fulfill: (expectation: XCTestExpectation) -> Void) {
-        let expectation = expectationWithDescription(description)
+    func ph_expectation(_ description: String, fulfill: (_ expectation: XCTestExpectation) -> Void) {
+        let expectation = self.expectation(description: description)
 
-        fulfill(expectation: expectation)
+        fulfill(expectation)
 
-        waitForExpectationsWithTimeout(5, handler: nil)
+        waitForExpectations(timeout: 5, handler: nil)
     }
 
 }

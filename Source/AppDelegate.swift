@@ -18,48 +18,48 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
 
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
+    let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
     let popover = NSPopover()
 
     var settingsWindow = PHPreferencesWindowController()
-    var countdownToMarkAsSeen: NSTimer?
+    var countdownToMarkAsSeen: Timer?
 
-    private var statusBarUpdater: PHStatusBarUpdater!
-    private var updatePostTimer: NSTimer?
-    private let defaults = PHDefaults(store: store)
+    fileprivate var statusBarUpdater: PHStatusBarUpdater!
+    fileprivate var updatePostTimer: Timer?
+    fileprivate let defaults = PHDefaults(store: store)
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
             button.image = NSImage(named: "StatusBarButtonImage")
-            button.imagePosition = .ImageLeft
+            button.imagePosition = .imageLeft
             button.action = #selector(togglePopover)
         }
 
         popover.contentViewController = PHPostListViewController(nibName: "PHPostListViewController", bundle: nil)
         popover.appearance = NSAppearance(named: NSAppearanceNameAqua)
         popover.animates = false
-        popover.behavior = .Transient
+        popover.behavior = .transient
 
         PHFirstLaunchAction.perform {
             PHStartAtLoginAction.perform(true)
             
-            SUUpdater.sharedUpdater().automaticallyChecksForUpdates = true
-            SUUpdater.sharedUpdater().automaticallyDownloadsUpdates = false
+            SUUpdater.shared().automaticallyChecksForUpdates = true
+            SUUpdater.shared().automaticallyDownloadsUpdates = false
         }
 
         statusBarUpdater = PHStatusBarUpdater(button: statusItem.button, store: store)
 
         PHLoadPostOperation.performNewer()
 
-        updatePostTimer = NSTimer.every(10.minutes) {
+        updatePostTimer = Timer.every(10.minutes) {
             PHLoadPostOperation.performNewer()
         }
 
-        SUUpdater.sharedUpdater().feedURL = NSURL(string: kPHFeedUrl)!
-        SUUpdater.sharedUpdater().updateCheckInterval = 1.day
+        SUUpdater.shared().feedURL = URL(string: kPHFeedUrl)!
+        SUUpdater.shared().updateCheckInterval = 1.day
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         updatePostTimer?.invalidate()
         updatePostTimer = nil
     }
@@ -88,11 +88,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func quit() {
-        NSApplication.sharedApplication().terminate(self)
+        NSApplication.shared().terminate(self)
     }
 
     func checkForUpdates() {
-        SUUpdater.sharedUpdater().checkForUpdates(nil)
+        SUUpdater.shared().checkForUpdates(nil)
     }
 }
 

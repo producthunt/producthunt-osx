@@ -22,8 +22,8 @@ class PHPostViewModel {
         return post.tagline
     }
 
-    var thumbnailUrl: NSURL {
-        return post.thumbnailUrl
+    var thumbnailUrl: URL {
+        return post.thumbnailUrl as URL
     }
 
     var votesCount: String {
@@ -38,9 +38,9 @@ class PHPostViewModel {
         return formatter.timeAgo(fromDateAsString: post.createdAt)
     }
 
-    private var post: PHPost
-    private var store: Store<PHAppState>
-    private var formatter = PHDateFormatter()
+    fileprivate var post: PHPost
+    fileprivate var store: Store<PHAppState>
+    fileprivate var formatter = PHDateFormatter()
 
     init(withPost post: PHPost, store: Store<PHAppState>) {
         self.post = post

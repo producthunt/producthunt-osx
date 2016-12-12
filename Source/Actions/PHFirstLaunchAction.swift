@@ -10,14 +10,14 @@ import Foundation
 
 class PHFirstLaunchAction {
 
-    class func perform(completion: PHVoidCallback) {
-        let defaults = NSUserDefaults.standardUserDefaults()
+    class func perform(_ completion: PHVoidCallback) {
+        let defaults = UserDefaults.standard
 
-        if !defaults.boolForKey("alreadyLaunched") {
+        if !defaults.bool(forKey: "alreadyLaunched") {
 
             completion()
 
-            defaults.setBool(true, forKey: "alreadyLaunched")
+            defaults.set(true, forKey: "alreadyLaunched")
             defaults.synchronize()
         }
     }

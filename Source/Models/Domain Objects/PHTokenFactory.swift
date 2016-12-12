@@ -10,7 +10,7 @@ import Foundation
 
 extension PHToken {
 
-    static func token(fromDictionary dictionary: [String: AnyObject]?) -> PHToken? {
+    static func token(fromDictionary dictionary: [String: Any]?) -> PHToken? {
         guard let dictionary = dictionary, let accessToken = dictionary["access_token"] as? String else {
             return nil
         }

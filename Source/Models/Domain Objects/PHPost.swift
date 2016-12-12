@@ -13,15 +13,15 @@ class PHPost {
     var id: Int
     var title: String
     var tagline: String
-    var thumbnailUrl: NSURL
-    var discussionUrl: NSURL
+    var thumbnailUrl: URL
+    var discussionUrl: URL
     var day: String
     var votesCount: Int
     var commentsCount: Int
     var createdAt: String
-    var redirectUrl: NSURL
+    var redirectUrl: URL
 
-    init(id: Int, title: String, tagline: String, thumbnailUrl: NSURL, discussionUrl: NSURL, day: String, votesCount: Int, commentsCount: Int, createdAt: String, redirectUrl: NSURL) {
+    init(id: Int, title: String, tagline: String, thumbnailUrl: URL, discussionUrl: URL, day: String, votesCount: Int, commentsCount: Int, createdAt: String, redirectUrl: URL) {
         self.id             = id
         self.title          = title
         self.tagline        = tagline
@@ -34,7 +34,7 @@ class PHPost {
         self.redirectUrl    = redirectUrl
     }
 
-    func description() -> [String: AnyObject] {
+    func description() -> [String: Any] {
         return [
             "id"                : id,
             "name"              : title,
