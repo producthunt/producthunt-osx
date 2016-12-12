@@ -7,7 +7,7 @@ pod 'AFNetworking', '~> 3.0'
 pod 'ISO8601', '~> 0.5'
 pod 'DateTools'
 pod 'SwiftyTimer'
-pod 'Sparkle', '~> 1.10'
+pod 'Sparkle'
 pod 'ReSwift'
 
     target 'ProductHuntTests' do

@@ -25,7 +25,7 @@ DEPENDENCIES:
   - ISO8601 (~> 0.5)
   - Kingfisher (~> 3.0)
   - ReSwift
-  - Sparkle (~> 1.10)
+  - Sparkle
   - SwiftyTimer
 
 SPEC CHECKSUMS:
@@ -37,6 +37,6 @@ SPEC CHECKSUMS:
   Sparkle: ccd95233b12a3e3d4eeb55ff01dd4c8bb8188b07
   SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
 
-PODFILE CHECKSUM: 0c2da53eff0df8f3e786fcf03f1b2e64333b6a28
+PODFILE CHECKSUM: 4a2d06f24ccf54d50b6032a7d9b83025c887d7ad
 
 COCOAPODS: 1.1.1
