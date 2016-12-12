@@ -115,6 +115,8 @@ class PHPostListViewController: NSViewController, NSTableViewDataSource, NSTable
     }
 
     func updateUI() {
-        lastUpdatedLabel.stringValue = "Last Updated: \((store.state.posts.lastUpdated as NSDate).timeAgoSinceNow())"
+        if let lastUpdated = (store.state.posts.lastUpdated as NSDate).timeAgoSinceNow() {
+            lastUpdatedLabel.stringValue = "Last Updated: \(lastUpdated)"
+        }
     }
 }
