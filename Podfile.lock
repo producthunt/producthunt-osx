@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - DateTools (1.7.0)
   - ISO8601 (0.6.0)
-  - Kingfisher (3.2.1)
+  - Kingfisher (3.2.2)
   - ReSwift (3.0.0)
   - Sparkle (1.14.0)
   - SwiftyTimer (2.0.0)
@@ -32,7 +32,7 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   ISO8601: d3ea3ba9b752820cf92c6b47a9ee327e9f0e13fc
-  Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
+  Kingfisher: 821466474ad7ffc375a4aecadfa05068cfed67b3
   ReSwift: f0255f4b4f2dacd12c5d97d34d13fc5dad6d6371
   Sparkle: ccd95233b12a3e3d4eeb55ff01dd4c8bb8188b07
   SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
