@@ -28,7 +28,9 @@ class PHGeneralSettingsViewController: NSViewController, PHPreferencesWindowCont
         filterVotesSlider.minValue = 0
         filterVotesSlider.maxValue = 100
 
-        versionLabel.stringValue = "Product Hunt for OSX \(PHBundle.version())"
+        if let version = PHBundle.version {
+            versionLabel.stringValue = "Product Hunt for OSX \(version)"
+        }
 
         store.subscribe(self)
 

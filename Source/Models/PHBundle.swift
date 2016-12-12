@@ -10,12 +10,12 @@ import Foundation
 
 class PHBundle {
 
-    class func shortVersion() -> String {
-        return getValueFromInfoDictionary("CFBundleShortVersionString", subjectType: String()) ?? ""
+    static var shortVersion: String? {
+        return getValueFromInfoDictionary(for: "CFBundleShortVersionString", subjectType: String())
     }
 
-    class func version() -> String {
-        return getValueFromInfoDictionary("CFBundleVersion", subjectType: String()) ?? ""
+    static var version: String? {
+        return getValueFromInfoDictionary(for: "CFBundleVersion", subjectType: String())
     }
 
     // Referenced from https://developer.apple.com/library/mac/technotes/tn1103/_index.html
@@ -38,7 +38,7 @@ class PHBundle {
         return address.isEmpty ? "" : address.first!
     }
 
-    fileprivate class func getValueFromInfoDictionary<T>(_ key: String, subjectType: T) -> T? {
+    fileprivate class func getValueFromInfoDictionary<T>(for key: String, subjectType: T) -> T? {
         guard let infoDictionary = Bundle.main.infoDictionary else {
             return nil
         }

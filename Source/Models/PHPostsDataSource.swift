@@ -31,7 +31,7 @@ class PHPostsDataSource: StoreSubscriber {
     }
 
     func newState(state: PHAppState) {
-        content = flatContent(state.posts.sections)
+        content = flatContent(from: state.posts.sections)
         delegate?.contentChanged()
     }
 
@@ -55,7 +55,7 @@ class PHPostsDataSource: StoreSubscriber {
         PHLoadPostOperation.performOlder(store)
     }
 
-    fileprivate func flatContent(_ content: [PHSection]) -> [AnyObject] {
+    fileprivate func flatContent(from content: [PHSection]) -> [AnyObject] {
         let formatter = PHDateFormatter()
         var output = [AnyObject]()
 

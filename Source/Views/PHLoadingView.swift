@@ -18,6 +18,37 @@ class PHLoadingView: NSView {
     @IBOutlet weak var loadingLabel: NSTextField!
     @IBOutlet weak var reload: PHButton!
 
+    var state: LoadingState = .idle {
+        didSet {
+            switch state {
+            case .loading:
+                isHidden = false
+                reload.isHidden = true
+                loadingIndicator.isHidden = false
+                loadingIndicator.startAnimation(nil)
+                loadingLabel.stringValue = "Hunting down new posts..."
+
+            case .error:
+                isHidden = false
+                reload.isHidden = false
+                loadingIndicator.isHidden = true
+                loadingIndicator.stopAnimation(nil)
+                loadingLabel.stringValue = "Something went wrong 😿"
+
+            case .empty:
+                isHidden = false
+                reload.isHidden = false
+                loadingIndicator.isHidden = true
+                loadingIndicator.stopAnimation(nil)
+                loadingLabel.stringValue = "Nothing to show 😿"
+
+            case .idle:
+                isHidden = true
+                loadingIndicator.stopAnimation(nil)
+            }
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -25,37 +56,8 @@ class PHLoadingView: NSView {
         layer?.backgroundColor = NSColor.white.cgColor
     }
 
-    func showState(_ state: LoadingState) {
-        switch state {
-        case .loading:
-            isHidden = false
-            reload.isHidden = true
-            loadingIndicator.isHidden = false
-            loadingIndicator.startAnimation(nil)
-            loadingLabel.stringValue = "Hunting down new posts..."
-
-        case .error:
-            isHidden = false
-            reload.isHidden = false
-            loadingIndicator.isHidden = true
-            loadingIndicator.stopAnimation(nil)
-            loadingLabel.stringValue = "Something went wrong 😿"
-
-        case .empty:
-            isHidden = false
-            reload.isHidden = false
-            loadingIndicator.isHidden = true
-            loadingIndicator.stopAnimation(nil)
-            loadingLabel.stringValue = "Nothing to show 😿"
-
-        case .idle:
-            isHidden = true
-            loadingIndicator.stopAnimation(nil)
-        }
-    }
-
     @IBAction func toggleReloadButton(_ sender: NSView) {
-        showState(.loading)
+        state = .loading
         PHLoadPostOperation.performNewer()
     }
 }

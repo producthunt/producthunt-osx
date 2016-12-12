@@ -32,7 +32,7 @@ class PHPostListViewController: NSViewController, NSTableViewDataSource, NSTable
 
         source.delegate = self
 
-        loadingView.showState(.loading)
+        loadingView.state = .loading
 
         homeButton.setImages("Icon-product-hunt", highlitedImage: "icon-kitty")
     }
@@ -97,7 +97,7 @@ class PHPostListViewController: NSViewController, NSTableViewDataSource, NSTable
     // MARK: PHDataSourceDelegate
 
     func contentChanged()  {
-        loadingView.showState( source.numberOfRows() > 0 ? LoadingState.idle : LoadingState.empty )
+        loadingView.state = source.numberOfRows() > 0 ? .idle : .empty
 
         productTableView.reloadData()
 

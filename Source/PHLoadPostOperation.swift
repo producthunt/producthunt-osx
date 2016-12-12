@@ -44,6 +44,7 @@ class PHLoadPostOperation {
             api.getPosts(daysAgo, completion: { (posts, error) in
                 if let error = error {
                     errorClosure(error)
+                    return
                 }
 
                 complete(posts)
