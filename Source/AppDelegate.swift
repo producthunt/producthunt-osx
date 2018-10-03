@@ -11,7 +11,7 @@ import SwiftyTimer
 import Sparkle
 import ReSwift
 
-let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

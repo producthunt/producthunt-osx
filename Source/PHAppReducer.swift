@@ -9,15 +9,11 @@
 import Foundation
 import ReSwift
 
-struct PHAppReducer: Reducer {
-
-    func handleAction(action: Action, state: PHAppState?) -> PHAppState {
-        return PHAppState(
-            settings: settingsReducer(action, state: state?.settings),
-            posts: postsReducer(action, state: state?.posts),
-            seenPosts: seenPostsReducer(action, state: state?.seenPosts),
-            token: tokenReducer(action, state: state?.token)
-        )
-    }
-
+func appReducer(action: Action, state: PHAppState?) -> PHAppState {
+    return PHAppState(
+        settings: settingsReducer(action, state: state?.settings),
+        posts: postsReducer(action, state: state?.posts),
+        seenPosts: seenPostsReducer(action, state: state?.seenPosts),
+        token: tokenReducer(action, state: state?.token)
+    )
 }
