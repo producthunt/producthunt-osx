@@ -15,11 +15,11 @@ class PHPostSorterTests: PHTestCase {
         let seenPost    = fake.post()
         let unseenPost  = fake.post()
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
         
         store.dispatch( PHMarkPostsAsSeenAction(posts: [seenPost]))
 
-        let posts = PHPostSorter.filter(store, posts: [seenPost, unseenPost], by: [.Seen(true)])
+        let posts = PHPostSorter.filter(store, posts: [seenPost, unseenPost], by: [.seen(true)])
 
         XCTAssertTrue(posts.count == 1)
     }
@@ -28,11 +28,11 @@ class PHPostSorterTests: PHTestCase {
         let seenPost    = fake.post()
         let unseenPost  = fake.post()
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         store.dispatch( PHMarkPostsAsSeenAction(posts: [seenPost]))
 
-        let posts = PHPostSorter.filter(store, posts: [seenPost, unseenPost], by: [.Seen(false)])
+        let posts = PHPostSorter.filter(store, posts: [seenPost, unseenPost], by: [.seen(false)])
 
         XCTAssertTrue(posts.count == 1)
     }
@@ -41,9 +41,9 @@ class PHPostSorterTests: PHTestCase {
         let seenPost    = fake.post(0, votes: 9, commentsCount: 0)
         let unseenPost  = fake.post(0, votes: 15, commentsCount: 0)
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
-        let posts = PHPostSorter.filter(store, posts: [seenPost, unseenPost], by: [PHPostFilter.Votes(10)])
+        let posts = PHPostSorter.filter(store, posts: [seenPost, unseenPost], by: [PHPostFilter.votes(10)])
 
         XCTAssertTrue(posts.count == 1)
     }
@@ -52,9 +52,9 @@ class PHPostSorterTests: PHTestCase {
         let seenPost    = fake.post(0, votes: 10, commentsCount: 0)
         let unseenPost  = fake.post(0, votes: 15, commentsCount: 0)
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
-        let posts = PHPostSorter.filter(store, posts: [seenPost, unseenPost], by: [PHPostFilter.SortByVotes])
+        let posts = PHPostSorter.filter(store, posts: [seenPost, unseenPost], by: [PHPostFilter.sortByVotes])
 
          XCTAssertTrue(posts.first!.votesCount == 15)
     }
@@ -64,7 +64,7 @@ class PHPostSorterTests: PHTestCase {
         let unseenPost = fake.post(0, votes: 9, commentsCount: 0)
         let otherUnseenPost = fake.post(0, votes: 10, commentsCount: 0)
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         store.dispatch( PHMarkPostsAsSeenAction(posts: [seenPost]))
 

@@ -11,7 +11,7 @@ import Cocoa
 class PHPopoverAction {
 
     fileprivate class var appDelegate: AppDelegate {
-        return NSApplication.shared().delegate as! AppDelegate
+        return NSApplication.shared.delegate as! AppDelegate
     }
 
     class func toggle() {
@@ -31,7 +31,7 @@ class PHPopoverAction {
     }
 
     class func show() {
-        NSRunningApplication.current().activate(options: NSApplicationActivationOptions.activateIgnoringOtherApps)
+        NSRunningApplication.current.activate(options: NSApplication.ActivationOptions.activateIgnoringOtherApps)
 
         guard let button = appDelegate.statusItem.button else {
             return

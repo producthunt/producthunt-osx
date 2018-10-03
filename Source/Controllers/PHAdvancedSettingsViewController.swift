@@ -48,6 +48,6 @@ class PHAdvancedSettingsViewController: NSViewController, PHPreferencesWindowCon
     }
 
     func preferencesIcon() -> NSImage {
-        return NSImage(named: NSImageNameAdvanced)!
+        return NSImage(named: NSImage.advancedName)!
     }
 }

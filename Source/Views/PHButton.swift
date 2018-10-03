@@ -10,7 +10,7 @@ import Cocoa
 
 class PHButton: NSButton {
 
-    fileprivate let cursor = NSCursor.pointingHand()
+    fileprivate let cursor = NSCursor.pointingHand
     fileprivate var normalStateImage: NSImage?
     fileprivate var highlightedStateImage: NSImage?
     fileprivate var trackingArea: NSTrackingArea?

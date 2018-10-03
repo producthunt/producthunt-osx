@@ -18,7 +18,7 @@ class PHPostDataSourceTests: PHTestCase {
     func testReturnsCountOfRows() {
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [fake.post().description()]], error: nil)
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         store.dispatch( PHTokenGetAction(token: fake.token() ))
 
@@ -32,7 +32,7 @@ class PHPostDataSourceTests: PHTestCase {
     func testThatReturnsSectionAtIndex() {
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [fake.post().description()]], error: nil)
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         store.dispatch( PHTokenGetAction(token: fake.token() ))
 
@@ -46,7 +46,7 @@ class PHPostDataSourceTests: PHTestCase {
     func testThatReturnsPostAtIndex() {
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [fake.post().description()]], error: nil)
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         store.dispatch( PHTokenGetAction(token: fake.token() ))
 
@@ -60,7 +60,7 @@ class PHPostDataSourceTests: PHTestCase {
     func testThatRerurnsTrueIfSectionIsGroup() {
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [fake.post().description()]], error: nil)
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         store.dispatch( PHTokenGetAction(token: fake.token() ))
 
@@ -75,7 +75,7 @@ class PHPostDataSourceTests: PHTestCase {
     func testLoadsNewer() {
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [fake.post().description()]], error: nil)
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         store.dispatch( PHTokenGetAction(token: fake.token() ))
 
@@ -90,7 +90,7 @@ class PHPostDataSourceTests: PHTestCase {
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [fake.post().description()]], error: nil)
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 1, "search[category]": "all"], response: ["posts" : [fake.post(-1.day, votes: 10, commentsCount: 0).description()]], error: nil)
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         store.dispatch( PHTokenGetAction(token: fake.token() ))
 
@@ -108,7 +108,7 @@ class PHPostDataSourceTests: PHTestCase {
 
         endpoint.addFake("GET", url: "posts", parameters: ["days_ago": 0, "search[category]": "all"], response: ["posts" : [firstPost.description(), secondPosts.description()]], error: nil)
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         store.dispatch( PHTokenGetAction(token: fake.token() ))
 

@@ -74,6 +74,6 @@ class PHGeneralSettingsViewController: NSViewController, PHPreferencesWindowCont
     }
 
     func preferencesIcon() -> NSImage {
-        return NSImage(named: NSImageNamePreferencesGeneral)!
+        return NSImage(named: NSImage.preferencesGeneralName)!
     }
 }

@@ -24,7 +24,7 @@ class PHBundle {
 
         let platformExpert: io_service_t = IOServiceGetMatchingService(kIOMasterPortDefault, dev)
 
-        let serialNumberAsCFString = IORegistryEntryCreateCFProperty(platformExpert, kIOPlatformUUIDKey as CFString!, kCFAllocatorDefault, 0)
+        let serialNumberAsCFString = IORegistryEntryCreateCFProperty(platformExpert, kIOPlatformUUIDKey as CFString, kCFAllocatorDefault, 0)
 
         IOObjectRelease(platformExpert)
 

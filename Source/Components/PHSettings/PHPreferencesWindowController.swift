@@ -27,7 +27,7 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
     }
 
     init() {
-        let masks: NSWindowStyleMask = [.closable, .miniaturizable, .resizable, .fullScreen, .fullScreen]
+        let masks: NSWindow.StyleMask = [.closable, .miniaturizable, .resizable, .fullScreen, .fullScreen]
         let window = PHPreferencesWindow(contentRect: PHPreferencesDefaultWindowRect, styleMask: masks, backing: .buffered, defer: true)
 
         window.isMovableByWindowBackground = true
@@ -46,7 +46,7 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
 
         showWindow(self)
         window.makeKeyAndOrderFront(self)
-        NSApplication.shared().activate(ignoringOtherApps: true)
+        NSApplication.shared.activate(ignoringOtherApps: true)
 
         if activeViewController == nil {
             activateViewController(viewControllers[0], animate:false)
@@ -54,7 +54,7 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
         }
 
         if let toolbar = window.toolbar, toolbarDefaultItemIdentifiers.count > 0 {
-            toolbar.selectedItemIdentifier = toolbarDefaultItemIdentifiers.first
+            toolbar.selectedItemIdentifier = convertToOptionalNSToolbarItemIdentifier(toolbarDefaultItemIdentifiers.first)
         }
     }
 
@@ -98,7 +98,7 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
                 let newView = preferencesViewController.view
                 newView.frame.origin = NSMakePoint(0, 0)
                 newView.alphaValue = 0.0
-                newView.autoresizingMask = NSAutoresizingMaskOptions()
+                newView.autoresizingMask = NSView.AutoresizingMask()
 
                 if let previousViewController = activeViewController as? NSViewController {
                     previousViewController.view.removeFromSuperview()
@@ -113,7 +113,7 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
                 NSAnimationContext.runAnimationGroup({
                     (context: NSAnimationContext) -> Void in
                     context.duration = (animate ? 0.25 : 0.0)
-                    context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                    context.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
                     self.window?.animator().setFrame(newWindowFrame, display: true)
                     newView.animator().alphaValue = 1.0
                 }) {
@@ -134,7 +134,10 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
         return nil
     }
 
-    func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: String, willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
+    func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier, willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
+// Local variable inserted by Swift 4.2 migrator.
+let itemIdentifier = convertFromNSToolbarItemIdentifier(itemIdentifier)
+
         guard let viewController = viewControllerWithIdentifier(itemIdentifier as NSString) else {
             return nil
         }
@@ -143,7 +146,7 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
         let label = viewController.preferencesTitle()
         let icon = viewController.preferencesIcon()
 
-        let toolbarItem = NSToolbarItem(itemIdentifier: identifier as String)
+        let toolbarItem = NSToolbarItem(itemIdentifier: convertToNSToolbarItemIdentifier(identifier as String))
         toolbarItem.label = label
         toolbarItem.paletteLabel = label
         toolbarItem.image = icon
@@ -156,7 +159,7 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
         return toolbarItem
     }
 
-    func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [String] {
+    func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
         var identifiers = [String]()
 
         for viewController in viewControllers {
@@ -165,23 +168,23 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
 
         toolbarDefaultItemIdentifiers = identifiers
 
-        return identifiers
+        return convertFromArrayToNSToolbarItemIdentifier(identifiers)
     }
 
-    func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [String] {
+    func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
         return toolbarDefaultItemIdentifiers(toolbar)
     }
 
-    func toolbarSelectableItemIdentifiers(_ toolbar: NSToolbar) -> [String] {
+    func toolbarSelectableItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
         return toolbarDefaultItemIdentifiers(toolbar)
     }
 
-    func toolbarItemAction(_ toolbarItem: NSToolbarItem) {
-        guard let activeViewController = activeViewController, activeViewController.preferencesIdentifier() != toolbarItem.itemIdentifier else {
+    @objc func toolbarItemAction(_ toolbarItem: NSToolbarItem) {
+        guard let activeViewController = activeViewController, activeViewController.preferencesIdentifier() != convertFromNSToolbarItemIdentifier(toolbarItem.itemIdentifier) else {
             return
         }
 
-        if let viewController = viewControllerWithIdentifier(toolbarItem.itemIdentifier as NSString) {
+        if let viewController = viewControllerWithIdentifier(convertFromNSToolbarItemIdentifier(toolbarItem.itemIdentifier) as NSString) {
             activateViewController(viewController, animate: true)
         }
     }
@@ -189,7 +192,7 @@ class PHPreferencesWindowController : NSWindowController, NSToolbarDelegate, NSW
 
 class PHPreferencesWindow : NSWindow {
 
-    override init(contentRect: NSRect, styleMask aStyle: NSWindowStyleMask, backing bufferingType: NSBackingStoreType, defer flag: Bool) {
+    override init(contentRect: NSRect, styleMask aStyle: NSWindow.StyleMask, backing bufferingType: NSWindow.BackingStoreType, defer flag: Bool) {
         super.init(contentRect: contentRect, styleMask: aStyle, backing: bufferingType, defer: flag)
         commonInit()
     }
@@ -198,7 +201,7 @@ class PHPreferencesWindow : NSWindow {
         center()
 
         setFrameAutosaveName(PHPreferencesWindowFrameAutoSaveName)
-        setFrameFrom(PHPreferencesWindowFrameAutoSaveName)
+        setFrame(from: PHPreferencesWindowFrameAutoSaveName)
     }
 
     override func keyDown(with theEvent: NSEvent) {
@@ -213,4 +216,30 @@ class PHPreferencesWindow : NSWindow {
         }
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSToolbarItemIdentifier(_ input: NSToolbarItem.Identifier) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSToolbarItemIdentifier(_ input: String?) -> NSToolbarItem.Identifier? {
+	guard let input = input else { return nil }
+	return NSToolbarItem.Identifier(rawValue: input)
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToNSToolbarItemIdentifier(_ input: String) -> NSToolbarItem.Identifier {
+	return NSToolbarItem.Identifier(rawValue: input)
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSToolbarItemIdentifierArray(_ input: [NSToolbarItem.Identifier]) -> [String] {
+	return input.map { key in key.rawValue }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromArrayToNSToolbarItemIdentifier(_ input: [String]) -> [NSToolbarItem.Identifier] {
+    return input.map { NSToolbarItem.Identifier(rawValue: $0) }
 }

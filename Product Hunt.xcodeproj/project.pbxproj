@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16C08EAF2D80C660E29807D9 /* Pods_ProductHunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFF7C7EB0D3A4B51ADC0E14 /* Pods_ProductHunt.framework */; };
-		A1BCE1B22BDD6A12AE28F244 /* Pods_ProductHunt_ProductHuntTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 760B94C892CB926A6C262CE8 /* Pods_ProductHunt_ProductHuntTests.framework */; };
+		41683AE45E458C6E65FF6FBA /* Pods_ProductHunt_ProductHuntTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C357F0C194BFF762BB983E /* Pods_ProductHunt_ProductHuntTests.framework */; };
+		BAAA36342164D5A200155BE5 /* Pods_ProductHunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590D3EA3A4C044F049E708CA /* Pods_ProductHunt.framework */; };
 		E706618D1CA2E70600BF8F36 /* PHPostsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E706618C1CA2E70600BF8F36 /* PHPostsDataSource.swift */; };
 		E723F2531CBBC6BA00E46A7D /* PHConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E723F2521CBBC6BA00E46A7D /* PHConfiguration.m */; };
 		E723F2541CBBC6BA00E46A7D /* PHConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E723F2521CBBC6BA00E46A7D /* PHConfiguration.m */; };
@@ -192,14 +192,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3963F93FB138D9D194FD7294 /* Pods-ProductHunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHunt/Pods-ProductHunt.release.xcconfig"; sourceTree = "<group>"; };
-		4DA9856AE7C89450B420B7FC /* Pods-ProductHunt-ProductHuntTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt-ProductHuntTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHunt-ProductHuntTests/Pods-ProductHunt-ProductHuntTests.debug.xcconfig"; sourceTree = "<group>"; };
-		760B94C892CB926A6C262CE8 /* Pods_ProductHunt_ProductHuntTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductHunt_ProductHuntTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F33A77C1D5E5D2E623C04A7 /* Pods-ProductHunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHunt/Pods-ProductHunt.debug.xcconfig"; sourceTree = "<group>"; };
-		87E1CB8D918E7077455D0D0A /* Pods-ProductHunt.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt.testing.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHunt/Pods-ProductHunt.testing.xcconfig"; sourceTree = "<group>"; };
-		94873D80465C7FF85BD1EB20 /* Pods-ProductHunt-ProductHuntTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt-ProductHuntTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHunt-ProductHuntTests/Pods-ProductHunt-ProductHuntTests.release.xcconfig"; sourceTree = "<group>"; };
-		9FFF7C7EB0D3A4B51ADC0E14 /* Pods_ProductHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3179868033DCA4738C674F6 /* Pods-ProductHunt-ProductHuntTests.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt-ProductHuntTests.testing.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHunt-ProductHuntTests/Pods-ProductHunt-ProductHuntTests.testing.xcconfig"; sourceTree = "<group>"; };
+		1B4150AD9412ADB26F7623A9 /* Pods-ProductHunt-ProductHuntTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt-ProductHuntTests.debug.xcconfig"; path = "Target Support Files/Pods-ProductHunt-ProductHuntTests/Pods-ProductHunt-ProductHuntTests.debug.xcconfig"; sourceTree = "<group>"; };
+		590D3EA3A4C044F049E708CA /* Pods_ProductHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63D9DD8FB8A090D6B40C129E /* Pods-ProductHunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt.debug.xcconfig"; path = "Target Support Files/Pods-ProductHunt/Pods-ProductHunt.debug.xcconfig"; sourceTree = "<group>"; };
+		68C357F0C194BFF762BB983E /* Pods_ProductHunt_ProductHuntTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductHunt_ProductHuntTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85A1270649338EFD3E5BA11D /* Pods-ProductHunt-ProductHuntTests.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt-ProductHuntTests.testing.xcconfig"; path = "Target Support Files/Pods-ProductHunt-ProductHuntTests/Pods-ProductHunt-ProductHuntTests.testing.xcconfig"; sourceTree = "<group>"; };
 		E706618C1CA2E70600BF8F36 /* PHPostsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostsDataSource.swift; sourceTree = "<group>"; };
 		E708BED11CB6FBDA0068D97B /* ProductHuntTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductHuntTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E723F2511CBBC6BA00E46A7D /* PHConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHConfiguration.h; sourceTree = "<group>"; };
@@ -295,6 +292,9 @@
 		E7F3E9DC1CC62B2700DA9A97 /* PHPostSorter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPostSorter.swift; sourceTree = "<group>"; };
 		E7F4BB151CAD0FD500E2458E /* PHFakeFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFakeFactory.swift; sourceTree = "<group>"; };
 		E7FC79841CC0BEA100FBEAC5 /* PHOpenProductHuntAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHOpenProductHuntAction.swift; sourceTree = "<group>"; };
+		ED366A5C565866219B0D1738 /* Pods-ProductHunt-ProductHuntTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt-ProductHuntTests.release.xcconfig"; path = "Target Support Files/Pods-ProductHunt-ProductHuntTests/Pods-ProductHunt-ProductHuntTests.release.xcconfig"; sourceTree = "<group>"; };
+		F5D20D3CCBBEF94B23C17196 /* Pods-ProductHunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt.release.xcconfig"; path = "Target Support Files/Pods-ProductHunt/Pods-ProductHunt.release.xcconfig"; sourceTree = "<group>"; };
+		F6EBE7BCA68794C6B8F486C7 /* Pods-ProductHunt.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHunt.testing.xcconfig"; path = "Target Support Files/Pods-ProductHunt/Pods-ProductHunt.testing.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,7 +302,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1BCE1B22BDD6A12AE28F244 /* Pods_ProductHunt_ProductHuntTests.framework in Frameworks */,
+				41683AE45E458C6E65FF6FBA /* Pods_ProductHunt_ProductHuntTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,20 +310,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAAA36342164D5A200155BE5 /* Pods_ProductHunt.framework in Frameworks */,
 				E75901051CA034AC003C15B9 /* ServiceManagement.framework in Frameworks */,
-				16C08EAF2D80C660E29807D9 /* Pods_ProductHunt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B09C6F670680D5860A8E364F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63D9DD8FB8A090D6B40C129E /* Pods-ProductHunt.debug.xcconfig */,
+				F6EBE7BCA68794C6B8F486C7 /* Pods-ProductHunt.testing.xcconfig */,
+				F5D20D3CCBBEF94B23C17196 /* Pods-ProductHunt.release.xcconfig */,
+				1B4150AD9412ADB26F7623A9 /* Pods-ProductHunt-ProductHuntTests.debug.xcconfig */,
+				85A1270649338EFD3E5BA11D /* Pods-ProductHunt-ProductHuntTests.testing.xcconfig */,
+				ED366A5C565866219B0D1738 /* Pods-ProductHunt-ProductHuntTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D696E3B7022D0774414E79D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				E75901041CA034AC003C15B9 /* ServiceManagement.framework */,
-				9FFF7C7EB0D3A4B51ADC0E14 /* Pods_ProductHunt.framework */,
-				760B94C892CB926A6C262CE8 /* Pods_ProductHunt_ProductHuntTests.framework */,
+				590D3EA3A4C044F049E708CA /* Pods_ProductHunt.framework */,
+				68C357F0C194BFF762BB983E /* Pods_ProductHunt_ProductHuntTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -538,7 +551,7 @@
 				E76ED6361C96BD0C005B3EC7 /* Products */,
 				E76ED6371C96BD0C005B3EC7 /* Source */,
 				E72526CC1C96E2E700942F0E /* Support */,
-				FF82DE7763D819727B94C304 /* Pods */,
+				B09C6F670680D5860A8E364F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -630,19 +643,6 @@
 			path = "Domain Objects";
 			sourceTree = "<group>";
 		};
-		FF82DE7763D819727B94C304 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7F33A77C1D5E5D2E623C04A7 /* Pods-ProductHunt.debug.xcconfig */,
-				87E1CB8D918E7077455D0D0A /* Pods-ProductHunt.testing.xcconfig */,
-				3963F93FB138D9D194FD7294 /* Pods-ProductHunt.release.xcconfig */,
-				4DA9856AE7C89450B420B7FC /* Pods-ProductHunt-ProductHuntTests.debug.xcconfig */,
-				C3179868033DCA4738C674F6 /* Pods-ProductHunt-ProductHuntTests.testing.xcconfig */,
-				94873D80465C7FF85BD1EB20 /* Pods-ProductHunt-ProductHuntTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -650,12 +650,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E708BED81CB6FBDA0068D97B /* Build configuration list for PBXNativeTarget "ProductHuntTests" */;
 			buildPhases = (
-				34C5264E8EAA6EBA5D3ABE10 /* [CP] Check Pods Manifest.lock */,
+				34810474306FC8FDFC39FDBB /* [CP] Check Pods Manifest.lock */,
 				E708BECD1CB6FBDA0068D97B /* Sources */,
 				E708BECE1CB6FBDA0068D97B /* Frameworks */,
 				E708BECF1CB6FBDA0068D97B /* Resources */,
-				79E556C9D1BD8D0DFD7CDF78 /* [CP] Embed Pods Frameworks */,
-				E4D9D274E1756089EC500CF5 /* [CP] Copy Pods Resources */,
+				7CBE6C304771C5037B16EFB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -671,14 +670,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E76ED6581C96BD0C005B3EC7 /* Build configuration list for PBXNativeTarget "ProductHunt" */;
 			buildPhases = (
-				417DD402319BB4F091760EA4 /* [CP] Check Pods Manifest.lock */,
+				2ED596145DA51DA1507F204F /* [CP] Check Pods Manifest.lock */,
 				E76ED6311C96BD0C005B3EC7 /* Sources */,
 				E76ED6321C96BD0C005B3EC7 /* Frameworks */,
 				E76ED6331C96BD0C005B3EC7 /* Resources */,
 				E75901021CA0344F003C15B9 /* Copy Files */,
-				DCCEE9E3C323FC7BAA99DD11 /* [CP] Embed Pods Frameworks */,
-				BE6DEB0AB17447D9783B25CB /* [CP] Copy Pods Resources */,
-				E7F3E9CE1CC4BF3800DA9A97 /* Sparkle */,
+				88DA76C4E2D25B3552141F9C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -697,18 +694,20 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = ProductHunt;
 				TargetAttributes = {
 					E708BED01CB6FBDA0068D97B = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = D54Y88Y9CY;
 						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
 						TestTargetID = E76ED6341C96BD0C005B3EC7;
 					};
 					E76ED6341C96BD0C005B3EC7 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = MGTRPU24M6;
-						LastSwiftMigration = 0810;
+						DevelopmentTeam = D54Y88Y9CY;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -779,109 +778,117 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		34C5264E8EAA6EBA5D3ABE10 /* [CP] Check Pods Manifest.lock */ = {
+		2ED596145DA51DA1507F204F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProductHunt-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		417DD402319BB4F091760EA4 /* [CP] Check Pods Manifest.lock */ = {
+		34810474306FC8FDFC39FDBB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProductHunt-ProductHuntTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		79E556C9D1BD8D0DFD7CDF78 /* [CP] Embed Pods Frameworks */ = {
+		7CBE6C304771C5037B16EFB8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProductHunt-ProductHuntTests/Pods-ProductHunt-ProductHuntTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/DateTools/DateTools.framework",
+				"${BUILT_PRODUCTS_DIR}/ISO8601/ISO8601.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+				"${PODS_ROOT}/Sparkle/Sparkle.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTools.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISO8601.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProductHunt-ProductHuntTests/Pods-ProductHunt-ProductHuntTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProductHunt-ProductHuntTests/Pods-ProductHunt-ProductHuntTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BE6DEB0AB17447D9783B25CB /* [CP] Copy Pods Resources */ = {
+		88DA76C4E2D25B3552141F9C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProductHunt/Pods-ProductHunt-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DCCEE9E3C323FC7BAA99DD11 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProductHunt/Pods-ProductHunt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/DateTools/DateTools.framework",
+				"${BUILT_PRODUCTS_DIR}/ISO8601/ISO8601.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+				"${PODS_ROOT}/Sparkle/Sparkle.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTools.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISO8601.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProductHunt/Pods-ProductHunt-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProductHunt/Pods-ProductHunt-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		E4D9D274E1756089EC500CF5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProductHunt-ProductHuntTests/Pods-ProductHunt-ProductHuntTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E7F3E9CE1CC4BF3800DA9A97 /* Sparkle */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Sparkle;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n\n# Usually set by Xcode\n\ncodesign --verbose --force --sign \"$CODE_SIGN_IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1065,65 +1072,74 @@
 /* Begin XCBuildConfiguration section */
 		E708BED91CB6FBDA0068D97B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DA9856AE7C89450B420B7FC /* Pods-ProductHunt-ProductHuntTests.debug.xcconfig */;
+			baseConfigurationReference = 1B4150AD9412ADB26F7623A9 /* Pods-ProductHunt-ProductHuntTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = D54Y88Y9CY;
 				INFOPLIST_FILE = Source/Tests/UnitTests/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ProductHunt.OSX.ProductHuntTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Tests/UnitTests/Support/UnitTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Product Hunt.app/Contents/MacOS/Product Hunt";
 			};
 			name = Debug;
 		};
 		E708BEDA1CB6FBDA0068D97B /* Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3179868033DCA4738C674F6 /* Pods-ProductHunt-ProductHuntTests.testing.xcconfig */;
+			baseConfigurationReference = 85A1270649338EFD3E5BA11D /* Pods-ProductHunt-ProductHuntTests.testing.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = D54Y88Y9CY;
 				INFOPLIST_FILE = Source/Tests/UnitTests/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ProductHunt.OSX.ProductHuntTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Tests/UnitTests/Support/UnitTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Product Hunt.app/Contents/MacOS/Product Hunt";
 			};
 			name = Testing;
 		};
 		E708BEDB1CB6FBDA0068D97B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94873D80465C7FF85BD1EB20 /* Pods-ProductHunt-ProductHuntTests.release.xcconfig */;
+			baseConfigurationReference = ED366A5C565866219B0D1738 /* Pods-ProductHunt-ProductHuntTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = D54Y88Y9CY;
 				INFOPLIST_FILE = Source/Tests/UnitTests/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ProductHunt.OSX.ProductHuntTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Tests/UnitTests/Support/UnitTests-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Product Hunt.app/Contents/MacOS/Product Hunt";
 			};
 			name = Release;
@@ -1137,18 +1153,26 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1172,6 +1196,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1184,18 +1209,26 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1212,21 +1245,23 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 		E76ED6591C96BD0C005B3EC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F33A77C1D5E5D2E623C04A7 /* Pods-ProductHunt.debug.xcconfig */;
+			baseConfigurationReference = 63D9DD8FB8A090D6B40C129E /* Pods-ProductHunt.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = MGTRPU24M6;
+				DEVELOPMENT_TEAM = D54Y88Y9CY;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -1238,24 +1273,27 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.producthunt.producthuntosx;
 				PRODUCT_NAME = "Product Hunt";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Support/ProductHunt-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		E76ED65A1C96BD0C005B3EC7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3963F93FB138D9D194FD7294 /* Pods-ProductHunt.release.xcconfig */;
+			baseConfigurationReference = F5D20D3CCBBEF94B23C17196 /* Pods-ProductHunt.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = MGTRPU24M6;
+				DEVELOPMENT_TEAM = D54Y88Y9CY;
 				INFOPLIST_FILE = Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -1263,8 +1301,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.producthunt.producthuntosx;
 				PRODUCT_NAME = "Product Hunt";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Support/ProductHunt-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1277,18 +1317,26 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1312,21 +1360,23 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Testing;
 		};
 		E7AC4DFF1CA9435C0099AB0E /* Testing */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87E1CB8D918E7077455D0D0A /* Pods-ProductHunt.testing.xcconfig */;
+			baseConfigurationReference = F6EBE7BCA68794C6B8F486C7 /* Pods-ProductHunt.testing.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = MGTRPU24M6;
+				DEVELOPMENT_TEAM = D54Y88Y9CY;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -1339,9 +1389,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.producthunt.producthuntosx;
 				PRODUCT_NAME = "Product Hunt";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Support/ProductHunt-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Testing;
 		};

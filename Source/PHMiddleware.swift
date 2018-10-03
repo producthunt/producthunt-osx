@@ -9,7 +9,7 @@
 import Foundation
 import ReSwift
 
-let PHTrackingMiddleware: Middleware = { dispatch, getState in
+let PHTrackingMiddleware: Middleware<PHAppState> = { dispatch, getState in
     return { next in
         return { action in
 

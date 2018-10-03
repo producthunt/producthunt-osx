@@ -15,7 +15,7 @@ class PHOpenURLAction {
     }
 
     class func perform(withUrl url: URL, closeAfterLaunch: Bool = false) {
-        let handle = NSWorkspace.shared().open(url)
+        let handle = NSWorkspace.shared.open(url)
 
         if handle && closeAfterLaunch {
             PHPopoverAction.close()

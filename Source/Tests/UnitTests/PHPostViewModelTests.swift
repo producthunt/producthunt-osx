@@ -14,7 +14,7 @@ class PHPostViewModelTests: PHTestCase {
     func testThatRerurnsTitle() {
         let post = fake.post()
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         let model = PHPostViewModel(withPost: post, store: store)
 
@@ -24,7 +24,7 @@ class PHPostViewModelTests: PHTestCase {
     func testThatReturnsThumbnailUrl() {
         let post = fake.post()
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         let model = PHPostViewModel(withPost: post, store: store)
 
@@ -34,7 +34,7 @@ class PHPostViewModelTests: PHTestCase {
     func testThatRerurnsTagline() {
         let post = fake.post()
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         let model = PHPostViewModel(withPost: post, store: store)
 
@@ -44,7 +44,7 @@ class PHPostViewModelTests: PHTestCase {
     func testThatSeenIsTrueIfPostIsOlderThanOneDay() {
         let post = fake.post(1.days)
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         let model = PHPostViewModel(withPost: post, store: store)
 
@@ -56,7 +56,7 @@ class PHPostViewModelTests: PHTestCase {
     func testThatSeenIsFalseIfNotInInteractions() {
         let post = fake.post()
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         let model = PHPostViewModel(withPost: post, store: store)
 
@@ -66,7 +66,7 @@ class PHPostViewModelTests: PHTestCase {
     func testThatSeenIsTrueIfPostIsInInteractions() {
         let post = fake.post()
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         let model = PHPostViewModel(withPost: post, store: store)
 
@@ -78,7 +78,7 @@ class PHPostViewModelTests: PHTestCase {
     func testThatReturnsVotesCount() {
         let post = fake.post(0.seconds, votes: 10, commentsCount: 10)
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         let model = PHPostViewModel(withPost: post, store: store)
 
@@ -88,7 +88,7 @@ class PHPostViewModelTests: PHTestCase {
     func testThatReturnsCommentsCount() {
         let post = fake.post(0.seconds, votes: 10, commentsCount: 10)
 
-        let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+        let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
         let model = PHPostViewModel(withPost: post, store: store)
 

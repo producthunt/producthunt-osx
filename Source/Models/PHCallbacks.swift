@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias PHVoidCallback = (Void) -> Void
+typealias PHVoidCallback = () -> Void
 typealias PHAPIErrorClosure = (_ error: NSError) -> ()
 typealias PHAPIOperationClosure = (_ api: PHAPI,_ errorClosure: @escaping PHAPIErrorClosure) -> ()
 typealias PHAPITokenCompletion  = ((_ token: PHToken?, _ error: NSError?) -> ())

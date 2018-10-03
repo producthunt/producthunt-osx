@@ -11,14 +11,14 @@ import SwiftyTimer
 import Sparkle
 import ReSwift
 
-let store = Store<PHAppState>(reducer: PHAppReducer(), state: nil, middleware: [PHTrackingMiddleware])
+let store = Store<PHAppState>(reducer: appReducer, state: nil, middleware: [PHTrackingMiddleware])
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
 
-    let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let popover = NSPopover()
 
     var settingsWindow = PHPreferencesWindowController()
@@ -36,7 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         popover.contentViewController = PHPostListViewController(nibName: "PHPostListViewController", bundle: nil)
-        popover.appearance = NSAppearance(named: NSAppearanceNameAqua)
+        popover.appearance = NSAppearance(named: NSAppearance.Name.aqua)
         popover.animates = false
         popover.behavior = .transient
 
@@ -66,32 +66,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: Actions
 
-    func togglePopover() {
+    @objc func togglePopover() {
         PHPopoverAction.toggle()
     }
 
-    func openAppsLink() {
+    @objc func openAppsLink() {
         PHOpenProductHuntAction.performWithAppsLink()
     }
 
-    func openFAQLink() {
+    @objc func openFAQLink() {
         PHOpenProductHuntAction.performWithFAQLink()
     }
 
-    func openAboutLink() {
+    @objc func openAboutLink() {
         PHOpenProductHuntAction.performWithAboutLink()
     }
 
-    func showSettings() {
+    @objc func showSettings() {
         PHOpenSettingsAction.perform()
         PHPopoverAction.close()
     }
 
-    func quit() {
-        NSApplication.shared().terminate(self)
+    @objc func quit() {
+        NSApplication.shared.terminate(self)
     }
 
-    func checkForUpdates() {
+    @objc func checkForUpdates() {
         SUUpdater.shared().checkForUpdates(nil)
     }
 }

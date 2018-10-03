@@ -35,6 +35,6 @@ extension PHPost {
     }
 
     class func posts(fromArray array: [[String: Any]]) -> [PHPost] {
-        return array.flatMap{ PHPost.post(fromDictionary: $0)! }
+        return array.compactMap{ PHPost.post(fromDictionary: $0)! }
     }
 }

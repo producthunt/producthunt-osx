@@ -1,42 +1,52 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - DateTools (1.7.0)
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - DateTools (2.0.0)
   - ISO8601 (0.6.0)
-  - Kingfisher (3.2.2)
-  - ReSwift (3.0.0)
-  - Sparkle (1.14.0)
+  - Kingfisher (4.10.0)
+  - ReSwift (4.0.1)
+  - Sparkle (1.20.0)
   - SwiftyTimer (2.0.0)
 
 DEPENDENCIES:
-  - AFNetworking (~> 3.0)
+  - AFNetworking
   - DateTools
-  - ISO8601 (~> 0.5)
-  - Kingfisher (~> 3.0)
+  - ISO8601
+  - Kingfisher
   - ReSwift
   - Sparkle
   - SwiftyTimer
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - DateTools
+    - ISO8601
+    - Kingfisher
+    - ReSwift
+    - Sparkle
+    - SwiftyTimer
+
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   ISO8601: d3ea3ba9b752820cf92c6b47a9ee327e9f0e13fc
-  Kingfisher: 821466474ad7ffc375a4aecadfa05068cfed67b3
-  ReSwift: f0255f4b4f2dacd12c5d97d34d13fc5dad6d6371
-  Sparkle: ccd95233b12a3e3d4eeb55ff01dd4c8bb8188b07
+  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
+  ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
+  Sparkle: 48999e7ee032f05ca05e28451eadf4af8ede6b44
   SwiftyTimer: 2efd74b060d69ad4f1496baf5bbedbe132125fcf
 
-PODFILE CHECKSUM: 4a2d06f24ccf54d50b6032a7d9b83025c887d7ad
+PODFILE CHECKSUM: 602455ecc8a6bbc9cd57cbce5f9d4e7507cacac3
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.6.0.beta.1
