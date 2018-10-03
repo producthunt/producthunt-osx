@@ -22,7 +22,7 @@ class PHShareAction: NSObject, NSSharingServiceDelegate {
         store.dispatch( PHTrackPostShare(post: post, medium: "twitter") )
 
         KingfisherManager.shared.retrieveImage(with: post.thumbnailUrl, options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) in
-            self.perform(NSSharingServiceNamePostOnTwitter, title: PHShareMessage.message(fromPost: post), url: post.discussionUrl, image: image)
+            self.perform(convertFromNSSharingServiceName(NSSharingService.Name.postOnTwitter), title: PHShareMessage.message(fromPost: post), url: post.discussionUrl, image: image)
         })
     }
 
@@ -34,12 +34,12 @@ class PHShareAction: NSObject, NSSharingServiceDelegate {
         store.dispatch( PHTrackPostShare(post: post, medium: "facebook") )
 
         KingfisherManager.shared.retrieveImage(with: post.thumbnailUrl, options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) in
-            self.perform(NSSharingServiceNamePostOnFacebook, title: PHShareMessage.message(fromPost: post), url: post.discussionUrl, image: image)
+            self.perform(convertFromNSSharingServiceName(NSSharingService.Name.postOnFacebook), title: PHShareMessage.message(fromPost: post), url: post.discussionUrl, image: image)
         })
     }
 
     fileprivate func perform(_ service: String, title: String, url: URL, image: NSImage?) {
-        if let service =  NSSharingService(named: service) {
+        if let service =  NSSharingService(named: convertToNSSharingServiceName(service)) {
             service.delegate = self
 
             var items = [AnyObject]()
@@ -53,4 +53,14 @@ class PHShareAction: NSObject, NSSharingServiceDelegate {
             service.perform(withItems: items)
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSSharingServiceName(_ input: NSSharingService.Name) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToNSSharingServiceName(_ input: String) -> NSSharingService.Name {
+	return NSSharingService.Name(rawValue: input)
 }

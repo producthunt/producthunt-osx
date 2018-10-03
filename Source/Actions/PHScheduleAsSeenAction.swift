@@ -11,7 +11,7 @@ import Cocoa
 class PHScheduleAsSeenAction {
 
     fileprivate class var delegate: AppDelegate {
-        return NSApplication.shared().delegate as! AppDelegate
+        return NSApplication.shared.delegate as! AppDelegate
     }
 
     class func performSchedule() {

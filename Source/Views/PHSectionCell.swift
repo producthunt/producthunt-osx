@@ -15,7 +15,7 @@ class PHSectionCell: NSTableCellView {
             return nil
         }
 
-        let view = tableView.make(withIdentifier: "sectionCellIdentifier", owner: owner) as! PHSectionCell
+        let view = tableView.makeView(withIdentifier: convertToNSUserInterfaceItemIdentifier("sectionCellIdentifier"), owner: owner) as! PHSectionCell
         view.textField?.stringValue = section
         return view
     }
@@ -26,4 +26,9 @@ class PHSectionCell: NSTableCellView {
         wantsLayer = true
         layer?.backgroundColor = NSColor.white.cgColor
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToNSUserInterfaceItemIdentifier(_ input: String) -> NSUserInterfaceItemIdentifier {
+	return NSUserInterfaceItemIdentifier(rawValue: input)
 }

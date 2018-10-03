@@ -11,7 +11,7 @@ import Cocoa
 class PHOpenSettingsMenuAction {
 
     class func perform(_ sender: NSView) {
-        let delegate = NSApplication.shared().delegate as! AppDelegate
+        let delegate = NSApplication.shared.delegate as! AppDelegate
 
         let menu = NSMenu()
 

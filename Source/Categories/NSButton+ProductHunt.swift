@@ -11,10 +11,10 @@ import Cocoa
 extension NSButton {
 
     var boolState: Bool {
-        return state == 1 ? true : false
+        return state.rawValue == 1 ? true : false
     }
 
     func setState(forBool bool: Bool) {
-        state = bool ? 1 : 0
+        state = NSControl.StateValue(rawValue: bool ? 1 : 0)
     }
 }

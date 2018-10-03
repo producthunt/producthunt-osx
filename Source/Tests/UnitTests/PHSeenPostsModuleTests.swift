@@ -44,7 +44,7 @@ class PHSeenPostsModuleTests: PHTestCase {
 
         let reducer = seenPostsReducer(action, state: seenPosts)
 
-        XCTAssertTrue(reducer.date.isToday())
+        XCTAssertTrue((reducer.date as NSDate).isToday())
         XCTAssertEqual(reducer.postIds.count, 1)
         XCTAssertTrue(reducer.isSeen(yesterdayPost))
         XCTAssertTrue(reducer.isSeen(post))

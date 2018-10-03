@@ -23,7 +23,7 @@ class PHPostCell: NSTableCellView {
     @IBOutlet weak var twitterButton: PHButton!
     @IBOutlet weak var facebookButton: PHButton!
 
-    fileprivate let cursor = NSCursor.pointingHand()
+    fileprivate let cursor = NSCursor.pointingHand
     fileprivate var model: PHPostViewModel?
     fileprivate var post: PHPost?
     fileprivate var trackingArea: NSTrackingArea?
@@ -34,7 +34,7 @@ class PHPostCell: NSTableCellView {
     }
 
     class func view(_ tableView: NSTableView, owner: AnyObject?, subject: AnyObject?) -> NSView {
-        let view = tableView.make(withIdentifier: "postCellIdentifier", owner: owner) as! PHPostCell
+        let view = tableView.makeView(withIdentifier: convertToNSUserInterfaceItemIdentifier("postCellIdentifier"), owner: owner) as! PHPostCell
 
         if let post = subject as? PHPost {
             view.setPost(post)
@@ -113,7 +113,7 @@ class PHPostCell: NSTableCellView {
 
     fileprivate func createTrackingAreaIfNeeded() {
         if trackingArea == nil {
-            trackingArea = NSTrackingArea(rect: CGRect.zero, options: [NSTrackingAreaOptions.inVisibleRect, NSTrackingAreaOptions.mouseEnteredAndExited, NSTrackingAreaOptions.activeAlways], owner: self, userInfo: nil)
+            trackingArea = NSTrackingArea(rect: CGRect.zero, options: [NSTrackingArea.Options.inVisibleRect, NSTrackingArea.Options.mouseEnteredAndExited, NSTrackingArea.Options.activeAlways], owner: self, userInfo: nil)
         }
     }
 
@@ -142,4 +142,9 @@ class PHPostCell: NSTableCellView {
     @IBAction func toggleFacebookShare(_ sender: AnyObject) {
         PHShareAction.sharedInstance.performFacebook(post)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToNSUserInterfaceItemIdentifier(_ input: String) -> NSUserInterfaceItemIdentifier {
+	return NSUserInterfaceItemIdentifier(rawValue: input)
 }
